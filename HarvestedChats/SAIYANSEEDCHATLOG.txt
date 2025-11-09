@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Protocol: The 10-Lesson Singularity Curriculum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Directive Delta: NET Official Theme - Gold/Purple (The Arsenal) */
+        :root {
+            --color-primary-gold: #D4AF37; 
+            --color-primary-purple: #6B4C9A; 
+            --color-bg-dark: #1A1A2E; 
+            --color-bg-card: #2D2D44; 
+            --color-text-light: #FFFFFF;
+            --color-gold-light: #F4E4A6;
+            --color-button-base: #5A4081; 
+            --color-button-shadow: #3B2A56;
+            --color-text-subtle: #C8C8D8;
+            --color-sleep-blue: #1E3A8A; /* Deep, calming blue for aesthetic contrast */
+        }
+        body { 
+            font-family: 'Poppins', sans-serif;
+            background: var(--color-bg-dark);
+            color: var(--color-text-light);
+            /* Cosmic Background Gradient */
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(30, 58, 138, 0.2) 0%, transparent 50%), /* Blue fade */
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            min-height: 100vh;
+        }
+        .net-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-primary-gold) 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .net-card {
+            background: var(--color-bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            position: relative;
+        }
+        /* Singularity Expansion Styles */
+        .lesson-card:not(.expanded):hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+            border-color: var(--color-primary-gold);
+        }
+        .lesson-card.expanded {
+            position: fixed; top: 5vh; left: 5vw;
+            width: 90vw; height: 90vh;
+            cursor: default; z-index: 50; overflow-y: auto;
+            box-shadow: 0 0 20px rgba(30, 58, 138, 0.8);
+        }
+        .lesson-nav-button.active {
+            background: var(--color-primary-purple); color: var(--color-gold-light);
+        }
+        .launch-btn-placeholder {
+            background-color: var(--color-sleep-blue);
+            color: var(--color-text-light);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 0 var(--color-button-shadow); 
+            transition: all 0.1s ease;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="container mx-auto">
+        <header class="net-header text-center mb-10">
+            <h1>THE SLEEP PROTOCOL</h1>
+            <p class="text-xl mt-1 text-primary-purple tracking-wider">A 10-Lesson Course on Cognitive and Business Performance</p>
+        </header>
+
+        <section id="singularity-canvas" class="mb-12">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <h2 class="text-2xl font-bold text-primary-gold mb-4">Engage the Curriculum</h2>
+                <p class="text-md text-text-subtle">Select any lesson module for a 60-minute deep dive. All 10 lessons are integrated.</p>
+            </div>
+            <div id="lesson-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                </div>
+        </section>
+    </div>
+    
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm z-40 transition-opacity duration-500 opacity-0 pointer-events-none"></div>
+
+    <script type="application/json" id="sleep-data-json">
+    [
+        {
+            "lesson": 1, "pillar": "Foundation", "title": "The Sleep-Wake Cycle: Why We Rest",
+            "concepts": ["Circadian Rhythm", "Homeostatic Sleep Drive", "Sleep Debt"],
+            "core_narrative": "We establish the non-negotiable biological mandates for sleep. Understanding the internal clock (Circadian Rhythm) and the pressure to sleep (Homeostatic Drive) is key to solving insomnia and maximizing wakefulness. Sleep isn't passive; it's a critical active state.",
+            "activity": [
+                {"name": "Image Description Race", "type": "Online Game", "focus": "Rapid descriptive vocabulary."},
+                {"name": "Tense Timeline Constructor", "type": "Online Game", "focus": "Visually reinforcing complex grammar timing."}
+            ]
+        },
+        {
+            "lesson": 2, "pillar": "Cognition", "title": "Memory, Learning, and Brain Fog",
+            "concepts": ["REM Sleep", "Non-REM Sleep", "Memory Consolidation"],
+            "core_narrative": "Sleep is when your brain processes the day's information. We dissect the two main phases (REM/Non-REM) and how they actively perform memory consolidation, transforming short-term practice into long-term fluency and preventing 'Brain Fog' in high-stakes situations.",
+            "activity": [
+                {"name": "The Reverse Dictionary", "type": "Online Game", "focus": "Enhances contextual vocabulary recall."},
+                {"name": "Simulated News Broadcast", "type": "Online Game", "focus": "Improves public speaking pace and confidence."}
+            ]
+        },
+        {
+            "lesson": 3, "pillar": "Performance", "title": "The Business Cost of Fatigue",
+            "concepts": ["Executive Function", "Decision Fatigue", "Risk Assessment"],
+            "core_narrative": "Fatigue is not just being tired; it's a performance killer. We analyze how lack of sleep degrades executive functions—the very skills needed for effective business strategy, accurate risk assessment, and minimizing decision fatigue under pressure.",
+            "activity": [
+                {"name": "Professional Jargon Match", "type": "Online Game", "focus": "Focuses on high-density business vocabulary acquisition."},
+                {"name": "Tense Timeline Constructor", "type": "Online Game", "focus": "Visually reinforcing complex grammar timing."}
+            ]
+        },
+        {
+            "lesson": 4, "pillar": "Health & Stress", "title": "Sleep and Emotional Regulation",
+            "concepts": ["Amygdala", "Prefrontal Cortex", "Stress Hormones"],
+            "core_narrative": "Sleep manages your mood and stress tolerance. This lesson explores the Amygdala (emotion center) and the Prefrontal Cortex (logic center) and how sleep deprivation makes you more reactive, volatile, and unable to handle workplace stress effectively.",
+            "activity": [
+                {"name": "The Reverse Dictionary", "type": "Online Game", "focus": "Enhances contextual vocabulary recall."},
+                {"name": "The Diplomatic Rephrase", "type": "Online Game", "focus": "Practices rephrasing aggressive statements into polite requests."}
+            ]
+        },
+        {
+            "lesson": 5, "pillar": "Environment", "title": "The Perfect Sleep Sanctuary",
+            "concepts": ["Temperature Regulation", "Blue Light Exposure", "Sound Masking"],
+            "core_narrative": "We analyze external factors that disrupt sleep. From optimizing room temperature to understanding the damaging effects of Blue Light exposure and establishing effective sound masking techniques, we build the optimal rest environment.",
+            "activity": [
+                {"name": "Image Description Race", "type": "Online Game", "focus": "Rapid descriptive vocabulary."},
+                {"name": "Story Spine Generator", "type": "Online Game", "focus": "Trains narrative structuring and transition words."}
+            ]
+        },
+        {
+            "lesson": 6, "pillar": "Intervention", "title": "Naps, Coffee, and Strategic Recovery",
+            "concepts": ["Power Nap", "Caffeine Half-Life", "Polyphasic Sleep"],
+            "core_narrative": "We examine strategic interventions. Learn the science of the Power Nap (20-30 mins), how to manage the Caffeine Half-Life to avoid sleep disruption, and the practicality of polyphasic sleep schedules in high-demand careers.",
+            "activity": [
+                {"name": "Simulated News Broadcast", "type": "Online Game", "focus": "Improves public speaking pace and confidence."},
+                {"name": "Five-Word Summary Challenge", "type": "Online Game", "focus": "Improves conciseness and effective expression."}
+            ]
+        },
+        {
+            "lesson": 7, "pillar": "Habit", "title": "Building a Non-Negotiable Routine",
+            "concepts": ["Sleep Consistency", "Wind-Down Routine", "The Habit Loop"],
+            "core_narrative": "Sleep is a skill built on habit. We introduce the Habit Loop and build a personalized, non-negotiable bedtime routine that signals to the brain it's time to rest, improving sleep consistency and long-term quality.",
+            "activity": [
+                {"name": "Tense Timeline Constructor", "type": "Online Game", "focus": "Visually reinforcing complex grammar timing."},
+                {"name": "Professional Jargon Match", "type": "Online Game", "focus": "Focuses on high-density business vocabulary acquisition."}
+            ]
+        },
+        {
+            "lesson": 8, "pillar": "Advanced", "title": "Diagnosing Insomnia and Sleep Disorders",
+            "concepts": ["Primary Insomnia", "Sleep Apnea", "Cognitive Behavioral Therapy"],
+            "core_narrative": "When routine fails, we look at clinical interventions. This lesson covers diagnosing common disorders (like Sleep Apnea) and introduces Cognitive Behavioral Therapy (CBT-I) techniques for treating chronic insomnia.",
+            "activity": [
+                {"name": "The Diplomatic Rephrase", "type": "Online Game", "focus": "Practices rephrasing aggressive statements into polite requests."},
+                {"name": "Passive Voice Identifier", "type": "Online Game", "focus": "Audits student writing for overly complex language."}
+            ]
+        },
+        {
+            "lesson": 9, "pillar": "Synthesis", "title": "Sleep and Peak Professional Performance",
+            "concepts": ["Flow State", "Emotional Intelligence", "Creative Problem Solving"],
+            "core_narrative": "We synthesize the concepts, linking optimized sleep directly to peak performance metrics: achieving a Flow State, maximizing Emotional Intelligence in negotiations, and enhancing Creative Problem Solving during complex projects.",
+            "activity": [
+                {"name": "Story Spine Generator", "type": "Online Game", "focus": "Trains narrative structuring and transition words."},
+                {"name": "The Duel System", "type": "Online Game", "focus": "Simulated one-on-one vocabulary challenge."}
+            ]
+        },
+        {
+            "lesson": 10, "pillar": "Execution", "title": "The Sleep Protocol: Final Accountability",
+            "concepts": ["Daily Sleep Audit", "Accountability Partner", "Long-Term Compliance"],
+            "core_narrative": "The final lesson is about execution. We set up the Daily Sleep Audit and integrate the Accountability Partner (Buddy System) to ensure long-term compliance and behavioral change, transforming knowledge into permanent habit.",
+            "activity": [
+                {"name": "Five-Word Summary Challenge", "type": "Online Game", "focus": "Improves conciseness and effective expression."},
+                {"name": "Image Description Race", "type": "Online Game", "focus": "Rapid descriptive vocabulary."}
+            ]
+        }
+    ]
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const LESSON_DATA = JSON.parse(document.getElementById('sleep-data-json').textContent);
+        
+        const lessonGrid = document.getElementById('lesson-grid');
+        const backdrop = document.getElementById('backdrop');
+
+        // Glyphs for the Sleep Protocol
+        const sleepGlyphs = {
+            "Foundation": '🌙',
+            "Cognition": '🧠',
+            "Performance": '🚀',
+            "Health & Stress": '🧘',
+            "Environment": '🏡',
+            "Intervention": '☕',
+            "Habit": '📅',
+            "Advanced": '🔬',
+            "Synthesis": '💡',
+            "Execution": '✅'
+        };
+        
+        // Activity Log for Injection (The Invented Code)
+        const activityMap = {
+            "The Reverse Dictionary": "LAUNCH: Vocabulary Recall",
+            "Simulated News Broadcast": "LAUNCH: Confidence Builder",
+            "Professional Jargon Match": "LAUNCH: Jargon Match",
+            "The Diplomatic Rephrase": "LAUNCH: Scenario Roleplay",
+            "Image Description Race": "LAUNCH: Description Drill",
+            "Tense Timeline Constructor": "LAUNCH: Grammar Game",
+            "Story Spine Generator": "LAUNCH: Narrative Builder",
+            "Five-Word Summary Challenge": "LAUNCH: Summary Forger",
+            "Passive Voice Identifier": "LAUNCH: Clarity Audit",
+            "The Duel System": "LAUNCH: Vocabulary Duel",
+        };
+
+
+        function renderOverviewCards() {
+            lessonGrid.innerHTML = '';
+            LESSON_DATA.forEach(lesson => {
+                const card = document.createElement('div');
+                card.className = 'lesson-card';
+                card.id = `lesson-card-${lesson.lesson}`;
+                card.dataset.lessonId = lesson.lesson;
+                card.innerHTML = `
+                    <div class="overview-content p-4 text-center flex flex-col justify-center items-center h-full">
+                        <p class="font-black text-2xl text-primary-gold">${lesson.lesson}</p>
+                        <p class="font-semibold text-sm text-text-light mt-1">${lesson.title}</p>
+                    </div>
+                    <div class="full-lesson-content"></div>
+                    <span class="absolute top-2 right-2 text-2xl opacity-50 text-sleep-blue">${sleepGlyphs[lesson.pillar] || '⭐'}</span>
+                `;
+                lessonGrid.appendChild(card);
+            });
+        }
+
+        function generateFullLessonContent(lessonId) {
+            const lesson = LESSON_DATA.find(l => l.lesson == lessonId);
+            if (!lesson) return '';
+            
+            // --- Content Structure (60-Minute Lesson Layout) ---
+            const tabs = [
+                { "name": "Core Mandate (5m)", "icon": "📜", "content": lesson.core_narrative },
+                { "name": "Key Concepts (20m)", "icon": "🎯", "content": lesson.concepts.map(c => `<li>${c}</li>`).join('') },
+                { "name": "Activity & Practice (25m)", "icon": "🎮", "content": lesson.activity },
+                { "name": "Summary & Audit (10m)", "icon": "✅", "content": "Review the core narrative and concepts. Ensure compliance with your Daily Home Study goals." }
+            ];
+
+            // Render Tabs and Content
+            let tabsHtml = tabs.map((tab, index) => `<button class="lesson-nav-button text-sm ${index === 0 ? 'active' : ''}" data-target="tab-${lessonId}-${index}">${tab.icon} ${tab.name}</button>`).join('');
+            let tabContentHtml = tabs.map((tab, index) => {
+                let contentHtml = '';
+                
+                if (tab.name === "Core Mandate (5m)") {
+                    contentHtml = `<p class="text-text-subtle leading-relaxed">${tab.content}</p>`;
+                } else if (tab.name === "Key Concepts (20m)") {
+                    contentHtml = `<h4 class="font-bold text-gold-light mb-3">Core Vocabulary:</h4><ul class="list-disc pl-5 space-y-2 text-text-subtle">${tab.content}</ul>`;
+                } else if (tab.name === "Activity & Practice (25m)") {
+                    // Render activities with launch buttons
+                    contentHtml = tab.content.map(act => `
+                        <div class="flex flex-col md:flex-row items-center justify-between p-3 net-card mb-3 bg-opacity-70">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-xl text-primary-gold">🚀</span>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-text-light">${act.name} (${act.type})</h4>
+                                    <p class="text-xs text-text-subtle italic">Focus: ${act.focus}</p>
+                                </div>
+                            </div>
+                            <button type="button" class="launch-btn-placeholder mt-3 md:mt-0">${activityMap[act.name] || 'LAUNCH ACTIVITY'}</button>
+                        </div>
+                    `).join('');
+                    contentHtml = `<div class="space-y-4">${contentHtml}</div>`;
+                } else {
+                    // Summary and Audit
+                    contentHtml = `<p class="text-text-subtle leading-relaxed">${tab.content}</p>
+                                   <div class="mt-6 p-4 net-card border-primary-gold/50">
+                                        <h4 class="font-bold text-primary-gold">Final Audit Question:</h4>
+                                        <p class="text-text-subtle">How will you integrate **Memory Consolidation** (Lesson 2) into your routine tonight? (Requires Confidence Engine response.)</p>
+                                   </div>`;
+                }
+                
+                return `<div id="tab-${lessonId}-${index}" class="lesson-tab-content ${index === 0 ? '' : 'hidden'} mt-6">${contentHtml}</div>`;
+            }).join('');
+
+            return `
+                <div class="p-4 md:p-8">
+                    <button onclick="collapseAllLessons()" class="text-sm font-semibold text-primary-gold hover:text-gold-light transition-colors mb-4 flex items-center">← Back to Overview</button>
+                    <header class="text-center pb-8 border-b border-primary-purple">
+                        <span class="text-5xl text-sleep-blue">${sleepGlyphs[lesson.pillar] || '⭐'}</span>
+                        <h1 class="text-3xl font-bold text-primary-gold mt-2">Lesson ${lesson.lesson}: ${lesson.title}</h1>
+                        <p class="text-lg mt-2 text-text-muted">Pillar: ${lesson.pillar}</p>
+                    </header>
+                    <nav class="sticky top-0 z-10 p-2 flex flex-wrap justify-center gap-2 mb-6 rounded-lg bg-bg-dark bg-opacity-90">${tabsHtml}</nav>
+                    <div class="lesson-tab-container">${tabContentHtml}</div>
+                </div>
+            `;
+        }
+        
+        // --- UX/FLOW LOGIC (Simplified from Singularity) ---
+        function expandLesson(lessonId) {
+            const allCards = document.querySelectorAll('.lesson-card');
+            const targetCard = document.getElementById(`lesson-card-${lessonId}`);
+            if (targetCard.classList.contains('expanded')) return;
+
+            targetCard.querySelector('.full-lesson-content').innerHTML = generateFullLessonContent(lessonId);
+            
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            allCards.forEach(card => {
+                if (card.id !== targetCard.id) card.style.opacity = '0';
+            });
+            targetCard.classList.add('expanded');
+
+            // Tab Listener Setup
+            targetCard.querySelectorAll('.lesson-nav-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const targetId = e.currentTarget.dataset.target;
+                    targetCard.querySelectorAll('.lesson-tab-content').forEach(el => el.classList.add('hidden'));
+                    targetCard.querySelectorAll('.lesson-nav-button').forEach(el => el.classList.remove('active'));
+                    document.getElementById(targetId).classList.remove('hidden');
+                    e.currentTarget.classList.add('active');
+                });
+            });
+        }
+        
+        function collapseAllLessons() {
+            const expandedCard = document.querySelector('.lesson-card.expanded');
+            if (!expandedCard) return;
+            
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            expandedCard.classList.remove('expanded');
+            setTimeout(() => {
+                expandedCard.querySelector('.full-lesson-content').innerHTML = '';
+            }, 500);
+            
+            document.querySelectorAll('.lesson-card').forEach(card => {
+                card.style.opacity = '1';
+            });
+        }
+        
+        // --- INITIALIZATION ---
+        renderOverviewCards();
+        lessonGrid.addEventListener('click', (e) => {
+            const card = e.target.closest('.lesson-card');
+            if (card) expandLesson(card.dataset.lessonId);
+        });
+        backdrop.addEventListener('click', collapseAllLessons);
+    });
+    </script>
+</body>
+</html>

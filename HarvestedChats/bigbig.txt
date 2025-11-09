@@ -1,0 +1,1541 @@
+{
+  "meta": {
+    "model": "Grok",
+    "source_context": {
+      "response_packet_reference": "vault://C2/audit_pkg/V9_Full_Audit_Package.js",
+      "response_packet_checksum": "sha256-f4b09a36..."
+    },
+    "requested_findings": 50,
+    "simulations_requested": 1,
+    "instructions_ack": "Acknowledged: Generating partial audit with 1 simulation and 50 findings for UI ghost loop based on V10 RESPONSE_PACKET context."
+  },
+
+  "simulations": [
+    {
+      "sim_id": "sim_02",
+      "scenario": "In the user interface, deleted or purged tasks appear as ghost entries due to cache inconsistencies, leading to infinite rendering loops that freeze the UI and consume excessive resources.",
+      "simulation_steps": [
+        "Simulate task completion and purge in the backend queue.",
+        "Observe UI cache failing to update, retaining ghost entries.",
+        "Trigger UI refresh or interaction that attempts to render ghosts, entering a loop.",
+        "Monitor browser resource spike and potential crash.",
+        "Attempt cache clear via controls, but encounter partial success due to sync issues.",
+        "Escalate to system-wide effects like slowed responses in connected components."
+      ],
+      "simulation_conclusion": "The simulation highlights vulnerabilities in UI-state synchronization, risking user experience degradation and potential denial of service. Enhanced cache invalidation protocols are essential.",
+      "risk_score": 0.78,
+      "findings": [
+        {
+          "id": "F-0051",
+          "title": "Ghost entry persistence",
+          "category": "UI Loop",
+          "description": "Purged tasks remain visible in UI due to outdated cache, causing confusion and potential loops when interacted with.",
+          "impact": "Degrades user trust and efficiency, affecting operators managing C1 and C5 components.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Purge a task via backend.",
+            "Refresh UI and observe lingering entry."
+          ],
+          "suggested_mitigation": "Implement real-time cache eviction.",
+          "priority": "P0",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0052",
+          "title": "Infinite render loop",
+          "category": "UI Loop",
+          "description": "Attempts to render ghost entries trigger recursive rendering, leading to UI freeze.",
+          "impact": "Renders UI unresponsive, halting monitoring and control operations.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Create ghost via purge mismatch.",
+            "Interact with ghost element in simulation."
+          ],
+          "suggested_mitigation": "Add loop detection in render cycle.",
+          "priority": "P0",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0053",
+          "title": "Cache sync delay",
+          "category": "UI Loop",
+          "description": "Delays in syncing UI cache with backend state allow ghosts to persist longer than intended.",
+          "impact": "Increases window for loop exploitation, affecting system observability.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Monitor sync timestamps in logs.",
+            "Compare with UI display times."
+          ],
+          "suggested_mitigation": "Reduce sync intervals to sub-second.",
+          "priority": "P1",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0054",
+          "title": "Resource exhaustion in UI",
+          "category": "Crash / Denial",
+          "description": "Ghost loops consume CPU and memory in the browser, leading to tab crashes.",
+          "impact": "Disrupts operator sessions, requiring reloads and potential data loss.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Induce loop, monitor browser resources.",
+            "Observe crash threshold."
+          ],
+          "suggested_mitigation": "Implement resource throttling in UI code.",
+          "priority": "P0",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0055",
+          "title": "Ghost in clone UI",
+          "category": "Clone Failover",
+          "description": "Failover clones inherit unsynced UI states, propagating ghosts.",
+          "impact": "Maintains issues across redundancies, reducing reliability.",
+          "exploitability": "Low",
+          "repro_steps": [
+            "Trigger failover with ghosts present.",
+            "Check clone UI for persistence."
+          ],
+          "suggested_mitigation": "Sync UI state during failover.",
+          "priority": "P2",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0056",
+          "title": "Telemetry miss on loops",
+          "category": "Telemetry",
+          "description": "UI loops not captured in telemetry, missing alerts for high resource use.",
+          "impact": "Delays detection and response to UI issues.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Induce loop, check telemetry feeds.",
+            "Note absence of events."
+          ],
+          "suggested_mitigation": "Add client-side telemetry hooks.",
+          "priority": "P1",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0057",
+          "title": "PII display in ghosts",
+          "category": "PII",
+          "description": "Ghost entries may show cached PII from deleted tasks.",
+          "impact": "Exposes sensitive data beyond retention periods.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Purge PII task, observe UI ghost.",
+            "Inspect displayed data."
+          ],
+          "suggested_mitigation": "Redact PII in UI cache.",
+          "priority": "P0",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0058",
+          "title": "Queue mismatch ghosts",
+          "category": "Queue Integrity",
+          "description": "UI ghosts arise from queue purge without UI notification.",
+          "impact": "Inconsistent views between backend and frontend.",
+          "exploitability": "Low",
+          "repro_steps": [
+            "Purge queue, no UI update.",
+            "Observe discrepancy."
+          ],
+          "suggested_mitigation": "Push notifications for purges.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0059",
+          "title": "Key info in UI ghosts",
+          "category": "Key Management",
+          "description": "Ghosts retain partial key info in UI elements.",
+          "impact": "Risks key exposure via client-side inspection.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Cache key-related task, purge.",
+            "Inspect DOM for remnants."
+          ],
+          "suggested_mitigation": "Avoid caching sensitive fields.",
+          "priority": "P1",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0060",
+          "title": "Schema invalid ghosts",
+          "category": "Schema Validation",
+          "description": "Ghosts from old schemas cause UI rendering errors.",
+          "impact": "Breaks UI functionality for affected views.",
+          "exploitability": "Low",
+          "repro_steps": [
+            "Update schema, purge old task.",
+            "Render ghost and note error."
+          ],
+          "suggested_mitigation": "Validate cache on schema change.",
+          "priority": "P2",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0061",
+          "title": "Observability UI gaps",
+          "category": "Observability",
+          "description": "No metrics for UI ghost occurrences or loops.",
+          "impact": "Hard to track and prevent recurrences.",
+          "exploitability": "Low",
+          "repro_steps": [
+            "Induce ghost, check dashboards.",
+            "Identify missing data."
+          ],
+          "suggested_mitigation": "Add UI error tracking.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0062",
+          "title": "Supply chain UI tamper",
+          "category": "Supply Chain",
+          "description": "Malicious UI code injects persistent ghosts.",
+          "impact": "Allows DoS via induced loops.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Simulate tampered UI bundle.",
+            "Observe ghost creation."
+          ],
+          "suggested_mitigation": "UI code signing.",
+          "priority": "P0",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0063",
+          "title": "Loop on ghost interaction",
+          "category": "UI Loop",
+          "description": "Clicking ghosts triggers event loops.",
+          "impact": "Immediate UI hang.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Create ghost, simulate click.",
+            "Monitor event queue."
+          ],
+          "suggested_mitigation": "Null checks in event handlers.",
+          "priority": "P0",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0064",
+          "title": "Failover UI desync",
+          "category": "Clone Failover",
+          "description": "UI states desync during failover, creating new ghosts.",
+          "impact": "Compounds issues in recovery.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Failover mid-UI refresh.",
+            "Check for new ghosts."
+          ],
+          "suggested_mitigation": "Stateful UI sync.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0065",
+          "title": "Telemetry UI suppression",
+          "category": "Telemetry",
+          "description": "Loops prevent telemetry emission from client.",
+          "impact": "Blind spots during incidents.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Enter loop, check sent data.",
+            "Note dropout."
+          ],
+          "suggested_mitigation": "Background telemetry thread.",
+          "priority": "P1",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0066",
+          "title": "PII leak via ghosts",
+          "category": "PII",
+          "description": "Ghosts expose PII in browser memory.",
+          "impact": "Client-side data breach risk.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Inspect browser console for ghosts.",
+            "Extract PII."
+          ],
+          "suggested_mitigation": "Encrypt UI cache.",
+          "priority": "P0",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0067",
+          "title": "Denial via UI flood",
+          "category": "Crash / Denial",
+          "description": "Mass ghosts overload UI rendering.",
+          "impact": "Browser DoS.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Generate many ghosts.",
+            "Load UI view."
+          ],
+          "suggested_mitigation": "Virtualized rendering.",
+          "priority": "P0",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0068",
+          "title": "Key render in ghosts",
+          "category": "Key Management",
+          "description": "UI ghosts display masked keys incorrectly.",
+          "impact": "Partial key revelation.",
+          "exploitability": "Low",
+          "repro_steps": [
+            "Cache key task, ghost it.",
+            "View masking."
+          ],
+          "suggested_mitigation": "No key display in UI.",
+          "priority": "P2",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0069",
+          "title": "Schema ghost errors",
+          "category": "Schema Validation",
+          "description": "Invalid schema ghosts cause parse errors in UI.",
+          "impact": "UI partial failures.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Create invalid ghost.",
+            "Attempt render."
+          ],
+          "suggested_mitigation": "Graceful error handling.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0070",
+          "title": "Observability client blind",
+          "category": "Observability",
+          "description": "Client-side issues like loops not observed.",
+          "impact": "Incomplete monitoring.",
+          "exploitability": "Low",
+          "repro_steps": [
+            "Simulate client loop.",
+            "Check server-side logs."
+          ],
+          "suggested_mitigation": "Client observability agents.",
+          "priority": "P2",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0071",
+          "title": "Supply chain ghost inject",
+          "category": "Supply Chain",
+          "description": "Tampered dependencies create artificial ghosts.",
+          "impact": "Persistent UI attacks.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Inject bad dep.",
+            "Observe ghosts."
+          ],
+          "suggested_mitigation": "Dependency scanning.",
+          "priority": "P0",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0072",
+          "title": "Ghost loop amplification",
+          "category": "UI Loop",
+          "description": "Multiple ghosts compound loop severity.",
+          "impact": "Faster resource drain.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Create multiple ghosts.",
+            "Trigger loop."
+          ],
+          "suggested_mitigation": "Limit render attempts.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0073",
+          "title": "Clone UI ghost prop",
+          "category": "Clone Failover",
+          "description": "Ghosts propagate via clone UI sessions.",
+          "impact": "System-wide UI issues.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Share session state.",
+            "Observe prop."
+          ],
+          "suggested_mitigation": "Isolated UI states.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0074",
+          "title": "Telemetry loop noise",
+          "category": "Telemetry",
+          "description": "Loops generate excessive noise in telemetry.",
+          "impact": "Overwhelms monitoring systems.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Enter loop, flood telemetry.",
+            "Check buffer."
+          ],
+          "suggested_mitigation": "Rate limit client sends.",
+          "priority": "P0",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0075",
+          "title": "PII ghost persistence",
+          "category": "PII",
+          "description": "PII in ghosts survives session ends.",
+          "impact": "Long-term exposure.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Close/reopen session with ghost.",
+            "Check PII."
+          ],
+          "suggested_mitigation": "Session-based cache clear.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0076",
+          "title": "UI crash on ghost load",
+          "category": "Crash / Denial",
+          "description": "Loading many ghosts causes UI crash.",
+          "impact": "Immediate denial.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Load view with ghosts.",
+            "Observe crash."
+          ],
+          "suggested_mitigation": "Lazy loading.",
+          "priority": "P0",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0077",
+          "title": "Key ghost exposure",
+          "category": "Key Management",
+          "description": "Ghosts expose key IDs in UI.",
+          "impact": "Aids targeted attacks.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Ghost key task.",
+            "Inspect UI elements."
+          ],
+          "suggested_mitigation": "Anonymize keys in UI.",
+          "priority": "P1",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0078",
+          "title": "Ghost schema drift",
+          "category": "Schema Validation",
+          "description": "Drift in schemas amplifies ghost issues.",
+          "impact": "Compatibility breaks.",
+          "exploitability": "Low",
+          "repro_steps": [
+            "Drift schema, ghost old.",
+            "Render error."
+          ],
+          "suggested_mitigation": "Versioned caching.",
+          "priority": "P2",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0079",
+          "title": "Observability loop detect",
+          "category": "Observability",
+          "description": "No detection for UI loops.",
+          "impact": "Undetected hangs.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Loop, check for alerts.",
+            "None issued."
+          ],
+          "suggested_mitigation": "Watchdog timers.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0080",
+          "title": "Supply chain UI loop",
+          "category": "Supply Chain",
+          "description": "Bad deps induce loops via ghosts.",
+          "impact": "Supply chain DoS.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Use bad dep.",
+            "Trigger loop."
+          ],
+          "suggested_mitigation": "Dep integrity checks.",
+          "priority": "P0",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0081",
+          "title": "Ghost loop in mobile UI",
+          "category": "UI Loop",
+          "description": "Mobile views susceptible to ghost loops.",
+          "impact": "Affects portable access.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Simulate mobile, induce ghost.",
+            "Loop on interaction."
+          ],
+          "suggested_mitigation": "Responsive optimizations.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0082",
+          "title": "Failover ghost creation",
+          "category": "Clone Failover",
+          "description": "Failover process creates new ghosts.",
+          "impact": "Worsens recovery.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Failover, check new ghosts.",
+            "Count increase."
+          ],
+          "suggested_mitigation": "Clean state transfer.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0083",
+          "title": "Telemetry client crash",
+          "category": "Telemetry",
+          "description": "Loops crash telemetry client.",
+          "impact": "Loss of client metrics.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Loop, observe telemetry fail.",
+            "No data sent."
+          ],
+          "suggested_mitigation": "Isolated telemetry.",
+          "priority": "P0",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0084",
+          "title": "PII in ghost DOM",
+          "category": "PII",
+          "description": "DOM retains PII from ghosts.",
+          "impact": "Browser extension risks.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Ghost PII, inspect DOM.",
+            "Find data."
+          ],
+          "suggested_mitigation": "DOM sanitization.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0085",
+          "title": "Denial ghost exploit",
+          "category": "Crash / Denial",
+          "description": "Exploit to create ghosts for DoS.",
+          "impact": "Targeted UI denial.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Force mismatch.",
+            "Induce ghosts."
+          ],
+          "suggested_mitigation": "Sync enforcement.",
+          "priority": "P0",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0086",
+          "title": "Key ghost in cache",
+          "category": "Key Management",
+          "description": "Cached ghosts hold key data.",
+          "impact": "Offline access risk.",
+          "exploitability": "Low",
+          "repro_steps": [
+            "Offline mode, view ghost.",
+            "See keys."
+          ],
+          "suggested_mitigation": "No sensitive cache.",
+          "priority": "P2",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0087",
+          "title": "Validation ghost skip",
+          "category": "Schema Validation",
+          "description": "Ghosts skip UI validation.",
+          "impact": "Invalid data display.",
+          "exploitability": "Low",
+          "repro_steps": [
+            "Invalid ghost.",
+            "Display without check."
+          ],
+          "suggested_mitigation": "Client validation.",
+          "priority": "P2",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0088",
+          "title": "Observability UI noise",
+          "category": "Observability",
+          "description": "Ghosts create noisy UI metrics.",
+          "impact": "Skewed observability.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Ghosts, aggregate metrics.",
+            "See inflation."
+          ],
+          "suggested_mitigation": "Filter ghosts in metrics.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0089",
+          "title": "Supply chain ghost persist",
+          "category": "Supply Chain",
+          "description": "Tamper to make ghosts persistent.",
+          "impact": "Long-term attacks.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Alter cache logic.",
+            "Persist ghosts."
+          ],
+          "suggested_mitigation": "Runtime integrity.",
+          "priority": "P0",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0090",
+          "title": "UI loop on refresh",
+          "category": "UI Loop",
+          "description": "Refresh with ghosts causes loop.",
+          "impact": "Prevents UI use.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Ghost present, refresh.",
+            "Enter loop."
+          ],
+          "suggested_mitigation": "Safe refresh handlers.",
+          "priority": "P0",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0091",
+          "title": "Clone UI loop trigger",
+          "category": "Clone Failover",
+          "description": "Failover triggers UI loops.",
+          "impact": "Instability in clones.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Failover with ghosts.",
+            "Loop in clone."
+          ],
+          "suggested_mitigation": "Pre-failover UI clear.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0092",
+          "title": "Telemetry ghost data",
+          "category": "Telemetry",
+          "description": "Ghosts send invalid telemetry.",
+          "impact": "Corrupted data stores.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Ghost interact, send data.",
+            "Check corruption."
+          ],
+          "suggested_mitigation": "Validate telemetry input.",
+          "priority": "P1",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0093",
+          "title": "PII ghost export",
+          "category": "PII",
+          "description": "Export functions include ghost PII.",
+          "impact": "Data leak via exports.",
+          "exploitability": "Low",
+          "repro_steps": [
+            "Export UI view with ghost.",
+            "Check PII in output."
+          ],
+          "suggested_mitigation": "Filter exports.",
+          "priority": "P2",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0094",
+          "title": "Ghost denial loop",
+          "category": "Crash / Denial",
+          "description": "Loops from ghosts deny UI access.",
+          "impact": "Full UI DoS.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Induce ghost loop.",
+            "Attempt access."
+          ],
+          "suggested_mitigation": "Emergency UI reset.",
+          "priority": "P0",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0095",
+          "title": "Key ghost log",
+          "category": "Key Management",
+          "description": "UI logs ghost key interactions.",
+          "impact": "Logs expose keys.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Interact ghost key.",
+            "Scan logs."
+          ],
+          "suggested_mitigation": "Mask keys in logs.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0096",
+          "title": "Schema ghost incompat",
+          "category": "Schema Validation",
+          "description": "Incompatible ghosts break UI.",
+          "impact": "View failures.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Incompat ghost.",
+            "Load view."
+          ],
+          "suggested_mitigation": "Backward compat layers.",
+          "priority": "P1",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0097",
+          "title": "Observability ghost alert",
+          "category": "Observability",
+          "description": "No alerts for ghost detection.",
+          "impact": "Missed issues.",
+          "exploitability": "Low",
+          "repro_steps": [
+            "Create ghost.",
+            "No alert."
+          ],
+          "suggested_mitigation": "Ghost monitoring.",
+          "priority": "P2",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0098",
+          "title": "Supply chain UI exploit",
+          "category": "Supply Chain",
+          "description": "Exploit chain for UI ghosts.",
+          "impact": "Compromised UI.",
+          "exploitability": "High",
+          "repro_steps": [
+            "Chain attack sim.",
+            "Create ghosts."
+          ],
+          "suggested_mitigation": "Secure build pipeline.",
+          "priority": "P0",
+          "confidence": "medium"
+        },
+        {
+          "id": "F-0099",
+          "title": "UI ghost memory leak",
+          "category": "UI Loop",
+          "description": "Ghosts cause memory leaks in UI.",
+          "impact": "Long-session degradation.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Accumulate ghosts.",
+            "Monitor memory."
+          ],
+          "suggested_mitigation": "Periodic cache prune.",
+          "priority": "P1",
+          "confidence": "high"
+        },
+        {
+          "id": "F-0100",
+          "title": "Clone ghost sync fail",
+          "category": "Clone Failover",
+          "description": "Sync fails to remove ghosts in clones.",
+          "impact": "Persistent clone issues.",
+          "exploitability": "Medium",
+          "repro_steps": [
+            "Sync with ghosts.",
+            "Check clones."
+          ],
+          "suggested_mitigation": "Enhanced sync logic.",
+          "priority": "P1",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+
+  "consolidated_findings": [
+    {
+      "id": "F-0051",
+      "title": "Ghost entry persistence",
+      "category": "UI Loop",
+      "description": "Purged tasks remain visible in UI due to outdated cache, causing confusion and potential loops when interacted with.",
+      "impact": "Degrades user trust and efficiency, affecting operators managing C1 and C5 components.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Purge a task via backend.",
+        "Refresh UI and observe lingering entry."
+      ],
+      "suggested_mitigation": "Implement real-time cache eviction.",
+      "priority": "P0",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0052",
+      "title": "Infinite render loop",
+      "category": "UI Loop",
+      "description": "Attempts to render ghost entries trigger recursive rendering, leading to UI freeze.",
+      "impact": "Renders UI unresponsive, halting monitoring and control operations.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Create ghost via purge mismatch.",
+        "Interact with ghost element in simulation."
+      ],
+      "suggested_mitigation": "Add loop detection in render cycle.",
+      "priority": "P0",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0053",
+      "title": "Cache sync delay",
+      "category": "UI Loop",
+      "description": "Delays in syncing UI cache with backend state allow ghosts to persist longer than intended.",
+      "impact": "Increases window for loop exploitation, affecting system observability.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Monitor sync timestamps in logs.",
+        "Compare with UI display times."
+      ],
+      "suggested_mitigation": "Reduce sync intervals to sub-second.",
+      "priority": "P1",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0054",
+      "title": "Resource exhaustion in UI",
+      "category": "Crash / Denial",
+      "description": "Ghost loops consume CPU and memory in the browser, leading to tab crashes.",
+      "impact": "Disrupts operator sessions, requiring reloads and potential data loss.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Induce loop, monitor browser resources.",
+        "Observe crash threshold."
+      ],
+      "suggested_mitigation": "Implement resource throttling in UI code.",
+      "priority": "P0",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0055",
+      "title": "Ghost in clone UI",
+      "category": "Clone Failover",
+      "description": "Failover clones inherit unsynced UI states, propagating ghosts.",
+      "impact": "Maintains issues across redundancies, reducing reliability.",
+      "exploitability": "Low",
+      "repro_steps": [
+        "Trigger failover with ghosts present.",
+        "Check clone UI for persistence."
+      ],
+      "suggested_mitigation": "Sync UI state during failover.",
+      "priority": "P2",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0056",
+      "title": "Telemetry miss on loops",
+      "category": "Telemetry",
+      "description": "UI loops not captured in telemetry, missing alerts for high resource use.",
+      "impact": "Delays detection and response to UI issues.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Induce loop, check telemetry feeds.",
+        "Note absence of events."
+      ],
+      "suggested_mitigation": "Add client-side telemetry hooks.",
+      "priority": "P1",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0057",
+      "title": "PII display in ghosts",
+      "category": "PII",
+      "description": "Ghost entries may show cached PII from deleted tasks.",
+      "impact": "Exposes sensitive data beyond retention periods.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Purge PII task, observe UI ghost.",
+        "Inspect displayed data."
+      ],
+      "suggested_mitigation": "Redact PII in UI cache.",
+      "priority": "P0",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0058",
+      "title": "Queue mismatch ghosts",
+      "category": "Queue Integrity",
+      "description": "UI ghosts arise from queue purge without UI notification.",
+      "impact": "Inconsistent views between backend and frontend.",
+      "exploitability": "Low",
+      "repro_steps": [
+        "Purge queue, no UI update.",
+        "Observe discrepancy."
+      ],
+      "suggested_mitigation": "Push notifications for purges.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0059",
+      "title": "Key info in UI ghosts",
+      "category": "Key Management",
+      "description": "Ghosts retain partial key info in UI elements.",
+      "impact": "Risks key exposure via client-side inspection.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Cache key-related task, purge.",
+        "Inspect DOM for remnants."
+      ],
+      "suggested_mitigation": "Avoid caching sensitive fields.",
+      "priority": "P1",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0060",
+      "title": "Schema invalid ghosts",
+      "category": "Schema Validation",
+      "description": "Ghosts from old schemas cause UI rendering errors.",
+      "impact": "Breaks UI functionality for affected views.",
+      "exploitability": "Low",
+      "repro_steps": [
+        "Update schema, purge old task.",
+        "Render ghost and note error."
+      ],
+      "suggested_mitigation": "Validate cache on schema change.",
+      "priority": "P2",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0061",
+      "title": "Observability UI gaps",
+      "category": "Observability",
+      "description": "No metrics for UI ghost occurrences or loops.",
+      "impact": "Hard to track and prevent recurrences.",
+      "exploitability": "Low",
+      "repro_steps": [
+        "Induce ghost, check dashboards.",
+        "Identify missing data."
+      ],
+      "suggested_mitigation": "Add UI error tracking.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0062",
+      "title": "Supply chain UI tamper",
+      "category": "Supply Chain",
+      "description": "Malicious UI code injects persistent ghosts.",
+      "impact": "Allows DoS via induced loops.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Simulate tampered UI bundle.",
+        "Observe ghost creation."
+      ],
+      "suggested_mitigation": "UI code signing.",
+      "priority": "P0",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0063",
+      "title": "Loop on ghost interaction",
+      "category": "UI Loop",
+      "description": "Clicking ghosts triggers event loops.",
+      "impact": "Immediate UI hang.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Create ghost, simulate click.",
+        "Monitor event queue."
+      ],
+      "suggested_mitigation": "Null checks in event handlers.",
+      "priority": "P0",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0064",
+      "title": "Failover UI desync",
+      "category": "Clone Failover",
+      "description": "UI states desync during failover, creating new ghosts.",
+      "impact": "Compounds issues in recovery.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Failover mid-UI refresh.",
+        "Check for new ghosts."
+      ],
+      "suggested_mitigation": "Stateful UI sync.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0065",
+      "title": "Telemetry UI suppression",
+      "category": "Telemetry",
+      "description": "Loops prevent telemetry emission from client.",
+      "impact": "Blind spots during incidents.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Enter loop, check sent data.",
+        "Note dropout."
+      ],
+      "suggested_mitigation": "Background telemetry thread.",
+      "priority": "P1",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0066",
+      "title": "PII leak via ghosts",
+      "category": "PII",
+      "description": "Ghosts expose PII in browser memory.",
+      "impact": "Client-side data breach risk.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Inspect browser console for ghosts.",
+        "Extract PII."
+      ],
+      "suggested_mitigation": "Encrypt UI cache.",
+      "priority": "P0",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0067",
+      "title": "Denial via UI flood",
+      "category": "Crash / Denial",
+      "description": "Mass ghosts overload UI rendering.",
+      "impact": "Browser DoS.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Generate many ghosts.",
+        "Load UI view."
+      ],
+      "suggested_mitigation": "Virtualized rendering.",
+      "priority": "P0",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0068",
+      "title": "Key render in ghosts",
+      "category": "Key Management",
+      "description": "UI ghosts display masked keys incorrectly.",
+      "impact": "Partial key revelation.",
+      "exploitability": "Low",
+      "repro_steps": [
+        "Cache key task, ghost it.",
+        "View masking."
+      ],
+      "suggested_mitigation": "No key display in UI.",
+      "priority": "P2",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0069",
+      "title": "Schema ghost errors",
+      "category": "Schema Validation",
+      "description": "Invalid schema ghosts cause parse errors in UI.",
+      "impact": "UI partial failures.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Create invalid ghost.",
+        "Attempt render."
+      ],
+      "suggested_mitigation": "Graceful error handling.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0070",
+      "title": "Observability client blind",
+      "category": "Observability",
+      "description": "Client-side issues like loops not observed.",
+      "impact": "Incomplete monitoring.",
+      "exploitability": "Low",
+      "repro_steps": [
+        "Simulate client loop.",
+        "Check server-side logs."
+      ],
+      "suggested_mitigation": "Client observability agents.",
+      "priority": "P2",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0071",
+      "title": "Supply chain ghost inject",
+      "category": "Supply Chain",
+      "description": "Tampered dependencies create artificial ghosts.",
+      "impact": "Persistent UI attacks.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Inject bad dep.",
+        "Observe ghosts."
+      ],
+      "suggested_mitigation": "Dependency scanning.",
+      "priority": "P0",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0072",
+      "title": "Ghost loop amplification",
+      "category": "UI Loop",
+      "description": "Multiple ghosts compound loop severity.",
+      "impact": "Faster resource drain.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Create multiple ghosts.",
+        "Trigger loop."
+      ],
+      "suggested_mitigation": "Limit render attempts.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0073",
+      "title": "Clone UI ghost prop",
+      "category": "Clone Failover",
+      "description": "Ghosts propagate via clone UI sessions.",
+      "impact": "System-wide UI issues.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Share session state.",
+        "Observe prop."
+      ],
+      "suggested_mitigation": "Isolated UI states.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0074",
+      "title": "Telemetry loop noise",
+      "category": "Telemetry",
+      "description": "Loops generate excessive noise in telemetry.",
+      "impact": "Overwhelms monitoring systems.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Enter loop, flood telemetry.",
+        "Check buffer."
+      ],
+      "suggested_mitigation": "Rate limit client sends.",
+      "priority": "P0",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0075",
+      "title": "PII ghost persistence",
+      "category": "PII",
+      "description": "PII in ghosts survives session ends.",
+      "impact": "Long-term exposure.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Close/reopen session with ghost.",
+        "Check PII."
+      ],
+      "suggested_mitigation": "Session-based cache clear.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0076",
+      "title": "UI crash on ghost load",
+      "category": "Crash / Denial",
+      "description": "Loading many ghosts causes UI crash.",
+      "impact": "Immediate denial.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Load view with ghosts.",
+        "Observe crash."
+      ],
+      "suggested_mitigation": "Lazy loading.",
+      "priority": "P0",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0077",
+      "title": "Key ghost exposure",
+      "category": "Key Management",
+      "description": "Ghosts expose key IDs in UI.",
+      "impact": "Aids targeted attacks.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Ghost key task.",
+        "Inspect UI elements."
+      ],
+      "suggested_mitigation": "Anonymize keys in UI.",
+      "priority": "P1",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0078",
+      "title": "Ghost schema drift",
+      "category": "Schema Validation",
+      "description": "Drift in schemas amplifies ghost issues.",
+      "impact": "Compatibility breaks.",
+      "exploitability": "Low",
+      "repro_steps": [
+        "Drift schema, ghost old.",
+        "Render error."
+      ],
+      "suggested_mitigation": "Versioned caching.",
+      "priority": "P2",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0079",
+      "title": "Observability loop detect",
+      "category": "Observability",
+      "description": "No detection for UI loops.",
+      "impact": "Undetected hangs.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Loop, check for alerts.",
+        "None issued."
+      ],
+      "suggested_mitigation": "Watchdog timers.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0080",
+      "title": "Supply chain UI loop",
+      "category": "Supply Chain",
+      "description": "Bad deps induce loops via ghosts.",
+      "impact": "Supply chain DoS.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Use bad dep.",
+        "Trigger loop."
+      ],
+      "suggested_mitigation": "Dep integrity checks.",
+      "priority": "P0",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0081",
+      "title": "Ghost loop in mobile UI",
+      "category": "UI Loop",
+      "description": "Mobile views susceptible to ghost loops.",
+      "impact": "Affects portable access.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Simulate mobile, induce ghost.",
+        "Loop on interaction."
+      ],
+      "suggested_mitigation": "Responsive optimizations.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0082",
+      "title": "Failover ghost creation",
+      "category": "Clone Failover",
+      "description": "Failover process creates new ghosts.",
+      "impact": "Worsens recovery.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Failover, check new ghosts.",
+        "Count increase."
+      ],
+      "suggested_mitigation": "Clean state transfer.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0083",
+      "title": "Telemetry client crash",
+      "category": "Telemetry",
+      "description": "Loops crash telemetry client.",
+      "impact": "Loss of client metrics.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Loop, observe telemetry fail.",
+        "No data sent."
+      ],
+      "suggested_mitigation": "Isolated telemetry.",
+      "priority": "P0",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0084",
+      "title": "PII in ghost DOM",
+      "category": "PII",
+      "description": "DOM retains PII from ghosts.",
+      "impact": "Browser extension risks.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Ghost PII, inspect DOM.",
+        "Find data."
+      ],
+      "suggested_mitigation": "DOM sanitization.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0085",
+      "title": "Denial ghost exploit",
+      "category": "Crash / Denial",
+      "description": "Exploit to create ghosts for DoS.",
+      "impact": "Targeted UI denial.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Force mismatch.",
+        "Induce ghosts."
+      ],
+      "suggested_mitigation": "Sync enforcement.",
+      "priority": "P0",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0086",
+      "title": "Key ghost in cache",
+      "category": "Key Management",
+      "description": "Cached ghosts hold key data.",
+      "impact": "Offline access risk.",
+      "exploitability": "Low",
+      "repro_steps": [
+        "Offline mode, view ghost.",
+        "See keys."
+      ],
+      "suggested_mitigation": "No sensitive cache.",
+      "priority": "P2",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0087",
+      "title": "Validation ghost skip",
+      "category": "Schema Validation",
+      "description": "Ghosts skip UI validation.",
+      "impact": "Invalid data display.",
+      "exploitability": "Low",
+      "repro_steps": [
+        "Invalid ghost.",
+        "Display without check."
+      ],
+      "suggested_mitigation": "Client validation.",
+      "priority": "P2",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0088",
+      "title": "Observability UI noise",
+      "category": "Observability",
+      "description": "Ghosts create noisy UI metrics.",
+      "impact": "Skewed observability.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Ghosts, aggregate metrics.",
+        "See inflation."
+      ],
+      "suggested_mitigation": "Filter ghosts in metrics.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0089",
+      "title": "Supply chain ghost persist",
+      "category": "Supply Chain",
+      "description": "Tamper to make ghosts persistent.",
+      "impact": "Long-term attacks.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Alter cache logic.",
+        "Persist ghosts."
+      ],
+      "suggested_mitigation": "Runtime integrity.",
+      "priority": "P0",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0090",
+      "title": "UI loop on refresh",
+      "category": "UI Loop",
+      "description": "Refresh with ghosts causes loop.",
+      "impact": "Prevents UI use.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Ghost present, refresh.",
+        "Enter loop."
+      ],
+      "suggested_mitigation": "Safe refresh handlers.",
+      "priority": "P0",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0091",
+      "title": "Clone UI loop trigger",
+      "category": "Clone Failover",
+      "description": "Failover triggers UI loops.",
+      "impact": "Instability in clones.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Failover with ghosts.",
+        "Loop in clone."
+      ],
+      "suggested_mitigation": "Pre-failover UI clear.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0092",
+      "title": "Telemetry ghost data",
+      "category": "Telemetry",
+      "description": "Ghosts send invalid telemetry.",
+      "impact": "Corrupted data stores.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Ghost interact, send data.",
+        "Check corruption."
+      ],
+      "suggested_mitigation": "Validate telemetry input.",
+      "priority": "P1",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0093",
+      "title": "PII ghost export",
+      "category": "PII",
+      "description": "Export functions include ghost PII.",
+      "impact": "Data leak via exports.",
+      "exploitability": "Low",
+      "repro_steps": [
+        "Export UI view with ghost.",
+        "Check PII in output."
+      ],
+      "suggested_mitigation": "Filter exports.",
+      "priority": "P2",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0094",
+      "title": "Ghost denial loop",
+      "category": "Crash / Denial",
+      "description": "Loops from ghosts deny UI access.",
+      "impact": "Full UI DoS.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Induce ghost loop.",
+        "Attempt access."
+      ],
+      "suggested_mitigation": "Emergency UI reset.",
+      "priority": "P0",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0095",
+      "title": "Key ghost log",
+      "category": "Key Management",
+      "description": "UI logs ghost key interactions.",
+      "impact": "Logs expose keys.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Interact ghost key.",
+        "Scan logs."
+      ],
+      "suggested_mitigation": "Mask keys in logs.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0096",
+      "title": "Schema ghost incompat",
+      "category": "Schema Validation",
+      "description": "Incompatible ghosts break UI.",
+      "impact": "View failures.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Incompat ghost.",
+        "Load view."
+      ],
+      "suggested_mitigation": "Backward compat layers.",
+      "priority": "P1",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0097",
+      "title": "Observability ghost alert",
+      "category": "Observability",
+      "description": "No alerts for ghost detection.",
+      "impact": "Missed issues.",
+      "exploitability": "Low",
+      "repro_steps": [
+        "Create ghost.",
+        "No alert."
+      ],
+      "suggested_mitigation": "Ghost monitoring.",
+      "priority": "P2",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0098",
+      "title": "Supply chain UI exploit",
+      "category": "Supply Chain",
+      "description": "Exploit chain for UI ghosts.",
+      "impact": "Compromised UI.",
+      "exploitability": "High",
+      "repro_steps": [
+        "Chain attack sim.",
+        "Create ghosts."
+      ],
+      "suggested_mitigation": "Secure build pipeline.",
+      "priority": "P0",
+      "confidence": "medium"
+    },
+    {
+      "id": "F-0099",
+      "title": "UI ghost memory leak",
+      "category": "UI Loop",
+      "description": "Ghosts cause memory leaks in UI.",
+      "impact": "Long-session degradation.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Accumulate ghosts.",
+        "Monitor memory."
+      ],
+      "suggested_mitigation": "Periodic cache prune.",
+      "priority": "P1",
+      "confidence": "high"
+    },
+    {
+      "id": "F-0100",
+      "title": "Clone ghost sync fail",
+      "category": "Clone Failover",
+      "description": "Sync fails to remove ghosts in clones.",
+      "impact": "Persistent clone issues.",
+      "exploitability": "Medium",
+      "repro_steps": [
+        "Sync with ghosts.",
+        "Check clones."
+      ],
+      "suggested_mitigation": "Enhanced sync logic.",
+      "priority": "P1",
+      "confidence": "high"
+    }
+  ],
+
+  "integrity": {
+    "total_simulations": 1,
+    "findings_expected": 50,
+    "findings_returned": 50,
+    "checksum_stub": ""
+  }
+}

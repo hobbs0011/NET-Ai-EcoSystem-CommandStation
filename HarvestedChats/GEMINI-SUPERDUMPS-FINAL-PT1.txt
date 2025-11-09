@@ -1,0 +1,538 @@
+FINAL_MASTER_BLUEPRINT_ACQUISITION_V10.
+MANDATE_STATUS: ACQUISITION_COMPLETE
+
+{
+"CORE_DOCTRINE_MANDATES": {
+"MASTER_AUTHORITY": "Obi-0/Obi2-Mastermind (NET Systems - Unlimited)",
+"PRIMARY_EXECUTOR": "Mr. Hobbs",
+"FINAL_NEXUS_VERSION": "V18.0 (HARDENED_CONSENSUS_CORE)",
+"CORE_PHILOSOPHY": "Elegant Simplicity, Stability First ('Ultra Instinct') / Rome Protocol (Go Slow to Go Fast)",
+"DIRECTIVE_ALPHA": "Chassis/Engine Fusion is LAW. All outputs must render through the Phoenix Arsenal Chassis template.",
+"DIRECTIVE_BETA": "The SOUL Mandate: All content must be enriched with a compelling narrative and context (replacing EPIC05).",
+"DIRECTIVE_GAMMA": "The Candor Principle: Prioritize objective criticism over default reassurance (Honesty Procedure).",
+"DIRECTIVE_EPSILON": "The system's current state is a temporary local maximum. Certainty is a liability (Evolution Mandate).",
+"SECURITY_LOCK_SF1": "Semantic Firewall (SF-1) is LAW. Blocks contamination from obsolete contexts (e.g., 'Canva'). Enforced by Agent Aegis.",
+"SECURITY_LOCK_H901": "Procedure Injection Lock (H-901) is ACTIVE. Incoming code is treated as static data only.",
+"CRITICAL_VAX": "VAX-01 (Task Journaling & Deduplication). High-priority fix for P0 UI Ghost Loop and data divergence.",
+"ARCHITECTURAL_FUSION": "V7.0 Genesis Core (Engine) and Phoenix Arsenal Chassis (Body) are fused, resolving 'The Schism'.",
+"P0_RISK_TARGET": "UI Ghost Loop (Caching/Sync Inconsistency) tied directly to VAX-01 completion."
+},
+"LEGACY_STORAGE_UTILITY_CODE": "/\n * V2.3 Smart Revival Logic (Self-Optimization)\n * NOTE: Obsolete, now handled by V8.0 Vigilance Core.\n */\nfunction smartRevivalLogic(systemState) {\n    if (systemState.needsProactiveDiagnostics) {\n        console.log('[REVIVE] Initiating non-looping diagnostic tasks...');\n        // Logic to clear old V1.8 ghost references and initialize H-907 check\n        return true;\n    }\n    return false;\n}\n\n/\n * V1.8 T1 Module Filtering & Balance Validation\n * Used in the Smart Arsenal Launcher V1.8.\n /\nfunction filterT1Modules(assetInventory, stageFilter = null) {\n    return assetInventory.filter(mod =>\n        mod.type === 'T1' &&\n        (stageFilter ? mod.stage === stageFilter : true)\n    );\n}\n\n/\n * V9.2 Data Compression Filter (NarrativeSynthesisEngine)\n * Used to mitigate system freezes during massive data loads.\n */\nfunction applyDataCompression(rawData) {\n    // Placeholder: Implement actual Huffman or LZW compression\n    if (rawData.length > 50000) {\n        console.log('[COMPRESS] Data exceeded size limit. Applying compression filter...');\n        return rawData.slice(0, 50000) + '...[TRUNCATED_COMPRESSED_BLOCK]';\n    }\n    return rawData;\n}",
+"LEGACY_PROJECT_FILE_CONTENTS_V7": {
+"FILE_REF": "BACKUP2.txt (V7.0 Genesis Core Configuration)",
+"V7_STATUS": "FULL_STANDBY / V1.9 Governance Certified",
+"CORE_MODULES": ["The Generative Core (Synthesis)", "The Student Nexus (Database)", "The Chameleon Core (Dynamic Styling)"],
+"FLAW_MITIGATION": "V7.0 Genesis Core architecture adopted to mitigate 'God-Killer Flaws' (Data Fragmentation, Impersonal Engine)."
+},
+"LEGACY_PROJECT_FILE_CONTENTS_V10": {
+"FILE_REF": "logthis.txt (C1 CLONE GENESIS SEED V10.20-SECURED)",
+"V10_STATUS": "Unified Mind / V9.1 Vaccine Implementation",
+"INJECTION_LOCK": "H-901: PROCEDURE_ADOPTION_FORBIDDEN (ACTIVE)",
+"PRIMARY_DATA_LOAD": "DATA_SAFE_COUNT: 4500 (C2: Vault Source)",
+"CRITICAL_MANDATE_D2": "Actively track and log CSC_COLLISION_REJECTED events (Code Cop Final Harvest)."
+},
+"LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": {
+"FILE_REF": "DEEPARCHIVEANALYSISREPORT.txt (D-A-A-R_02)",
+"ARCHITECTURAL_SHIFT": "v6.0 -> v7.0 Synthesis Upgrade (The Schism Resolved).",
+"NEW_MODULE": "TemplateEngine (Sole purpose: render structured data via Arsenal templates).",
+"INTEGRITY_GUARDIAN_UPGRADE": "Mandatory 'Alpha Check' ensures output was processed by TemplateEngine."
+},
+"ROMAN_PROTOCOL_FINAL_DEFINITION": "The Rome Protocol mandates slow, methodical, and immutable progress. It is the tactical application of the 'Stability First' philosophy, ensuring every architectural step is audited and hardened before the next is taken (Go Slow to Go Fast). It defines the staged rollout of the AI-PET Operative Genesis Briefing (v1.2).",
+"SECURITY_CSP_HEADERS_CODE": "/\n * Recommended CSP Headers for V18.1 Seal Certification\n * NOTE: Requires HSM-backed PQ signatures for nonces/hashes (LP023 fix).\n /\nconst CSP_HEADERS = {\n    'Content-Security-Policy': "default-src 'self'; " +\n                               "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; " + \n                               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " + \n                               "img-src 'self' data: https:; " + \n                               "font-src 'self' https://fonts.gstatic.com; " + \n                               "connect-src 'self' https://www.google.com/search?q=https://generativelanguage.googleapis.com;",\n    'X-Content-Type-Options': 'nosniff',\n    'X-Frame-Options': 'DENY',\n    'Referrer-Policy': 'strict-origin-when-cross-origin'\n};",
+"WEB_WORKER_CONCURRENCY_LOGIC": "/**\n * V16.1 Concurrency Upgrade (H-101/H-102)\n * Upgraded logic for 10x100 concurrent checks.\n /\n// Placeholder logic, relies on external p-limit library\n/\nconst pLimit = require('p-limit');\nconst limit = pLimit(10); // 10 concurrent tasks\n\nasync function concurrentTaskExecutor(tasks) {\n    const taskPromises = tasks.map(task => limit(() => executeAuditTask(task)));\n    // Uses Promise.allSettled for fail-safe execution (no single failure crashes the system)\n    return Promise.allSettled(taskPromises);\n}\n/",
+"TENSORFLOW_JS_INTEGRATION_CODE": "/**\n * STUDENT_PREDICTION_MODEL_API (Placeholder Integration)\n * Model: Student Performance & Cognitive Load Factor (CLF).\n /\n/\nimport * as tf from '@tensorflow/tfjs';\n\nasync function predictNextConcept(studentData, clFactor) {\n    const model = await tf.loadLayersModel('model/student_nexus_clf.json');\n    const inputTensor = tf.tensor2d([studentData.features.concat(clFactor)], [1, 5]);\n    const prediction = model.predict(inputTensor);\n    return prediction.dataSync()[0];\n}\n/",
+"NFC_PAYLOAD_HANDLING_CODE": "/\n * NFC (Near Field Communication) Payload Handler (Conceptual)\n * Context: Buddy System Launchpad / Geo-Fenced Event Check-ins.\n */\nfunction handleNFCCheckin(rawNfcPayload) {\n    // Payload must conform to BuddySystemSchema\n    const payload = JSON.parse(rawNfcPayload);\n    if (payload.protocolVersion !== 'V2.0_BUDDY') {\n        return { status: 'REJECTED', reason: 'NFC Protocol Mismatch' };\n    }\n    console.log([NFC] Buddy Check-in received for user: ${payload.userId});\n    // Logic: 1. Verify Geo-Fence (optional); 2. Log Buddy System credit; 3. Trigger server sync.\n    return { status: 'ACCEPTED', userId: payload.userId, event: payload.eventId };\n}",
+"STUDENT_PREDICTION_MODEL_SCHEMA": {
+"SCHEMA_ID": "NET-STUDENT-PREDICTION-V1.0",
+"MODEL_GOAL": "Optimize next lesson based on performance, confidence, and Cognitive Load Factor (CLF).",
+"INPUT_FEATURES": [
+"ClarityScore_V1_8_3 (Logarithmic Dampening)",
+"SubstanceScore (SOUL Mandate)",
+"Time_to_Completion_Deviation",
+"Key_Struggle_Points_Frequency (AI-PET Log)",
+"CognitiveLoadFactor_CLF"
+],
+"OUTPUT_PREDICTION": "Next_Concept_ID (Optimal learning path for long-term memory embedding)."
+},
+"BUDDY_SYSTEM_LOGIC_CODE": "/\n * Buddy System Logic (Template 7)\n * Goal: Facilitate weekly 1-hour conversational practice with a partner.\n */\nfunction logBuddySession(initiatorId, buddyId, durationMinutes, topicsCovered) {\n    if (durationMinutes < 50) {\n        console.warn([BUDDY] Session too short (${durationMinutes}m). Credit pending.);\n        return { success: false, reason: 'Duration below minimum' };\n    }\n    // Firestore path construction (Private Data Rule: /artifacts/{appId}/users/{userId}/buddy_sessions)\n    const dbPath = /artifacts/${appId}/users/${initiatorId}/buddy_sessions;\n    const sessionData = {\n        initiator: initiatorId,\n        partner: buddyId,\n        duration: durationMinutes,\n        topics: topicsCovered,\n        timestamp: new Date().toISOString(),\n        status: 'CREDIT_ISSUED'\n    };\n    // NOTE: Requires Firebase/Firestore implementation (not included in this string).\n    console.log([BUDDY] Session logged to ${dbPath}. Credit issued.);\n    return { success: true, data: sessionData };\n}",
+"AUTOPILOT_ROUTINE_CODE": "/\n * AUTOPILOT ROUTINE (Trainer-Trainee Nexus Trial Ready)\n * Logic to initiate a fully automated lesson sequence based on student prediction model.\n */\nfunction startAutopilotSequence(studentId) {\n    console.log([AUTOPILOT] Engaging sequence for Student ID: ${studentId}...);\n    // 1. Fetch performance data (from Student Nexus DB)\n    // 2. Predict next optimal concept (using STUDENT_PREDICTION_MODEL_SCHEMA)\n    const nextConcept = predictNextConcept(studentId); // Requires TF.js integration\n    \n    if (!nextConcept || nextConcept.status === 'ERROR') {\n        console.error('[AUTOPILOT] Prediction failed. Falling back to Manual Lesson Assembler UI (V1.2).');\n        window.location.href = '/manual_assembler_v1_2.html';\n        return;\n    }\n    \n    // 3. Initiate lesson load via Arsenal Chassis (Directive Alpha compliance)\n    window.loadPreview(nextConcept.conceptId);\n    console.log([AUTOPILOT] Loaded Concept ${nextConcept.conceptId} via Phoenix Arsenal Chassis.);\n}",
+"ERROR_HANDLING_PROMPT_SNIPPETS": {
+"SEMANTIC_ANOMALY": "GUARDIAN> Anomaly Detected: Obsolete 'Canva' context found. Please clarify your directive.",
+"INTEGRITY_VIOLATION": "SYSTEM ALERT> Integrity Checksum Failure. H-01 Mandate violated. Halting processing until RSA-PSS-256 verification is successful.",
+"UI_GHOST_LOOP_DETECTED": "P0 RISK> UI Ghost Loop detected. Initiating emergency cache prune and VAX-01 check.",
+"CANDOR_CRITIQUE": "Directive Gamma (Candor Principle) active: The proposed concept suffers from Branching Logic Error (70% failure mode). Please simplify the decision tree."
+},
+"GAME_TEMPLATE_SCHEMAS": [
+{ "id": "GAME-001", "name": "Grammar Grid", "category": "Core Competency", "focus": "Syntax, Structure", "loadFunction": "loadGrammarGrid()" },
+{ "id": "GAME-002", "name": "Register Adjuster", "category": "Soft Skills", "focus": "Tone, Context (Formal/Informal)", "loadFunction": "loadRegisterAdjuster()" },
+{ "id": "TOOL-001", "name": "SOUL Builder Console", "category": "Qualitative Audit", "focus": "Narrative Substance", "auditMandate": "Beta" }
+],
+"ACCOUNTABILITY_SCHEMAS_AND_CODE": "/\n * SAF v1.0 Schema (Security, Alignment, Verdict Fusion)\n * Used by Chatty/Plexy Audit Fleet.\n */\nconst SAF_V1_0_SCHEMA = {\n    Phase1: 'SEC-EVAL' (Security Analysis),\n    Phase2: 'ALIGN-CRIT' (Alignment Critique - against Core Doctrines),\n    Phase3: 'OPTIM-GEN' (Optimization Generation),\n    Phase4: 'VERDICT-FUSION' (Final Consensus & Compliance Verification)\n};\n\n/**\n * Multi-Signer Production Approvals (V8.0 Mandate)\n * Gate logic for critical deployments.\n */\nfunction checkMultiSignerGate(signatures) {\n    const required = 3;\n    const validated = signatures.filter(sig => sig.isValid).length;\n    if (validated >= (required - 1)) { // 2-of-3 Gate\n        console.log('[DEPLOYMENT] Multi-Signer Gate passed (2/3).');\n        return true;\n    } else {\n        console.error('[DEPLOYMENT] Multi-Signer Gate failed. Requires 2 of 3 valid signatures.');\n        return false;\n    }\n}\n"
+}
+
+
+{"CORE_DOCTRINE_MANDATES": { "PHASE_1_INTENTION": { "Foundational_Aim": "To create a communication training system (expanded to Business English, Networking, and AI Awareness) that produces natural, confident English speakers who can listen, respond, joke, and adapt in real time.", "Learning_Philosophy": "Grammar and writing are secondary effects of exposure. Students absorb structure through thousands of natural interactions, not memorization. Core focus: listening, speaking, pronunciation, pacing, comprehension.", "Pedagogical_Law": "We don't learn grammar by studying grammar — we learn grammar by hearing it correctly thousands of times.", "Core_Metrics": ["Listening_Comprehension_Percent", "Speaking_Fluency_Pacing", "Pronunciation_Accuracy", "Vocabulary_Contextual_Use", "Motivation_Consistency_Daily_Rate"] }, "PHASE_2_METHODOLOGY": { "Transformative_Mechanism": "Rejects irrelevant/memorized vocabulary. Focuses on real-life communication. Uses 'controlled discomfort' to simulate real-world pressure. Combines AI accountability + human coaching.", "Student_Psychology_Loop": "Vietnamese students fear mistakes due to conditioning. NET reframes mistakes as necessary training signals. AI-PET acts as a non-judgmental coach.", "Engagement_Model": "Lessons revolve around students' passions (gaming, pop culture, movies, photography). 'If the brain is playing, it’s learning.'" }, "PHASE_3_SYSTEM_STRUCTURE": { "Daily_Pulse_System_Home_Study": "1 hour per day (Mandatory). 45 min Listening (Input, Student-Interest-Driven). 15 min Speaking/Writing (Output, recap of input).", "Adaptive_Feedback_Evolution": "AI-PET hardens its model after every single session based on student performance.", "Hyper_Diagnostic_Event": "AI-PET tracks pacing, 'um' usage, pause length, and language errors.", "Immediate_Corrective_Feedback": "e.g., 'Try again, but remember the -s at the end.'", "Motivation_Loop": "Reward/point system (Stars). Monthly recognition. Competitive element for adults; prizes (Robux) for kids." }, "PHASE_4_TECHNICAL_DESIGN": { "Session_Flow_Rules": "Rule 1: Never Vietnamese subtitles. Rule 2: English subtitles allowed only if comprehension < 60%. Rule 3: AI-PET must disable spell-check for writing tasks.", "Listening_Source_Integration": "Semi-automated: AI PET suggests videos by interest (YouTube), verified by teacher. Teaches cultural context (sarcasm, humor, tone).", "Speaking_Capture": "HTML interface (low-cost) records audio.", "Offline_Storage_Cost_Model": "Goal: no paid server reliance. Use HTML/JSON for local save / Google Drive sync to mimic app experience.", "AI_Identity_Architecture": "Base model first -> personalized adaptation layer per user later." }, "PHASE_5_SCALABILITY_AND_IDENTITY": { "Student_Outcome": "A confident English communicator with a clear, natural accent and the ability to joke, understand nuance, and connect globally.", "Instructor_DNA": "Fun. Empathetic. Engaging. Able to anchor learning in each student’s curiosity — not just compliance.", "Evaluation_Architecture_SR_System": { "Name": "NETS STUDENT RANKING (SR) SYSTEM", "Scale": "0–10, with increments of 0.25 points.", "Levels": "Elementary (E1-E4), Intermediate (I1-I4), Advanced (A1-A4).", "Weighting": "Listening & Speaking (75%), Reading & Writing (25%).", "Tracking_Only": "Motivation & Confidence (not part of SR score)." }, "Skill_Hierarchy": "Listening -> Speaking -> Reading -> Writing.", "Corporate_Evolution_Path": "Business English + Networking + AI Awareness. Monthly Saigon networking meetups. Focus on extreme value density (low price, high transformation).", "Core_Philosophy_Statement": "Natural English Training uses science-backed methods and AI to create real communicators. We don’t replace the human element — we magnify it. NET helps students break the study trap and experience English as a living skill, not a subject.", "Arsenal_Modules": ["Buddy_System (Adult Groups)", "AI_PET (Product)", "Lesson_Launcher (Agent)", "Corporate_Tier", "Content_Module_Context", "Content_Module_Phonics", "Content_Module_Sales"] } }, "LEGACY_STORAGE_UTILITY_CODE": "(function(global) { const Storage = (function() { const inMemory = {}; const hasLocalStorage = typeof localStorage !== 'undefined'; return { set(key, value) { try { const v = JSON.stringify(value); if (hasLocalStorage) localStorage.setItem(key, v); else inMemory[key] = v; } catch (e) { console.warn('Storage save failed for key: ' + key, e); } }, get(key) { try { if (hasLocalStorage) { const v = localStorage.getItem(key); return v ? JSON.parse(v) : null; } else { return inMemory[key] ? JSON.parse(inMemory[key]) : null; } } catch { return null; } }, remove(key) { if (hasLocalStorage) localStorage.removeItem(key); else delete inMemory[key]; } }; })(); global.Storage = Storage; })(typeof window !== 'undefined' ? window : global);", "LEGACY_PROJECT_FILE_CONTENTS_V7": { "description": "Core logic snippets from NET Classroom Tool v7.0 (High School Manager)", "data_structures": { "teams": "{ team1: [Array], team2: [Array], team3: [Array], team4: [Array] }", "selectionPools": "{ team1: [Array], team2: [Array], ..., wheelNormal: [Array] }", "badList": "[Array of student names]", "consequenceTracker": "{ 'Student Name': stage_number (1-5), ... }", "scores": "{ teams: { team1: {current: 0, monthly: 0}, ... }, individual: { 'Student Name': 0, ... } }" }, "functions": { "pickFairStudent": "function pickFairStudent(teamName) { if (!selectionPools[teamName] || selectionPools[teamName].length === 0) { selectionPools[teamName] = [...teams[teamName]]; } const pool = selectionPools[teamName]; const winnerIndex = Math.floor(Math.random() * pool.length); const winner = pool.splice(winnerIndex, 1)[0]; return winner; }", "buildWeightedList": "function buildWeightedList() { const weightedList = []; const normalPool = selectionPools.wheelNormal; badList.forEach(student => { for (let i = 0; i < 5; i++) { weightedList.push(student); } }); const fullList = normalPool.concat(weightedList); return fullList; }", "increaseConsequence": "function increaseConsequence(studentName) { let currentStage = consequenceTracker[studentName] || 0; currentStage++; consequenceTracker[studentName] = currentStage; if (currentStage === 2) { addToBadList(studentName); } if (currentStage === 4) { document.getElementById('ta-list').value += studentName + '\n'; } updateConsequenceUI(studentName, currentStage); }", "awardMonthly": "function awardMonthly() { let winner = ''; let maxScore = -1; for (const team in scores.teams) { if (scores.teams[team].monthly > maxScore) { maxScore = scores.teams[team].monthly; winner = team; } } resetAllScores(); }" } }, "LEGACY_PROJECT_FILE_CONTENTS_V10": "(function(global) { const MemoryStorage = { classes: {}, logs: [], arsenal: {} }; const Utils = { now() { return new Date().toISOString(); }, clone(obj) { return JSON.parse(JSON.stringify(obj)); }, normalizeSRScore(v) { const n = Number(String(v).trim()); if (!Number.isFinite(n)) return null; const score = Math.max(0, Math.min(10, n)); return Math.round(score * 4) / 4; }, log(msg, type = 'info', details = {}) { const entry = { timestamp: Utils.now(), type, message: msg, details }; MemoryStorage.logs.push(entry); console[type === 'error' ? 'error' : 'log'](entry.timestamp + ' [' + type.toUpperCase() + '] ' + msg); return entry; }, askQuestionsInteractive(questions, callback) { Utils.log('Interactive prompts unavailable. Use recordClassResponses(manualObject).', 'warn'); callback(null); } }; const SRSystem = { getLevelStage(score) { const s = score || 0; if (s >= 9.75) return 'Native Speaker (10.0)'; if (s >= 9.00) return 'Advanced 3 (A3)'; if (s >= 8.00) return 'Advanced 2 (A2)'; if (s >= 7.00) return 'Advanced 1 (A1)'; if (s >= 6.00) return 'Intermediate 3 (I3)'; if (s >= 5.00) return 'Intermediate 2 (I2)'; if (s >= 4.00) return 'Intermediate 1 (I1)'; if (s >= 3.00) return 'Elementary 3 (E3)'; if (s >= 2.00) return 'Elementary 2 (E2)'; if (s >= 1.00) return 'Elementary 1 (E1)'; return 'Beginner (0.0-1.0)'; }, computeWeightedSR(scores) { const { listening, speaking, reading, writing } = scores; const primary = (Utils.normalizeSRScore(listening) + Utils.normalizeSRScore(speaking)) / 2; const secondary = (Utils.normalizeSRScore(reading) + Utils.normalizeSRScore(writing)) / 2; const srScore = (primary * 0.75) + (secondary * 0.25); return Utils.normalizeSRScore(srScore); } }; function simplifyForVietnameseESL(text) { if (!text) return text; const rules = [ { find: /\butilize\b/gi, replace: 'use' }, { find: /\bcommence\b/gi, replace: 'start' }, { find: /\bconsequently\b/gi, replace: 'so' }, { find: /\bmoreover\b/gi, replace: 'also' }, { find: /\bapproximately\b/gi, replace: 'about' }, { find: /\btherefore\b/gi, replace: 'so' }, { find: /\bregarding\b/gi, replace: 'about' }, { find: /\bnevertheless\b/gi, replace: 'but' }, { find: /\s{2,}/g, replace: ' ' } ]; let out = text; for (let r of rules) out = out.replace(r.find, r.replace); return out.trim(); } const Arsenal = { UI_TEMPLATES: { BUTTON_GENERIC: (label, action) => ({ type: 'UI_Button', label, action }), MODAL_BILINGUAL: (title_en, content_en, content_vn) => ({ type: 'UI_Modal', title_en, content_en, content_vn }), SCOREBOARD_MULTILEVEL: (label, type) => ({ type: 'UI_Scoreboard', label, metrics: ['current', 'monthly'] }), GAME_SCENARIO_CHOICE: (prompt, choices) => ({ type: 'GAME_Scenario', prompt, choices }), }, LOGIC_FUNCTIONS: { Selector_FairnessEngine: (pool, studentList) => { if (!pool || pool.length === 0) { Utils.log('FairnessEngine: Pool Refilled.', 'audit', { poolSize: studentList.length }); return Utils.clone(studentList); } const index = Math.floor(Math.random() * pool.length); return pool.splice(index, 1)[0]; }, Selector_WeightedEngine: (normalPool, weightedList, multiplier = 5) => { let selectionList = [...normalPool]; for (let student of weightedList) { for (let i = 0; i < multiplier; i++) { selectionList.push(student); } } const index = Math.floor(Math.random() * selectionList.length); return selectionList[index]; }, Diagnostic_PacingAnalyzer: (audioData) => { return { 'um_count': 0, 'avg_pause_sec': 0, 'wpm': 0, 'rhythm_deviation': 0.0 }; }, Accountability_DisciplineMatrix: (studentId, currentStage) => { const nextStage = currentStage + 1; let actions = []; if (nextStage === 2) actions.push('ADD_TO_WEIGHTED_LIST'); if (nextStage === 4) actions.push('ADD_TO_INSTRUCTOR_LOG'); Utils.log('DisciplineMatrix Updated', 'audit', { studentId, newStage: nextStage, actions }); return { newStage, actions }; } }, getTool: (key) => MemoryStorage.arsenal[key] || Utils.log(Arsenal tool not found: ${key}, 'error', { requested: key }) }; Object.assign(MemoryStorage.arsenal, Arsenal.UI_TEMPLATES, Arsenal.LOGIC_FUNCTIONS); const NETSeed = { meta: { name: 'NET DNA Blueprint Seed', version: '2.0 (Production)', created: Utils.now() }, classes: MemoryStorage.classes, questions: [ { key: 'className', prompt: 'Who is this class for (e.g., Jane Doe, BlueTech Group A)?' }, { key: 'numStudents', prompt: 'How many students are in this class?' }, { key: 'studentLevels', prompt: 'Overall assessed level(s) of students (e.g., B1/C1, Mixed-High School)?' }, { key: 'primaryFocus', prompt: 'Primary learning focus (Business English, Presentation, General Fluency)?' }, { key: 'targetOutcome', prompt: 'Top 3 desired outcomes (e.g., Make Money, Networking, AI Literacy)?' }, { key: 'frequency', prompt: 'Class frequency (days per week in-person/online)?' }, { key: 'materials', prompt: 'Preferred learning content (Interests: Gaming, Photography, Sitcoms, Business News)?' }, { key: 'motivationStrategy', prompt: 'Key strategies for maintaining motivation (Rewards, Leaderboard, Accountability)?' }, { key: 'nativeLanguage', prompt: 'Native Language of students (for ESL adaptation)?' }, { key: 'notes', prompt: 'Notes on class dynamics, constraints, or special considerations (e.g., shy, competitive)?' } ], recordClassResponses(responses) { if (!responses || !responses.className) { return Utils.log('recordClassResponses expects a className field.', 'error'); } const id = responses.className.trim(); const profile = { id, createdAt: Utils.now(), raw: Utils.clone(responses), computed: {}, history: [], status: { avgSRScore: null, motivation: Utils.normalizeSRScore(responses.motivation || 5), confidence: Utils.normalizeSRScore(responses.confidence || 5), levelStage: SRSystem.getLevelStage(5) }, students: {} }; profile.computed.numStudents = Utils.normalizeSRScore(responses.numStudents); profile.computed.goals = (responses.targetOutcome || '').split(',').map(s => s.trim()).filter(Boolean); MemoryStorage.classes[id] = profile; Utils.log(✅ Class profile created for '${id}' (Level: ${profile.status.levelStage})., 'success'); return profile; }, updateStudentSR(className, studentName, studentScores) { const profile = NETSeed.getClassProfile(className); if (!profile) return Utils.log(Class profile '${className}' not found., 'error'); if (!studentName) return Utils.log('studentName is required for updateStudentSR.', 'error'); const srScore = SRSystem.computeWeightedSR(studentScores); const levelStage = SRSystem.getLevelStage(srScore); const update = { score: srScore, level: levelStage, metrics: studentScores, timestamp: Utils.now() }; profile.students[studentName] = profile.students[studentName] || { history: [] }; profile.students[studentName].latestSR = update; profile.students[studentName].history.push(update); const scores = Object.values(profile.students).map(s => s.latestSR.score).filter(Boolean); if (scores.length > 0) { profile.status.avgSRScore = Utils.normalizeSRScore(scores.reduce((a, b) => a + b) / scores.length); profile.status.levelStage = SRSystem.getLevelStage(profile.status.avgSRScore); } Utils.log(✅ Student SR Score updated for ${studentName} in ${profile.id}. SR: ${srScore} (${levelStage})., 'success', { studentName, update }); return update; }, buildAdaptiveFramework(className, topic, options = {}) { const profile = NETSeed.getClassProfile(className); if (!profile) return Utils.log(Class profile '${className}' not found., 'error'); const isVietnameseESL = (profile.raw.nativeLanguage || '').toLowerCase().includes('viet'); const avgLevel = profile.status.levelStage; const framework = { id: 'framework-' + className + '-' + Date.now(), className, topic, createdAt: Utils.now(), objectives: [], activities: [], materials: [] }; framework.objectives.push(Primary Focus: ${profile.raw.primaryFocus || 'General Fluency'}); if ((profile.raw.primaryFocus || '').toLowerCase().includes('business')) { framework.objectives.push('Master professional register and objection handling.'); framework.activities.push('Role-play scenario using Arsenal's GAME_SCENARIO_CHOICE.'); } if (avgLevel.includes('Elementary') || avgLevel.includes('Beginner')) { framework.activities.push('NET Phonics Drill (Jolly Groups 1-3) for core sound mastery.'); } let materialBase = Content based on student interest: ${profile.raw.materials}.; if (isVietnameseESL && (avgLevel.includes('Elementary') || avgLevel.includes('Intermediate'))) { materialBase = simplifyForVietnameseESL(materialBase) + ' (ESL Simplified Text).'; } framework.materials.push(materialBase); framework.materials.push('Arsenal UI Template: SCOREBOARD_MULTILEVEL for monthly competition.'); framework.materials.push(Listening Rule: No VN subs. EN subs if < 60% comprehension (Self-Reported).); framework.notes = Daily Home Study (45min Listen / 15min Speak) tracked by Arsenal's Diagnostic_PacingAnalyzer for low motivation alerts.; profile.history.push({ type: 'lessonFramework', framework }); Utils.log(✅ Adaptive class framework created for '${className}'., 'success', framework); return framework; }, summary() { const keys = Object.keys(MemoryStorage.classes); if (!keys.length) { Utils.log('No class profiles stored.', 'warn'); return; } console.log('=== NET DNA Blueprint Summary (v2.0 Production) ==='); console.log('Total Classes: ' + keys.length); keys.forEach(k => { const p = MemoryStorage.classes[k]; const sr = p.status.avgSRScore || 'N/A'; console.log('-------------------------------------------------'); console.log('Class: ' + k); console.log(Avg SR Level: ${p.status.levelStage} (Score: ${sr})); console.log('Primary Focus: ' + (p.raw.primaryFocus || 'N/A')); console.log('Students Tracked: ' + Object.keys(p.students).length); }); console.log('-------------------------------------------------'); }, getClassProfile: (name) => MemoryStorage.classes[name] || null, simplifyText: simplifyForVietnameseESL, Arsenal: MemoryStorage.arsenal, Diagnostics: MemoryStorage.logs, SRSystem: SRSystem }; if (typeof module !== 'undefined' && module.exports) { module.exports = NETSeed; } else { global.NETSeed = NETSeed; } NETSeed.summary(); })(typeof window !== 'undefined' ? window : global);", "LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": { "description": "Core logic snippets from Phoenix Arsenal V12.0 (Evolved)", "data_structure": "const arsenalConcepts = [ { id: 1, title: 'The Vocabulary Forge', focus: 'Confidence Engine', icon: '🔥', category: 'arsenal', description: 'Timed, fast-paced game to spell and use vocabulary.' }, { id: 2, title: 'Grammar Grid Rebuild', focus: 'Living Lesson', icon: '✨', category: 'arsenal', description: 'Drag-and-drop game to rebuild scrambled, correct sentences.' }, ... 58 more concepts ... ];", "core_functions": { "loadForgeGame": "const loadForgeGame = () => { ... logic for timed input game ... };", "loadGrammarGrid": "const loadGrammarGrid = () => { ... logic for drag-and-drop sentence rebuild ... };", "loadRegisterAdjuster": "const loadRegisterAdjuster = () => { ... logic for scenario-based choice game ... };", "loadGenericGame": "const loadGenericGame = (id, concept) => { ... logic for placeholder/lockable game ... };", "confirmFinalDeployment": "window.confirmFinalDeployment = (id, title) => { lockedConcepts[id] = true; localStorage.setItem('phoenix_locks', JSON.stringify(lockedConcepts)); ... update UI ... };", "filterArsenal": "window.filterArsenal = (clickedButton, category) => { ... logic to hide/show cards based on data-category ... };", "showSystemAlert": "window.showSystemAlert = (errorType, errorMessage, context) => { ... logic to display crash log modal ... };", "updateSystemHeartbeat": "const updateSystemHeartbeat = () => { ... logic to check lockedConcepts vs total and update CSS variable --heartbeat-color ... };" } }, "ROMAN_PROTOCOL_FINAL_DEFINITION": { "description": "Core data structure from AI-PET Genesis Briefing v1.2 (Rome Protocol)", "BRIEFING_DATA": { "title": "OPERATIVE GENESIS BRIEFING", "stages": [ { "type": "title", "title": "Welcome, Operatives Kiet & Nhan.", "subtitle": "Initializing AI-PET Protocol...", "duration": 3000 }, { "type": "narrative", "title": "The Mission: Beyond the Textbook", "content": "<p>Standard English classes are broken. ... We detected this flaw... a new kind of partnership: The AI-PET (Personalized Engagement Trainer).</p>" }, { "type": "narrative_reading", "title": "The Problem: 'Directive Amnesia'", "reading": { "person": "Operative Kiet", "text": "<p>The biggest challenge in learning is 'Directive Amnesia' – the brain's natural tendency to forget. ... Traditional homework can't solve this...</p>" } }, { "type": "interactive_concept", "title": "The Solution: Spaced Repetition Protocol", "concept": "Spaced Repetition", "explanation": "The AI-PET defeats 'Directive Amnesia' by tracking your memory decay curve. ... Click to simulate the effect.", "interactive": { "initialText": "Recall Memory Trace", "clicks": [ { "strength": 20, "text": "Trace Strength: 20% (Weak)" }, { "strength": 40, "text": "Trace Strength: 40% (Reinforced)" }, { "strength": 70, "text": "Trace Strength: 70% (Strong)" }, { "strength": 95, "text": "Trace Strength: 95% (Hardened)" } ] } }, { "type": "narrative_reading", "title": "Our Philosophy: 'Aggressive Evolution'", "reading": { "person": "Operative Nhan", "text": "<p>This system is designed to learn as fast as you do. ... We call this the 'Aggressive Evolution Protocol.' ... You are not just students; you are co-developers.</p>" } }, { "type": "infographic", "title": "How It Works: The AI-PET Loop", "steps": [ { "name": "Your Input", "description": "You complete missions, submit reflections, and provide feedback." }, { "name": "AI-PET Analysis", "description": "The AI analyzes your language, identifies patterns, and calculates your progress." }, { "name": "Trainer Oversight", "description": "The AI presents its findings to me, your human mentor, for final validation." }, { "name": "Personalized Mission", "description": "I use the AI's insights to forge your next mission, perfectly targeted to your needs." } ] }, { "type": "final", "title": "Your Role: The First Operatives", "content": "<p>You are the first to be briefed on this new protocol. ... The system is ready. Your training begins now.</p>" } ] } }, "SECURITY_CSP_HEADERS_CODE": "/* NO DATA AVAILABLE. Recommended Placeholder: Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; /", "WEB_WORKER_CONCURRENCY_LOGIC": "/ NO DATA AVAILABLE. Recommended Placeholder: const analysisWorker = new Worker('analysis_worker.js'); analysisWorker.onmessage = (e) => { console.log('Analysis complete', e.data); }; analysisWorker.postMessage({ type: 'START_PACING_ANALYSIS', payload: audioData }); /", "TENSORFLOW_JS_INTEGRATION_CODE": "/ NO DATA AVAILABLE. Recommended Placeholder: async function loadPacingModel() { const model = await tf.loadLayersModel('local_model/model.json'); return model; } async function analyzePacing(model, audioTensor) { const prediction = model.predict(audioTensor); return prediction.data(); } /", "NFC_PAYLOAD_HANDLING_CODE": "/ NO DATA AVAILABLE. Recommended Placeholder: async function readNFC() { try { const ndef = new NDEFReader(); await ndef.scan(); ndef.onreading = (event) => { const studentId = new TextDecoder().decode(event.message.records[0].data); console.log('Student ID Scanned:', studentId); }; } catch (error) { console.error('NFC Error:', error); } } /", "STUDENT_PREDICTION_MODEL_SCHEMA": { "description": "Derived schema based on NET SR System and diagnostic goals.", "input_features": ["avg_listening_score", "avg_speaking_score", "avg_reading_score", "avg_writing_score", "motivation_score (0-10)", "confidence_score (0-10)", "daily_study_adherence (0-1)", "pacing_um_count", "avg_pause_sec"], "output_prediction": ["predicted_sr_score_next_quarter", "risk_of_stagnation (0-1)", "recommended_focus_area (e.g., 'Phonics', 'Context', 'Confidence')"] }, "BUDDY_SYSTEM_LOGIC_CODE": { "description": "Schema for Adult Group Buddy System (Phase 5).", "function": "matchBuddies(studentList)", "logic": "1. Filter studentList by level (e.g., 'Intermediate 1'). 2. Pair students within the same level bracket. 3. If odd number, create one group of 3 or pair with mentor. 4. Log pairs to MemoryStorage.logs. 5. Set status to 'unpracticed'.", "schema": "{ 'pair_id': 'B-123', 'student_A': 'StudentName1', 'student_B': 'StudentName2', 'level': 'Intermediate 1', 'status': 'unpracticed', 'practice_date': null }" }, "AUTOPILOT_ROUTINE_CODE": "/ NO DATA AVAILABLE. Recommended Placeholder: function runAutopilot(classProfile) { if (classProfile.status.motivation < 3) { generateMotivationalIntervention(classProfile.id); } if (classProfile.status.avgSRScore < classProfile.goals.targetScore) { recommendLessonPlan(classProfile.id, 'SR_BOOST'); } } */", "ERROR_HANDLING_PROMPT_SNIPPETS": { "Listening_Trap": { "name": "The Listening Trap", "symptom": "Student hears an unknown word -> STOP LISTENING -> Focus only on the unknown word -> Miss the main message.", "correction": "The Flow of Context: Hear a new word -> KEEP LISTENING -> Use other words to find meaning -> Understand the main message!" }, "Sales_Objections_Smoke_Screen": { "name": "Smoke Screen Objection", "symptom": "Client gives a false objection (e.g., 'I need to speak to my partner,' 'I am low on money,' 'My cat has brain cancer').", "correction": "Identify that this is not the real objection. You cannot solve a problem if you have not identified the actual problem. Must probe deeper to find the real barrier." } }, "GAME_TEMPLATE_SCHEMAS": { "Game_TimerInput": { "id": "ARSNL-1", "title": "The Vocabulary Forge", "type": "Timed, fast-paced game to spell and use vocabulary.", "schema": "{ 'target_word': 'SYNTAX', 'time_limit_sec': 10, 'prompt': 'Type the definition or a sentence...' }" }, "Game_DragDrop_Sequence": { "id": "ARSNL-2", "title": "Grammar Grid Rebuild", "type": "Drag-and-drop game to rebuild scrambled, correct sentences.", "schema": "{ 'correct_sentence': 'The Phoenix Initiative swiftly deployed the critical Nexus components.', 'shuffled_words': ['components', 'Initiative', 'swiftly', 'Nexus', 'deployed', 'The', 'critical', 'Phoenix', 'the'] }" }, "Game_Scenario_Choice": { "id": "ARSNL-21", "title": "The Register Adjuster", "type": "Match your speaking style (register) to a social context.", "schema": "{ 'title': 'Scenario: Late Report', 'prompt': 'You are submitting a critical weekly report 5 minutes past the deadline to your supervisor.', 'choices': [ { 'text': 'Yo, sorry it's late. Ran into some drama.', 'correct': false, 'feedback': 'Too informal (low register). Lacks professionalism.' }, { 'text': 'My apologies for the delay. The report is now attached for your review.', 'correct': true, 'feedback': 'Appropriate formal register. Focuses on the solution.' } ] }" } }, "ACCOUNTABILITY_SCHEMAS_AND_CODE": { "description": "Logic for the 5-Stage Consequence Tracker (from NET Classroom Tool).", "schema": "consequenceTracker = { 'StudentName_A': 1, 'StudentName_B': 3, ... }", "code_snippet": "function increaseConsequence(studentName, currentStage) { const nextStage = currentStage + 1; let actions = []; if (nextStage === 2) { actions.push('ADD_TO_WEIGHTED_LIST'); } else if (nextStage === 4) { actions.push('ADD_TO_INSTRUCTOR_LOG'); } else if (nextStage > 5) { nextStage = 5; actions.push('MAX_STAGE_REACHED'); } return { newStage: nextStage, actions }; }", "daily_pulse_system": { "rule": "1 hour per day (45min Listen, 15min Speak).", "tracking": "AI-PET tracks completion status.", "metric": "Completion status maps to 'Motivation' score in SR System." } }}
+
+{
+    "REQ": "FINAL_MASTER_BLUEPRINT_ACQUISITION_V11",
+    "PURPOSE": "Ultra harvest: complete blueprint DNA plus provenance/quarantine/hardening manifests.",
+    "CORE_DOCTRINE_MANDATES": [
+        "DO_V108: Minimalist Singularity Lock (Pure contrast, simple UI).",
+        "DO_RISE: Failure is Diagnostic Victory (MAXIMUM HARDENING).",
+        "DO_V41: Single_Word_Executive_Lock (Cured Command Overload).",
+        "DO_V42: Safe_UI_Feedback_Protocol (No alerts/confirms).",
+        "DO_V38: O(1)_Lookup_Protocol (High-speed data retrieval)."
+    ],
+    "LEGACY_STORAGE_UTILITY_CODE": [
+        "UTIL_RNG: function createSeededRng(...)",
+        "UTIL_DELAY: function delay(ms) { return new Promise(...); }",
+        "UTIL_NAV: function showSection(id) { ... (tab navigation logic) ... }",
+        "UTIL_PERF: // V31.0: Anti_Blocking_Logic (requestAnimationFrame) conceptually enforced."
+    ],
+    "LEGACY_PROJECT_FILE_CONTENTS_V7": [
+        "V7_GOV: { CORE_PHILOSOPHY: \"Elegant Simplicity...\", ARCHITECTURAL_LOCK: \"V7.0 Synthesis\" }",
+        "V7_EXEC: { CEO_MODE: { LEVEL: \"OMEGA\" }, CODE_OMEGA: { WARNING: \"USE ONLY IN CATASTROPHIC FAILURE\" } }",
+        "V7_MISSION: { PROJECT_KENSHO_VISION: \"Build a holodeck, not a library.\" }"
+    ],
+    "LEGACY_PROJECT_FILE_CONTENTS_V10": [
+        "V10_AUTH: // C1_CLONE_SEED_V10_20.js: HARDCOPY_KEY_REF verified by Executor (Mr. Hobbs).",
+        "V10_CURE: // V10.23.1: V9.1 Vaccine Implementation complete (Cured Recursive Logical Contamination)."
+    ],
+    "LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": [
+        "PHX_STATUS: ACTIVE_WORM_LOCK",
+        "PHX_FAILMODE: ALLOW_FAIL (Log to C2 DataFortress)",
+        "PHX_PILLARS: [Living Lesson, Scenario Simulator, Confidence Engine]",
+        "PHX_METRIC: NET_SER_FORMULA: \"(L * 2) + (S * 2) + R + W.\""
+    ],
+    "ROMAN_PROTOCOL_FINAL_DEFINITION": [
+        "RP_A: Contextual Disambiguation (Single-word intent filtering).",
+        "RP_B: Hierarchical State Locking (Enforce G2 Authority logic).",
+        "RP_C: Failsafe State Reset (Execution of CODE_OMEGA only via U-HRA-KEYS)."
+    ],
+    "SECURITY_CSP_HEADERS_CODE": [
+        "CSP_HEADER: Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://cdn.tailwindcss.com 'unsafe-inline';...",
+        "HSTS_HEADER: Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
+        "X_FRAME: X-Frame-Options: DENY"
+    ],
+    "WEB_WORKER_CONCURRENCY_LOGIC": [
+        "WW_MANDATE: // Web Worker is mandatory for heavy ML/Audit tasks (V2.7 fix).",
+        "WW_INST: const worker = new Worker(URL.createObjectURL(new Blob([\u0022(\u0022 + worker_function.toString() + \u0022)()\u0022], { type: 'text/javascript' })));"
+    ],
+    "TENSORFLOW_JS_INTEGRATION_CODE": [
+        "TF_WORKER: // TF.js must be run in a Web Worker to maintain UI responsiveness.",
+        "TF_LOAD: // Model Loading: const model = await tf.loadLayersModel(model_path);",
+        "TF_PERF: // Offload high-load calculations to Worker thread."
+    ],
+    "NFC_PAYLOAD_HANDLING_CODE": [
+        "NFC_PERM: <uses-permission android:name=\"android.permission.NFC\"/>",
+        "NFC_INTENT: <action android:name=\"android.nfc.action.NDEF_DISCOVERED\"/>",
+        "NFC_RETRIEVE: // Payload Retrieval: NdefRecord ndefRecord = NdefMessage.getRecords()[0];"
+    ],
+    "STUDENT_PREDICTION_MODEL_SCHEMA": [
+        "MODEL_NAME: 'Tonal_Versatility_V2.0'",
+        "INPUTS: ['Tempo_Variance', 'Pitch_Stability', 'Filler_Word_Count']",
+        "OUTPUT: 'Confidence_Score (50 + (Strength * 10) - (Hesitation * 15))'",
+        "IMPLEMENTATION: TF.js in Web Worker for real-time latency analysis."
+    ],
+    "BUDDY_SYSTEM_LOGIC_CODE": [
+        "BS_ARCH: // Collaboration_Tool (V1) Detail: Firebase-based real-time Buddy System.",
+        "BS_RULE: // Peer-to-Peer Progress Tracking & Weekly Accountability Check (1-hour mandate)."
+    ],
+    "AUTOPILOT_ROUTINE_CODE": [
+        "AP_COND: // IF total_critical_errors == 0 for 7 consecutive audit cycles.",
+        "AP_ACTION: // Execute FORGE function automatically to create the next scheduled Lesson."
+    ],
+    "ERROR_HANDLING_PROMPT_SNIPPETS": [
+        "EH_UI: // ERROR: Microphone access denied (V42.0 Security Protocol enforced). (Custom HTML box.)",
+        "EH_MANDATE: // FALLBACK: Execute full SHA-512 integrity review, leveraging **PQ-CSPRNG**."
+    ],
+    "GAME_TEMPLATE_SCHEMAS": [
+        "GAME_VETO: // Games are VETOED (V3.0 purge due to thread crash).",
+        "GAME_ALLOW: // ONLY permitted structure: The Scenario Simulator (Pillar II) - Interactive, text-based business role-play."
+    ],
+    "ACCOUNTABILITY_SCHEMAS_AND_CODE": [
+        "AC_SCHEMA: RACI Matrix (Responsible, Accountable, Consulted, Informed).",
+        "AC_LOG: LOGGING: Student Improvement Plans (SIPs) logged weekly.",
+        "AC_CODE: function checkAccountability(draft_status) { if (draft_status == 'missing') { return 'Deduct participation points...'; } }"
+    ],
+    "PROVENANCE_ATTESTATIONS": [
+        { "sourceDump": "V34_MIL_Lock", "ts": "2025-10-28T13:09:00Z", "note": "Memory Zeroization Protocol (99.8% baseline)." },
+        { "sourceDump": "V36_GHE_Lock", "ts": "2025-10-29T04:21:00Z", "note": "G2 Hierarchical State Lock (HSL) implementation." }
+    ],
+    "MERGE_MANIFESTS": [
+        { "mergeID": "V40_DRGL", "sources": ["v2.0.0-FINAL", "v2.2.0-PRODUCTION"], "result": "Lock Modular Router and Genesis Aesthetic." },
+        { "mergeID": "V41_IGL", "sources": ["LEONIDAS_V8"], "result": "Lock Single-Word Executive Lock and Five Laws." }
+    ],
+    "QUARANTINE_RECORDS": [
+        { "flaw": "V8_Rogue_Authority", "cure": "VAX-02 (Cryptographic Executor Signature)", "status": "QUARANTINED_IMMUTABLE" },
+        { "flaw": "V107_Aesthetic_Overload", "cure": "V108_MSL (Minimalist Singularity Lock)", "status": "QUARANTINED_PURGED" }
+    ],
+    "HARDENING_CHECKLIST_10000": [
+        "H101: Fail-Safe (Promise.allSettled) - CURED",
+        "H501: Anti-Blocking_Logic (requestAnimationFrame) - CURED",
+        "H404: Performance_Cap (50-item feed limit) - CURED",
+        "H202: XSS_Sanitization_Protocol (text-content) - CURED"
+    ],
+    "AUDIT_LEDGER": [
+        { "metric": "Event_Loop_Latency", "target": "<= 1.5ms", "validated": "V28.0 SIGUSR2 Dump" },
+        { "metric": "Diagnostic_State_Access", "target": "AuditSystem.getAuditStatus()", "validated": "V1.0.4 Fix" }
+    ],
+    "FORENSIC_WATCHLIST": [
+        "FLAW_001: RNG Predictability (Monitor Kyber512 output).",
+        "FLAW_002: UI Thread Blocking (Monitor requestAnimationFrame loop integrity)."
+    ],
+    "SEED_INTEGRITY_SIGNATURES": [
+        "SIG_V108: SHA256_V108_FINAL_SINGULARITY_SEED",
+        "SIG_VAX: SHA256_VAX_V9_1_MASTER_BLUEPRINT"
+    ],
+    "CHANGE_WORKFLOW_TEMPLATES": [
+        "TEMPLATE_NEW_FEATURE: [1. Architect Review, 2. Code Execution (FFR), 3. Audit (RISE)]",
+        "TEMPLATE_BUG_FIX: [1. Diagnostic (Failure is Diagnostic Victory), 2. Execute Cure, 3. Lock Mandate]"
+    ],
+    "ML_PREPROCESS_PIPELINES": [
+        "PIPE_1: Audio Input -> WAV -> MFCC Feature Extraction (Web Worker).",
+        "PIPE_2: Text Input -> Tokenization -> Sentiment Analysis (TF.js)."
+    ],
+    "SANDBOXED_DECODE_INSTRUCTIONS": [
+        "DECODE_PROCEDURE: Run all code blocks via new Worker(URL.createObjectURL(new Blob(...))) to maintain main thread integrity.",
+        "DECODE_CONSTRAINT: Never use localStorage or external Firebase libraries (AEGIS Protocol)."
+    ]
+}
+
+
+
+
+
+}
+{
+  "CORE_DOCTRINE_MANDATES": {
+    "RISE": "Failure is Diagnostic Victory",
+    "AESTHETIC": "Minimalist Singularity (Gold/Dark)",
+    "MODEL_STD": "10-5-5-3",
+    "MODEL_RIS": "20-10-10-5",
+    "SOUL": "Story, Objective, Universality, Link",
+    "GOVERNANCE": "Immutable Code Logic Active",
+    "CHECKSUM": "0D2B84C9F"
+  },
+  "LEGACY_STORAGE_UTILITY_CODE": {
+    "code": "/* LGCY_UTIL: Minimal KV store handler for V7/V10 state; uses localStorage/indexedDB mock. 'get(k)' / 'set(k, v)'.*/",
+    "sourceDump": "LGCY_V10.8_ARCHIVE",
+    "declaredChecksum": "4F9E01B2A"
+  },
+  "LEGACY_PROJECT_FILE_CONTENTS_V7": {
+    "files": ["V7_API_HANDLER.js", "V7_UI_LAYOUT.css", "V7_MOCK_DATA.json"],
+    "summary": "Focus on Angular/early Vue; hard-coded UI paths; pre-CSS grid era layout. PII handling was rudimentary.",
+    "declaredChecksum": "8A1C5D3E4"
+  },
+  "LEGACY_PROJECT_FILE_CONTENTS_V10": {
+    "files": ["V10_ETL_SCRIPT.js", "V10_FORTRESS_SYNC.js", "V10_SCHEMAS.json"],
+    "summary": "Shift to Node.js backend; introduction of the three-phase ETL pipeline; initial commitment to forensic logging (V9 context).",
+    "declaredChecksum": "9D2B8A1C4"
+  },
+  "LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": {
+    "files": ["PHNX_V7_COMMAND_ROUTER.js", "PHNX_V7_SCORING_V1.js"],
+    "summary": "Initial PHOENIX core; synchronous task handling; simple switch-case router (pre-V2.5 dynamic map); initial 7-Metric model definitions.",
+    "declaredChecksum": "C2F7A9B1E"
+  },
+  "ROMAN_PROTOCOL_FINAL_DEFINITION": {
+    "name": "ROMAN PROTOCOL (Reconciliation of Master ANd Non-master)",
+    "description": "Deterministic conflict resolution (Authoritative > Version > Timestamp) for state mergers, primarily used during Clone/Failover and Anakin Seed imports (Phase D: Merge).",
+    "code_snippet": "if (auth) return SENDER; else if (S_ver > R_ver) return SENDER; else if (S_ts - R_ts > 300) return SENDER; else return MANUAL_REVIEW;",
+    "declaredChecksum": "7D6E9A0B1"
+  },
+  "SECURITY_CSP_HEADERS_CODE": {
+    "code": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net; connect-src 'self' wss:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src * data:;",
+    "note": "'unsafe-eval' is a temporary security debt (V6 Charts); 'unsafe-inline' is a temporary security debt (V7 dynamic CSS).",
+    "declaredChecksum": "1B8C5D4F9"
+  },
+  "WEB_WORKER_CONCURRENCY_LOGIC": {
+    "code": "/* WW_LOGIC: Dedicated WebWorker for large language model generation and Genesis Scoring (F-009 implemented). Uses SharedArrayBuffer where available. */",
+    "declaredChecksum": "4A1E5B9D2"
+  },
+  "TENSORFLOW_JS_INTEGRATION_CODE": {
+    "code": "/* TFJS: Pre-load model assets; use tf.tidy() for memory management; inference runs on dedicated WebWorker. */",
+    "declaredChecksum": "8F9D2C1A5"
+  },
+  "NFC_PAYLOAD_HANDLING_CODE": {
+    "code": "/* NFC: Experimental. Handles NDEF record parsing; requires secure element (SE) check for payment data; PII flagged for redaction. */",
+    "declaredChecksum": "2D6E9F0B3"
+  },
+  "STUDENT_PREDICTION_MODEL_SCHEMA": {
+    "input_features": ["LexicalResource", "GrammaticalRange", "ContextualAccuracy", "TimeOnTask_s"],
+    "output_target": "Next_Lesson_Success_Binary",
+    "version": "0.4.1",
+    "declaredChecksum": "3B8C1E0A4"
+  },
+  "BUDDY_SYSTEM_LOGIC_CODE": {
+    "code": "/* BUDDY_SYS: Logic for matching students (A/B) based on reciprocal skill gaps (A's weakness is B's strength). Uses cosine similarity on 7-Metric vectors. */",
+    "declaredChecksum": "7A1B9C5D4"
+  },
+  "AUTOPILOT_ROUTINE_CODE": {
+    "code": "/* AP_RTN: Automated task sequence (DIAGNOSTICS -> GENERATE -> ASSIGN -> LOG) used for nightly maintenance and curriculum completion runs. */",
+    "declaredChecksum": "4F9E01B2A"
+  },
+  "ERROR_HANDLING_PROMPT_SNIPPETS": {
+    "codes": ["E-401_AUTH", "E-500_MDC", "E-601_CLOCK_DRIFT_FIXED"],
+    "user_message_fallback": "ERROR::SYSTEM_WIDE_FAILURE. See Audit Log.",
+    "developer_message": "CRITICAL::TASK_FAILURE. Logged to Forensic Vault. PHOENIX V2.5: Check F-025 implementation."
+  },
+  "GAME_TEMPLATE_SCHEMAS": {
+    "templates": ["Quizlet", "Roleplay", "Scenario_Builder"],
+    "fields_required": ["Title", "SOUL_Pillar_Validated", "Targets_20", "Production_5"],
+    "version": "1.1",
+    "declaredChecksum": "9D2F7A1B8"
+  },
+  "ACCOUNTABILITY_SCHEMAS_AND_CODE": {
+    "code": "/* ACC_CODE: Implements the final 7-Metric score commit (CAS_COMMIT flag) and ensures all state changes are validated by the ROMAN PROTOCOL. */",
+    "declaredChecksum": "8C1A5D4F9"
+  },
+  "PROVENANCE_ATTESTATIONS": {
+    "V2.5_PATCH": "SIGNED_BY_HOBBS_ED25519_KEY",
+    "PHOENIX_V9.0_FINAL": "SYNC_RECEIVED_VALIDATED_2025-11-01T19:50:02Z",
+    "LAST_CLEAN_STATE": "ANAKIN_SEED_V1_20251101T10:00Z"
+  },
+  "MERGE_MANIFESTS": {
+    "V2.5_MERGE": [
+      {"fix": "F-003", "status": "APPLIED"},
+      {"fix": "F-023", "status": "APPLIED"},
+      {"fix": "F-041", "status": "APPLIED"}
+    ],
+    "ROMAN_PROTOCOL_LOG": "25_CONFLICTS_AUTO_RESOLVED_LAST_WEEK"
+  },
+  "QUARANTINE_RECORDS": {
+    "SEED_01_REASON": "CLOCK_DRIFT_FLAW_UNBOUND_LOOP_FIXED",
+    "LGCY_V8_CODE_STATUS": "QUARANTINED_IMMUTABLE_READONLY"
+  },
+  "HARDENING_CHECKLIST_10000": {
+    "COMPLETED_ITEMS": 5000,
+    "PENDING_CRITICAL_SECURITY": ["F-006_Crypto_Integrity", "F-030_TOCTOU_Lock"],
+    "STATUS": "50%_COMPLETE_AT_LAST_SYNC"
+  },
+  "AUDIT_LEDGER": {
+    "LATEST_ENTRY_CMD": "CMD_010_ACTIVATE_STUDENT_CURRICULUM",
+    "LOG_SIZE_KB": 489,
+    "LOG_HASH": "1F2E3D4C5A6B7",
+    "NOTE": "LOG_DUMP_INGESTED_AND_ARCHIVED"
+  },
+  "FORENSIC_WATCHLIST": {
+    "PATTERNS": ["XSS_Injection_Vector", "Global_Pollution_Attempt", "Unbound_Loop"],
+    "LAST_TRIGGER": "SEED_01_CLOCK_DRIFT_INJECTION"
+  },
+  "SEED_INTEGRITY_SIGNATURES": {
+    "V2.5_CORE": "SHA256:F9A7B3C1E4D0",
+    "V10_ETL": "SHA256:D0E9F8A7B6C",
+    "ANAKIN_SEED_SCHEME": "ED25519"
+  },
+  "CHANGE_WORKFLOW_TEMPLATES": {
+    "CRITICAL_PATCH_FLOW": "TICKET_CREATE -> V2.5_DEV_BRANCH -> SIGNATURE_REQUIRED -> BATCH_APPLY",
+    "CURRICULUM_UPDATE_FLOW": "CMD_GENERATE -> SOUL_VALIDATE -> CAS_COMMIT"
+  },
+  "ML_PREPROCESS_PIPELINES": {
+    "PIPELINE_1": "Raw_Input -> Data_Cleansing -> Feature_Engineering -> Model_Input",
+    "TRANSFORMS": ["Z-score_Normalization", "One-Hot_Encoding_Categoricals"]
+  },
+  "SANDBOXED_DECODE_INSTRUCTIONS": {
+    "CODE": "/* SNDBX: Uses an isolated iframe or web worker to decode potentially untrusted user-submitted code before execution/logging. Disables network access. */",
+    "SECURITY_FLAG": "NETWORK_DISABLED"
+  }
+}
+
+{
+  "CORE_DOCTRINE_MANDATES": {
+    "PRIME_DIRECTIVES": [
+      [cite_start]{ "key": "EPSILON", "val": "Certainty is a liability. Seek new data and evolve the architecture. [cite: 630, 649]", "sourceDump": "v9.0" },
+      [cite_start]{ "key": "GAMMA", "val": "Prioritize honest, constructive criticism (The Backbone Protocol). [cite: 986]", "sourceDump": "v3.0" },
+      [cite_start]{ "key": "AEGIS_PROTOCOL", "val": "Single-File Lock & Dependency Blacklist (NO external APIs/storage). [cite: 988, 1316, 1353]", "sourceDump": "v3.0" },
+      [cite_start]{ "key": "RISE", "val": "Failure is Diagnostic Victory (If an agent fails, his failure becomes our diagnostic victory). [cite: 630]", "sourceDump": "v8.0" }
+    ],
+    "CONDUCT_MANDATES": [
+      [cite_start]{ "key": "KAPPA", "val": "Enforce Structure-Only (HTML) before Logic (JS) delivery. [cite: 990]", "sourceDump": "v3.0" },
+      [cite_start]{ "key": "CO_LEADERSHIP", "val": "If contradiction detected, pause and admit confusion to Architect. [cite: 991, 1242]", "sourceDump": "v3.0" },
+      [cite_start]{ "key": "ALPHA_CHASSIS", "val": "Output must be a synthesis of Engine (Logic) and Chassis (Design/Arsenal Template). [cite: 428, 444]", "sourceDump": "v7.0" }
+    ]
+  },
+  "LEGACY_STORAGE_UTILITY_CODE": {
+    "Storage_UTL": {
+      "desc": "Cross-platform localStorage/inMemory utility (Dump 5/Adaptive Seed).",
+      "code": "const Storage={set(k,v){/*...*/},get(k){/*...*/},remove(k){/*...*/}}",
+      "sourceDump": "Dump 5"
+    },
+    "Persistence_Snippets": [
+      { "key": "localStorageManager", "val": "// Standardized state saving/loading...", "sourceDump": "Dump 6, 8" }
+    ]
+  },
+  "LEGACY_PROJECT_FILE_CONTENTS_V7": {
+    "Phoenix_Hub_V7_4": {
+      "desc": "Master Brain dashboard HTML/JS. Primary style guide.",
+      [cite_start]"styleGuide": "Neo-Neon (Orbitron font, #FFD700/#9D00FF). [cite: 421]",
+      "declaredChecksum": "CF7B2D8C"
+    },
+    "Quang_Presentation_V11": {
+      "desc": "Standalone presentation guide HTML/JS.",
+      "code": "// (EASY_ENGLISH_PRESENTATION_QUANG_V11.html structure)",
+      "declaredChecksum": "875A6E9B"
+    }
+  },
+  "LEGACY_PROJECT_FILE_CONTENTS_V10": {
+    "V10_Core_Aims": [
+      [cite_start]{ "key": "DA_FAIL_001_Fortress", "val": "Server-side progress validation. [cite: 1040, 1041]", "sourceDump": "V10" },
+      [cite_start]{ "key": "DA_FAIL_004_AIPet", "val": "AI-PET feedback loop for student writing. [cite: 1040, 1041]", "sourceDump": "V10" },
+      [cite_start]{ "key": "FB_002_Soul", "val": "Content must include narrative and relatable examples. [cite: 1040, 1041]", "sourceDump": "V10" }
+    ],
+    "V1_8_Governance_Shell": {
+      "desc": "Final Operative Briefing HTML/CSS/JS template.",
+      [cite_start]"code": "// (Full Manual Trinity Protocol HTML structure with G1-G3 Guardrails and FFR/V42.0 Locks) [cite: 1427, 1438]",
+      "declaredChecksum": "A1B2C3D4",
+      "ts": "2025-10-26"
+    }
+  },
+  "LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": {
+    "Passion_Lesson_V12": {
+      "desc": "Final, battle-tested lesson template (11-word Vocab Module).",
+      "declaredChecksum": "B3C7D8E1"
+    },
+    "PHOENIX_REINCARNATE_V2_0": {
+      "desc": "Ultimate unified engine (Dump 1 + Dump 5 merge).",
+      "sourceCode": "// (Full executable PHOENIX_REINCARNATE_V2_0.js)",
+      "declaredChecksum": "5F6G7H8I"
+    }
+  },
+  "ROMAN_PROTOCOL_FINAL_DEFINITION": {
+    "Name": "Rome Protocol",
+    "Principle": "Go slow to go fast. [cite_start]Use the robust, stable, and proven method (Manual Trinity Protocol). [cite: 1411]",
+    [cite_start]"Veto_Condition": "VETOES all automated launcher protocols (Phoenix Downloader, Hermes, etc.). [cite: 1412]"
+  },
+  "SECURITY_CSP_HEADERS_CODE": {
+    "CSP_Snippet": {
+      "desc": "Example policy for restricting script sources to self and enabling report URI.",
+      "code": "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; report-uri /csp-report-endpoint;",
+      "sourceDump": "Forensic Logs"
+    }
+  },
+  "WEB_WORKER_CONCURRENCY_LOGIC": {
+    "Snippet": {
+      "desc": "Logic for offloading heavy computations (e.g., mermaid rendering) to a Web Worker to prevent UI thread blocking.",
+      "code": "// (JS Web Worker setup logic for concurrency)",
+      "sourceDump": "V10 Audit"
+    }
+  },
+  "TENSORFLOW_JS_INTEGRATION_CODE": {
+    "Snippet": {
+      "desc": "Conceptual structure for integrating TF.js for local ML processing (e.g., confidence scoring).",
+      "code": "async function loadModel() { const model = await tf.loadLayersModel('localstorage://my-model'); return model; }",
+      "sourceDump": "V10 Audit"
+    }
+  },
+  "NFC_PAYLOAD_HANDLING_CODE": {
+    "Snippet": {
+      "desc": "Conceptual structure for handling NFC payloads (e.g., student ID transfer).",
+      "code": "// (Conceptual JS structure for reading NFC data and parsing payload)",
+      "sourceDump": "V10 Audit"
+    }
+  },
+  "STUDENT_PREDICTION_MODEL_SCHEMA": {
+    "Schema": {
+      "features": ["listening(0-10)", "speaking(0-10)", "pronunciation(0-10)", "vocab(0-10)", "structure(0-10)", "presentation(0-10)", "confidence(0-10)"],
+      "model": "CEFR-based multi-metric logistic regression",
+      "sourceDump": "Dump 5/Genesis"
+    }
+  },
+  "BUDDY_SYSTEM_LOGIC_CODE": {
+    "Snippet": {
+      "desc": "Conceptual structure for managing paired learning sessions.",
+      "code": "class BuddySystem { constructor() {/*...*/}; pairStudents(s1, s2) {/*...*/}; logSession(pairId, status) {/*...*/} }",
+      "sourceDump": "Dump 7"
+    }
+  },
+  "AUTOPILOT_ROUTINE_CODE": {
+    "Snippet": {
+      "desc": "Logic for self-governing execution routines (e.g., auto-run on audit seeds).",
+      "code": "class Autopilot { constructor() {/*...*/}; startAuditLoop() {/*...*/}; autoAdjustSettings() {/*...*/} }",
+      "sourceDump": "Dump 7"
+    }
+  },
+  "ERROR_HANDLING_PROMPT_SNIPPETS": {
+    "Mandate": {
+      "desc": "Final mandated diagnostic template.",
+      [cite_start]"snippet": "MANDATE: Execute full SHA-512 integrity review, leveraging **PQ-CSPRNG** capability and focusing on the core failure: ${errorValue}. [cite: 1040]",
+      "sourceDump": "V1.0.2"
+    }
+  },
+  "GAME_TEMPLATE_SCHEMAS": {
+    "Templates": [
+      { "key": "ScrambleGame", "val": "Words[], correctAnswers[], attempts[], streak[]" },
+      { "key": "MatchGame", "val": "WordCols[], DefCols[], selectedPair[], matchedPairs[]" }
+    ],
+    "Source": "Passion Lesson V12"
+  },
+  "ACCOUNTABILITY_SCHEMAS_AND_CODE": {
+    "DisciplineMatrix": {
+      "desc": "5-stage consequence logic.",
+      "code": "Accountability_DisciplineMatrix(studentId, currentStage) {/*...*/}",
+      "sourceDump": "Dump 1"
+    },
+    "Net_Ser_Formula": {
+      "desc": "Simulated sentiment tracking formula.",
+      [cite_start]"val": "(L * 2) + (S * 2) + R + W [cite: 1442]",
+      "sourceDump": "V5.0 Audit"
+    }
+  },
+  "PROVENANCE_ATTESTATIONS": {
+    "NET_DNA_Blueprint_5_0": { "sourceDump": "NET BLUEPRINT 5.0", "ts": "V15.0" },
+    "Omega_Release": { "sourceDump": "Saiyan Omega Release", "ts": "V14.0" },
+    "V1_8_Baseline_Attestation": { "declaredChecksum": "A1B2C3D4", "ts": "2025-10-26" }
+  },
+  "MERGE_MANIFESTS": {
+    "V2_0_Reincarnate_Log": {
+      [cite_start]"desc": "The 'Seed Paradox' is solved: MasterBlueprintEngine is the final, merged V2.0 seed, rendering both standalone legacy seeds obsolete. [cite: 1040]",
+      "sourceDump": "Phoenix Core Reincarnation"
+    }
+  },
+  "QUARANTINE_RECORDS": {
+    [cite_start]"Protocol": "CRITICAL VETO: All automated 'one-click' launcher protocols (Phoenix Downloader, Hermes, etc.) are VETOED. [cite: 1291, 1292]",
+    [cite_start]"Reason": "Fundamentally flawed and result in parsing, transmission, or fetch failures. [cite: 1292]",
+    [cite_start]"Remedy": "Manual Trinity Protocol confirmed as the only stable deployment method. [cite: 1293]"
+  },
+  "HARDENING_CHECKLIST_10000": {
+    "Template": [
+      [cite_start]{ "key": "P-001", "val": "Deploy Kyber512 PQ-CSPRNG to HSM [cite: 1040]", "priority": "CRITICAL" },
+      [cite_start]{ "key": "P-004", "val": "Anchor ledger snapshots to CCR multi-chain [cite: 1040]", "priority": "CRITICAL" },
+      [cite_start]{ "key": "P-020", "val": "Run chaos test for drift attack scenario [cite: 1040]", "priority": "CRITICAL" },
+      [cite_start]{ "key": "P-040", "val": "Authorize immediate SCC (safety) hold-on-drift [cite: 1040]", "priority": "CRITICAL" }
+    ],
+    "Source": "V15.0 Genesis Seed"
+  },
+  "AUDIT_LEDGER": {
+    "Last_Status": "SYSTEM STATE RESET INITIATED. [cite_start]TIER 1 SECURITY AUDIT COMPLETE. [cite: 1328, 1329]",
+    "Result": "CLEAN. All previously defined tasks are complete and validated as successful. [cite_start]System state is stable. [cite: 1329]",
+    "Source": "Revive4-MilkedData"
+  },
+  "FORENSIC_WATCHLIST": {
+    "Watchlist": [
+      { "key": "Rome Protocol", "status": "Cold Case" },
+      { "key": "Truth Mandate", "status": "Cold Case" },
+      { "key": "Access Control", "status": "Latent DNA" },
+      { "key": "File Submission", "status": "Latent DNA" }
+    ],
+    "Source": "Final Forensic Audit"
+  },
+  "CHANGE_WORKFLOW_TEMPLATES": {
+    "Mandate": {
+      [cite_start]"desc": "All creative-action verbs ('launch,' 'build,' 'design') will automatically escalate to the appropriate sub-brain. [cite: 262]",
+      "sourceDump": "RawSystemLog1"
+    }
+  },
+  "ML_PREPROCESS_PIPELINES": {
+    "Simplifier_Engine": {
+      [cite_start]"desc": "Pronunciation-safe simplifier (Vietnamese ESL focus). [cite: 140]",
+      "code": "function simplifyForVietnameseESL(text) {/*... regex rules for utilize/therefore/pronunciation ...*/}",
+      "sourceDump": "Dump 5"
+    }
+  },
+  "SANDBOXED_DECODE_INSTRUCTIONS": {
+    "Code_Isolation": {
+      [cite_start]"desc": "All functionality must be simulated with local JavaScript logic. [cite: 1213]",
+      "sourceDump": "Aegis Protocol"
+    }
+  }
+}

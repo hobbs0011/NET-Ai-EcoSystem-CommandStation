@@ -1,0 +1,27 @@
+The highest-priority security issues to address first in the NET SYSTEM V3.1 are:
+
+1. **Governance Control Concentration Risk**  
+   Mitigate risks from Apex II’s elevated operational authority by implementing multi-party consensus, digital enforcement of mandatory sequences, and strict audit logging to prevent rogue or unauthorized actions.
+
+2. **Local Ephemeral Key System Security**  
+   Harden local cryptographic key lifecycle management by integrating hardware-backed key storage (HSM), automating key rotation with multi-factor approvals, and continuously patching crypto libraries against vulnerabilities.
+
+3. **Telemetry Spooling and Data Loss**  
+   Prevent telemetry data loss and client-side storage overflow by supplementing IndexedDB spooling with encrypted fallback storage, enforcing backpressure controls, and deploying real-time telemetry volume monitoring and alerting.
+
+4. **Legacy Token Scanner Reliability**  
+   Protect against denial-of-service and missed legacy key detections from pathological or malformed payloads by optimizing key scans with timeout guards, chunked parallel processing, and comprehensive fuzz testing.
+
+5. **Distributed Cluster State Consistency**  
+   Avoid version drift across GPT/GROK/PERPLEXITY clusters via a centralized version registry, cluster-wide synchronization checkpoints, state reconciliation protocols, and enforced immutable payload hashing.
+
+6. **Runtime Event and Timing Lock Robustness**  
+   Prevent event hijacking and timing bypass by implementing multiple redundant DOM readiness checks, signed “ready” tokens, and active event sequence monitoring.
+
+7. **Import Validation Atomicity & Rollback Completeness**  
+   Ensure that import validation failures lead to full atomic rollback of state and side effects, verified with synthetic fault injection tests to prevent partial corruption.
+
+8. **Explicit Failover and Quarantine Procedures**  
+   Define and automate failover, rollback, and agent quarantine workflows to quickly isolate and recover from partial failures or compromised nodes.
+
+Addressing these issues first will close critical operational and security gaps that have historically generated risk, and form the foundation necessary for a secure and resilient production-grade system.

@@ -1,0 +1,75 @@
+/**
+ * =================================================================
+ * CONSOLIDATED SYSTEM MANIFEST (LEDGER V8.0)
+ * TARGET: Encapsulation of all '00yeeehawww' files (V1.8, V3.0, V5.0, V8.0)
+ * DESCRIPTION: A single configuration object containing system identity,
+ * mandates, core philosophy, and known flaws extracted from the source documents.
+ * =================================================================
+ */
+
+// Global App ID reference (required for environment context)
+const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+const SystemManifest = Object.freeze({
+    // --- 1. SYSTEM IDENTITY & VERSIONING ---
+    IDENTITY: {
+        APP_ID: appId,
+        CORE_PRODUCT: "NET (Natural English Training) AI Systems",
+        ARCHIVAL_ROLE: "Archival & Knowledge Base (V8.0 Vault)",
+        PRIMARY_EXECUTOR: "NET Systems Mastermind (V5.0 Phase)",
+        CERTIFIED_BASELINE: "V2.5 Fully Hardened & Certified",
+        ACTIVE_VERSIONS_CITED: ["V1.8 (Smart Arsenal)", "V3.0 (Grok Prep)", "V5.0 (Handoff)", "V8.0 (Vault)"],
+    },
+
+    // --- 2. CORE PHILOSOPHY & GOVERNANCE ---
+    GOVERNANCE_CORE: {
+        PHILOSOPHY: "Elegant Simplicity, Stability First ('Ultra Instinct')",
+        PRIME_DIRECTIVE: "EPSILON: Certainty is a liability (Seek data, challenge assumptions, evolve).",
+        MANDATE_LOCK: "CONTENT QUALITY ENFORCED (V5.0 Geopolitics Template)",
+        FAILURE_MODE: "CRITICAL - Data loss in Archival channel constitutes a global system integrity violation.",
+    },
+
+    // --- 3. MASTER/MAIN BRAIN CONFIGURATION ---
+    BRAIN_CONFIGURATION: {
+        // Extracted from v2.0.0 and v1.4.5 definitions
+        MAIN_BRAIN_VERSION: "2.0.0-FINAL",
+        MASTER_BRAIN_VERSION: "1.4.5 LOADED",
+        STATUS: "PRODUCTION_READY",
+        MODULAR_ARCHITECTURE: true,
+        SUB_BRAINS: ["Design", "Content", "Methodology", "Media", "Marketing", "Student Ops"],
+        INTERACTIVE_FEATURES: ["Recording", "Navigation", "Quizzes", "Tabs", "Hover Cards"],
+        LANGUAGES: ["English", "Vietnamese (Southern Dialect)"],
+    },
+
+    // --- 4. CRITICAL V3.0 HARDENING MANDATES (Selection) ---
+    HARDENING_MANDATES: [
+        { id: "P1-01", task: "Integrate H-01 (Payload Signing) verification into the Codex INGEST API to enforce non-repudiation." },
+        { id: "P1-02", task: "Develop Metadata Asset Validator function using H-04 schemas to reject invalid T1 modules pre-load." },
+        { id: "P2-08", task: "Review and enforce cryptographic chain of custody for all T1/T2 asset data." },
+    ],
+
+    // --- 5. SMART ARSENAL V1.8 CORE TASKS ---
+    V1_8_EXECUTION_TASKS: [
+        "Smart Arsenal", "Market Integration", "Ranking", "Balance Validation",
+        "Telemetry Hooks", "Stage Mapping", "Top-N Module Selection", "UI-ready dashboard",
+    ],
+
+    // --- 6. KNOWN CRITICAL FLAWS (GHOST ISSUES) ---
+    KNOWN_FLAWS: [
+        { id: "F-0098", title: "Supply chain UI exploit", priority: "P0", mitigation: "Secure build pipeline." },
+        { id: "F-0099", title: "UI ghost memory leak", priority: "P1", mitigation: "Periodic cache prune." },
+        { id: "F-0100", title: "Clone ghost sync fail", priority: "P2", mitigation: "Address clone sync error." }
+    ]
+});
+
+// Example function to demonstrate how to use the manifest data
+function displaySystemStatus() {
+    console.log(`\n--- ${SystemManifest.IDENTITY.CORE_PRODUCT} ---`);
+    console.log(`Status: ${SystemManifest.BRAIN_CONFIGURATION.STATUS}`);
+    console.log(`Core Philosophy: ${SystemManifest.GOVERNANCE_CORE.PHILOSOPHY}`);
+    console.log(`Main Brain V: ${SystemManifest.BRAIN_CONFIGURATION.MAIN_BRAIN_VERSION}`);
+    console.log(`Critical P0 Flaws: ${SystemManifest.KNOWN_FLAWS.filter(f => f.priority === 'P0').length}`);
+    console.log("-------------------------------------");
+}
+
+displaySystemStatus();

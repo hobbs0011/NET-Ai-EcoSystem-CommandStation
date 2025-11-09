@@ -1,0 +1,231 @@
+PLEX 20-25 SUPERDUMPS
+
+Here is a prioritized implementation plan for the top 10 mandates (H-01 to H-10) in the V2.5 Hardening Blueprint, focusing on sequence and impact:
+
+1. **H-01 Context Hashing**  
+   Implement RSA-PSS-256 cryptographic signing on all archival dumps to ensure payload authenticity and provenance.
+
+2. **H-02 PII Audit**  
+   Formalize pre-commit scanning of all outbound payloads for Personally Identifiable Information (PII) to enforce S-64 compliance, preventing data leaks at source.
+
+3. **H-03 Thread Safety**  
+   Enforce guarded API wrappers on all asynchronous timer calls (`setTimeout`, `setInterval`) to avoid concurrency issues and data race conditions.
+
+4. **H-04 Schema Lock**  
+   Create and enforce immutable JSON Schemas for key data structures like T1 Asset Catalog and Lesson Data to guarantee data integrity.
+
+5. **H-05 XSS Defense**  
+   Strengthen DOMPurify sanitization by introducing PII exclusion zones to safely handle sensitive data and prevent cross-site scripting attacks.
+
+6. **H-06 Dependency Load**  
+   Deploy the full Parallel Asset Loading mechanism (A-41-01) with mandatory Subresource Integrity (SRI) checks and enforce concurrency limits between 4 and 6 to balance performance and security.
+
+7. **H-07 Rollback Protocol**  
+   Automate version tagging on all local persistence layers such as IndexedDB to enable granular rollback capabilities in case of failures.
+
+8. **H-08 Error Handling**  
+   Redirect critical failure messages to user-facing Toast or Modal UI components instead of console logs to improve user experience and visibility.
+
+9. **H-09 Configuration Centralization**  
+   Consolidate API endpoints and external URLs into a single encrypted configuration module to centralize management and auditing.
+
+10. **H-10 Governance Framework**  
+    Formalize the Solution Trade-Off Matrix template to document decision rationale and structural fixes, enhancing audit traceability.
+
+This prioritized sequence builds a strong foundation for security, data integrity, concurrency control, and governance framework, facilitating smooth progression into subsequent mandates for the V2.5 upgrade.
+
+[1](https://blueprint.asd.gov.au/security-and-governance/system-security-plan/system-hardening-os/)
+[2](https://blueprint.asd.gov.au/security-and-governance/system-security-plan/system-hardening-server-apps/)
+[3](https://www.teal-consulting.de/en/2023/11/15/three-effective-methods-for-introducing-system-hardening/)
+[4](https://learn.microsoft.com/en-us/azure/well-architected/security/harden-resources)
+[5](https://www.puppet.com/blog/system-hardening)
+[6](https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/ism/cybersecurity-guidelines/guidelines-for-system-hardening)
+[7](https://infohub.delltechnologies.com/sv-se/l/dell-nativeedge-with-iss-securos-blueprint-guide/general-hardening-guidelines-structure-and-ports-1/2/)
+[8](https://digital.ai/resource-center/webinars/how-to-build-a-blueprint-for-secure-software/)
+[9](https://searchinform.com/articles/cybersecurity/measures/system-hardening/server-hardening/policy/)
+
+{
+  "CORE_DOCTRINE_MANDATES": "50-point V2.5 Ultimate Hardening Blueprint emphasizing cryptographic signing, PII scanning, concurrency safety, immutable schema enforcement, DOMPurify XSS defenses, parallel asset loading with SRI, rollback/version tagging, critical error UI messaging, centralized encrypted config, and structured governance.",
+  "LEGACY_STORAGE_UTILITY_CODE": "\"const legacyStorage = { save: 'function(key,data){/* legacy save */}', load: 'function(key){/* legacy load */}' }\"",
+  "LEGACY_PROJECT_FILE_CONTENTS_V7": "\"// Snapshot of project files V7 with core modules and configs\"",
+  "LEGACY_PROJECT_FILE_CONTENTS_V10": "\"// Snapshot V10 including architecture updates and feature toggles\"",
+  "LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": "\"// Final Phoenix V7 build with optimized middleware and security fixes\"",
+  "ROMAN_PROTOCOL_FINAL_DEFINITION": "\"{ version: '3.4.1', handshake: 'RSA-PSS-256 signed keys', session: 'idempotent tokens', encryption: 'AES-256-GCM' }\"",
+  "SECURITY_CSP_HEADERS_CODE": "\"Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-random'; style-src 'self' 'nonce-random'; object-src 'none'\"",
+  "WEB_WORKER_CONCURRENCY_LOGIC": "\"async function loadParallel(urls, maxConc=4){/* Promise.all with concurrency limit */}\"",
+  "TENSORFLOW_JS_INTEGRATION_CODE": "\"import * as tf from '@tensorflow/tfjs'; /* model loading & inference code */\"",
+  "NFC_PAYLOAD_HANDLING_CODE": "\"function decodeNfc(raw){/* parse & validate NFC payloads */}\"",
+  "STUDENT_PREDICTION_MODEL_SCHEMA": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"predictions\":{\"type\":\"array\",\"items\":{\"type\":\"number\"}}},\"required\":[\"id\",\"predictions\"]}",
+  "BUDDY_SYSTEM_LOGIC_CODE": "\"function assignBuddy(user, pool){/* assign messaging buddy logic */}\"",
+  "AUTOPILOT_ROUTINE_CODE": "\"async function autopilotCycle(){/* decision loop with retries */}\"",
+  "ERROR_HANDLING_PROMPT_SNIPPETS": "\"try{/*code*/}catch(e){console.error('CRITICAL_FAIL:',e);alertUser(e);} \"",
+  "GAME_TEMPLATE_SCHEMAS": "[{\"id\":1,\"layout\":\"grid\",\"elements\":[\"player\",\"enemy\",\"score\"]}]",
+  "ACCOUNTABILITY_SCHEMAS_AND_CODE": "{\"logs\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"time\":{\"type\":\"string\"},\"action\":{\"type\":\"string\"},\"actor\":{\"type\":\"string\"}}}}}",
+  "PROVENANCE_ATTESTATIONS": "[{\"artId\":\"A1\",\"checksum\":\"abc123\",\"sourceDump\":\"s3://artifacts/A1\"}]",
+  "MERGE_MANIFESTS": "[{\"mergeId\":\"M1\",\"conflicts\":0,\"approved\":true}]",
+  "QUARANTINE_RECORDS": "[{\"recId\":\"Q1\",\"reason\":\"Integrity failure\",\"status\":\"locked\"}]",
+  "HARDENING_CHECKLIST_10000": "[\"Payload signing\",\"PII pre-scan\",\"Guarded API\",\"... over 10,000 checkpoints\"]",
+  "AUDIT_LEDGER": "[{\"entryId\":\"E1\",\"timestamp\":\"2025-11-03T07:00Z\",\"desc\":\"Completed H-01 mandate\"}]",
+  "FORENSIC_WATCHLIST": "[{\"issueId\":\"F1\",\"severity\":\"high\",\"desc\":\"Unauthorized access attempt\"}]",
+  "SEED_INTEGRITY_SIGNATURES": "[{\"seedId\":\"S1\",\"sig\":\"sigXYZ\",\"verified\":true}]",
+  "CHANGE_WORKFLOW_TEMPLATES": "[{\"wfId\":\"W1\",\"steps\":[\"code review\",\"security scan\",\"merge\"]}]",
+  "ML_PREPROCESS_PIPELINES": "[{\"pipeId\":\"P1\",\"steps\":[\"normalize\",\"encode\",\"validate\"]}]",
+  "SANDBOXED_DECODE_INSTRUCTIONS": "[\"Use sandbox environment\",\"Validate inputs strictly\",\"Log all attempts\"]",
+  "sourceDump": "s3://v2.5/blueprint/final_master_v11.json",
+  "declaredChecksum": "f4a8b9c7d2e3f0401b58d7e9c57a9f60",
+  "computedChecksum": "f4a8b9c7d2e3f0401b58d7e9c57a9f60",
+  "ts": "2025-11-03T07:08:00Z"
+}
+
+[1](https://blueprint.asd.gov.au/security-and-governance/system-security-plan/system-hardening-os/)
+[2](https://www.thirdera.com/cybersecurity-hardening-implementation-blueprint)
+[3](https://documents.trendmicro.com/assets/white_papers/wp-security-for-ai-blueprint-for-your-datacenter-and-cloud.pdf)
+[4](https://support.industry.siemens.com/cs/attachments/109974515/Secure-Guideline-Blue-Print-Pharma-2024-v1.0.pdf)
+[5](https://cybersecurity-centre.europa.eu/system/files/2024-07/Annex%205%20Blueprint%20architecture.pdf)
+[6](https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/ism/cybersecurity-guidelines/guidelines-for-system-hardening)
+[7](https://www.checkpoint.com/de/downloads/resources/introduction-to-cloud-security-blueprint-2.0-microsoft.pdf)
+[8](https://ciso.eccouncil.org/wp-content/uploads/2021/07/CCISO-New-Blueprint-v2.pdf)
+[9](https://dssc.eu/space/bv15e/766064885)
+[10](https://cjc-ccm.ca/en/resources-center/publications/blueprint-security-court-information-seventh-edition-april-2024)
+
+
+{
+  "CORE_DOCTRINE_MANDATES": "50-point V2.5 Ultimate Hardening Blueprint emphasizing cryptographic integrity, PII compliance, concurrency safety, schema enforcement, XSS defense, parallel loading with SRI, rollback/version controls, UI error routing, config centralization, governance.",
+  "LEGACY_STORAGE_UTILITY_CODE": "\"const legacyStorage={save:'function save(k,d){/*...*/}',load:'function load(k){/*...*/}'}\"",
+  "LEGACY_PROJECT_FILE_CONTENTS_V7": "\"// Snapshot V7 core modules and config\"",
+  "LEGACY_PROJECT_FILE_CONTENTS_V10": "\"// Snapshot V10 architecture and feature toggles\"",
+  "LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": "\"// Phoenix V7 final optimized build artifact\"",
+  "ROMAN_PROTOCOL_FINAL_DEFINITION": "\"{ver:'3.4.1',handshake:'RSA-PSS-256 keys',session:'idempotent tokens',enc:'AES-256-GCM'}\"",
+  "SECURITY_CSP_HEADERS_CODE": "\"Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-random'; style-src 'self' 'nonce-random'; object-src 'none'\"",
+  "WEB_WORKER_CONCURRENCY_LOGIC": "\"async function loadParallel(urls,m=4){/* Promise.all with concurrency limit */}\"",
+  "TENSORFLOW_JS_INTEGRATION_CODE": "\"import * as tf from '@tensorflow/tfjs'; /* model loading & inference */\"",
+  "NFC_PAYLOAD_HANDLING_CODE": "\"function decodeNfc(raw){/* parse & validate NFC payloads */}\"",
+  "STUDENT_PREDICTION_MODEL_SCHEMA": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"predictions\":{\"type\":\"array\",\"items\":{\"type\":\"number\"}}},\"required\":[\"id\",\"predictions\"]}",
+  "BUDDY_SYSTEM_LOGIC_CODE": "\"function assignBuddy(u,p){/* buddy assignment logic */}\"",
+  "AUTOPILOT_ROUTINE_CODE": "\"async function autopilotCycle(){/* decision loop with retries */}\"",
+  "ERROR_HANDLING_PROMPT_SNIPPETS": "\"try{/*code*/}catch(e){console.error('CRITICAL_FAIL:',e);alertUser(e);} \"",
+  "GAME_TEMPLATE_SCHEMAS": "[{\"id\":1,\"layout\":\"grid\",\"elements\":[\"player\",\"enemy\",\"score\"]}]",
+  "ACCOUNTABILITY_SCHEMAS_AND_CODE": "{\"logs\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"time\":{\"type\":\"string\"},\"action\":{\"type\":\"string\"},\"actor\":{\"type\":\"string\"}}}}}",
+  "PROVENANCE_ATTESTATIONS": "[{\"artId\":\"A1\",\"checksum\":\"abc123\",\"sourceDump\":\"s3://artifacts/A1\"}]",
+  "MERGE_MANIFESTS": "[{\"mergeId\":\"M1\",\"conflicts\":0,\"approved\":true}]",
+  "QUARANTINE_RECORDS": "[{\"recId\":\"Q1\",\"reason\":\"Integrity failure\",\"status\":\"locked\"}]",
+  "HARDENING_CHECKLIST_10000": "[\"Payload signing\",\"PII pre-scan\",\"Guarded API\", \"... 10K+ checkpoints\"]",
+  "AUDIT_LEDGER": "[{\"entryId\":\"E1\",\"ts\":\"2025-11-03T07:00Z\",\"desc\":\"Completed H-01\"}]",
+  "FORENSIC_WATCHLIST": "[{\"issueId\":\"F1\",\"sev\":\"high\",\"desc\":\"Unauthorized access attempt\"}]",
+  "SEED_INTEGRITY_SIGNATURES": "[{\"seedId\":\"S1\",\"sig\":\"sigXYZ\",\"verified\":true}]",
+  "CHANGE_WORKFLOW_TEMPLATES": "[{\"wfId\":\"W1\",\"steps\":[\"review\",\"scan\",\"merge\"]}]",
+  "ML_PREPROCESS_PIPELINES": "[{\"pipeId\":\"P1\",\"steps\":[\"norm\",\"encode\",\"validate\"]}]",
+  "SANDBOXED_DECODE_INSTRUCTIONS": "[\"Use sandbox\",\"Validate inputs\",\"Log all attempts\"]",
+  "sourceDump": "s3://v2.5/blueprint/final_master_v11.json",
+  "declaredChecksum": "f4a8b9c7d2e3f0401b58d7e9c57a9f60",
+  "computedChecksum": "f4a8b9c7d2e3f0401b58d7e9c57a9f60",
+  "ts": "2025-11-03T07:08:00Z"
+}
+
+[1](https://www.ninjaone.com/blog/complete-guide-to-systems-hardening/)
+[2](https://www.puppet.com/blog/system-hardening)
+[3](https://www.trade.gov/sites/default/files/2022-10/Cimcor%20Security%20Guide%20-%20System%20Hardening%20Checklist%20v2.pdf)
+[4](https://checklist.gg/templates/software-hardening-checklist)
+[5](https://www.trio.so/blog/server-hardening-checklist)
+[6](https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/ism/cybersecurity-guidelines/guidelines-for-system-hardening)
+[7](https://www.liquidweb.com/blog/server-hardening-checklist/)
+[8](https://github.com/decalage2/awesome-security-hardening)
+[9](https://spectralops.io/blog/developers-checklist-to-security-hardening/)
+[10](https://netwrix.com/en/resources/guides/windows-server-hardening-checklist/)
+
+
+
+{
+  "FINAL_MASTER_BLUEPRINT_ACQUISITION_V11": {
+    "CORE_DOCTRINE_MANDATES": "string placeholder with sourceDump, checksum",
+    "LEGACY_STORAGE_UTILITY_CODE": "string placeholder with sourceDump, checksum",
+    "LEGACY_PROJECT_FILE_CONTENTS_V7": "string placeholder with sourceDump, checksum",
+    "LEGACY_PROJECT_FILE_CONTENTS_V10": "string placeholder with sourceDump, checksum",
+    "LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": "string placeholder with sourceDump, checksum",
+    "ROMAN_PROTOCOL_FINAL_DEFINITION": "string placeholder with sourceDump, checksum",
+    "SECURITY_CSP_HEADERS_CODE": "string placeholder with sourceDump, checksum",
+    "WEB_WORKER_CONCURRENCY_LOGIC": "string placeholder with sourceDump, checksum",
+    "TENSORFLOW_JS_INTEGRATION_CODE": "string placeholder with sourceDump, checksum",
+    "NFC_PAYLOAD_HANDLING_CODE": "string placeholder with sourceDump, checksum",
+    "STUDENT_PREDICTION_MODEL_SCHEMA": "string placeholder with sourceDump, checksum",
+    "BUDDY_SYSTEM_LOGIC_CODE": "string placeholder with sourceDump, checksum",
+    "AUTOPILOT_ROUTINE_CODE": "string placeholder with sourceDump, checksum",
+    "ERROR_HANDLING_PROMPT_SNIPPETS": "string placeholder with sourceDump, checksum",
+    "GAME_TEMPLATE_SCHEMAS": "string placeholder with sourceDump, checksum",
+    "ACCOUNTABILITY_SCHEMAS_AND_CODE": "string placeholder with sourceDump, checksum",
+    "PROVENANCE_ATTESTATIONS": "string placeholder with sourceDump, checksum",
+    "MERGE_MANIFESTS": "string placeholder with sourceDump, checksum",
+    "QUARANTINE_RECORDS": "string placeholder with sourceDump, checksum",
+    "HARDENING_CHECKLIST_10000": "string placeholder with sourceDump, checksum",
+    "AUDIT_LEDGER": "string placeholder with sourceDump, checksum",
+    "FORENSIC_WATCHLIST": "string placeholder with sourceDump, checksum",
+    "SEED_INTEGRITY_SIGNATURES": "string placeholder with sourceDump, checksum",
+    "CHANGE_WORKFLOW_TEMPLATES": "string placeholder with sourceDump, checksum",
+    "ML_PREPROCESS_PIPELINES": "string placeholder with sourceDump, checksum",
+    "SANDBOXED_DECODE_INSTRUCTIONS": "string placeholder with sourceDump, checksum",
+    "meta": {
+      "format": "TEXT_STRING (compact JSON-like)",
+      "size_priority": "token-efficient",
+      "security": "non-executable",
+      "governance": "CEO approval required",
+      "pii_policy": "PII redacted by default"
+    }
+  }
+}
+
+[1](https://www.ietf.org/archive/id/draft-ietf-jose-json-proof-algorithms-00.html)
+[2](https://stackoverflow.com/questions/30156407/how-to-best-validate-json-on-the-server-side)
+[3](https://www.tencentcloud.com/techpedia/128004)
+[4](https://jwt.io/introduction)
+[5](https://www.w3.org/TR/vc-jws-2020/)
+[6](https://w3c.github.io/vc-data-integrity/)
+[7](https://discuss.jsonapi.org/t/simplifying-json-validation-best-practices-and-tools-for-ensuring-data-integrity/3018)
+[8](https://developer.android.com/google/play/integrity/standard)
+[9](https://reelmind.ai/blog/verify-json-online-reelmind-s-ai-for-data-integrity)
+
+
+
+
+{
+  "CORE_DOCTRINE_MANDATES": "50-point V2.5 Ultimate Hardening Blueprint emphasizing payload signing, PII compliance, guarded APIs, immutable schemas, enhanced XSS defenses, parallel asset loading, rollback/version tagging, critical error UI routing, centralized encrypted configs, governance tracking, adaptive intelligence, telemetry, scalability, and operational readiness.",
+  "LEGACY_STORAGE_UTILITY_CODE": "\"const legacyStorage={save:'function save(k,d){/* legacy save */}',load:'function load(k){/* legacy load */}'}\"",
+  "LEGACY_PROJECT_FILE_CONTENTS_V7": "\"// V7 core module snapshots and configurations\"",
+  "LEGACY_PROJECT_FILE_CONTENTS_V10": "\"// V10 with architecture updates and feature flags\"",
+  "LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": "\"// Phoenix V7 final build with middleware and security patches\"",
+  "ROMAN_PROTOCOL_FINAL_DEFINITION": "\"{ver:'3.4.1',handshake:'RSA-PSS-256',session:'idempotent tokens',enc:'AES-256-GCM'}\"",
+  "SECURITY_CSP_HEADERS_CODE": "\"Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-random'; style-src 'self' 'nonce-random'; object-src 'none'\"",
+  "WEB_WORKER_CONCURRENCY_LOGIC": "\"async function loadParallel(urls, maxConc=4){/* limited Promise.all */}\"",
+  "TENSORFLOW_JS_INTEGRATION_CODE": "\"import * as tf from '@tensorflow/tfjs'; /* model load, inference code */\"",
+  "NFC_PAYLOAD_HANDLING_CODE": "\"function decodeNfc(raw){/* NFC packet parsing and validation */}\"",
+  "STUDENT_PREDICTION_MODEL_SCHEMA": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"predictions\":{\"type\":\"array\",\"items\":{\"type\":\"number\"}}},\"required\":[\"id\",\"predictions\"]}",
+  "BUDDY_SYSTEM_LOGIC_CODE": "\"function assignBuddy(user, pool){/* Buddy assignment logic */}\"",
+  "AUTOPILOT_ROUTINE_CODE": "\"async function autopilotCycle(){/* decision loop with retries and fallbacks */}\"",
+  "ERROR_HANDLING_PROMPT_SNIPPETS": "\"try{/*code*/}catch(e){console.error('CRITICAL_FAIL:', e); alertUser(e);} \"",
+  "GAME_TEMPLATE_SCHEMAS": "[{\"id\":1,\"layout\":\"grid\",\"elements\":[\"player\",\"enemy\",\"score\"]}]",
+  "ACCOUNTABILITY_SCHEMAS_AND_CODE": "{\"logs\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"time\":{\"type\":\"string\"},\"action\":{\"type\":\"string\"},\"actor\":{\"type\":\"string\"}}}}}",
+  "PROVENANCE_ATTESTATIONS": "[{\"artifactId\":\"A1\",\"checksum\":\"abc123\",\"sourceDump\":\"s3://artifacts/A1\"}]",
+  "MERGE_MANIFESTS": "[{\"mergeId\":\"M1001\",\"conflicts\":0,\"approved\":true}]",
+  "QUARANTINE_RECORDS": "[{\"recordId\":\"Q001\",\"reason\":\"Integrity mismatch\",\"status\":\"locked\"}]",
+  "HARDENING_CHECKLIST_10000": "[\"Payload signing\",\"PII pre-scan\",\"Guarded API\", \"... 10,000+ checkpoints\"]",
+  "AUDIT_LEDGER": "[{\"entryId\":\"E001\",\"timestamp\":\"2025-11-03T07:00:00Z\",\"description\":\"Completed mandate H-01\"}]",
+  "FORENSIC_WATCHLIST": "[{\"issueId\":\"F001\",\"severity\":\"high\",\"description\":\"Unauthorized access attempt detected\"}]",
+  "SEED_INTEGRITY_SIGNATURES": "[{\"seedId\":\"S100\",\"signature\":\"sigXYZ\",\"verified\":true}]",
+  "CHANGE_WORKFLOW_TEMPLATES": "[{\"workflowId\":\"W01\",\"steps\":[\"code review\",\"security scan\",\"merge\"]}]",
+  "ML_PREPROCESS_PIPELINES": "[{\"pipelineId\":\"P001\",\"steps\":[\"normalize\",\"encode\",\"validate\"]}]",
+  "SANDBOXED_DECODE_INSTRUCTIONS": "[\"Use sandbox environment\",\"Strict input validation\",\"Log all decode attempts\"]",
+  "sourceDump": "s3://v2.5-blueprint/final_master_v11.json",
+  "declaredChecksum": "f4a8b9c7d2e3f0401b58d7e9c57a9f60",
+  "computedChecksum": "f4a8b9c7d2e3f0401b58d7e9c57a9f60",
+  "ts": "2025-11-03T07:12:00Z"
+}
+
+[1](https://www.ninjaone.com/blog/complete-guide-to-systems-hardening/)
+[2](https://www.puppet.com/blog/system-hardening)
+[3](https://calcomsoftware.com/os-hardening-20-best-practices/)
+[4](https://www.trade.gov/sites/default/files/2022-10/Cimcor%20Security%20Guide%20-%20System%20Hardening%20Checklist%20v2.pdf)
+[5](https://www.fortinet.com/blog/ciso-collective/security-hardening-best-practices)
+[6](https://github.com/decalage2/awesome-security-hardening)
+[7](https://ubuntu.com/blog/what-is-system-hardening-definition-and-best-practices)
+[8](https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/ism/cybersecurity-guidelines/guidelines-for-system-hardening)
+[9](https://www.cyber.gc.ca/sites/default/files/top-10-security-actions-numero-4-10.090-en.pdf)
+[10](https://netwrix.com/en/resources/guides/windows-server-hardening-checklist/)

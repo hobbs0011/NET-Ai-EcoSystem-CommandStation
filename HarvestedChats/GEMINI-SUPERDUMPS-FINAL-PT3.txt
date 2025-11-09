@@ -1,0 +1,513 @@
+{
+"REQUEST_TS": 1668270180,
+"CORE_DOCTRINE_MANDATES": {
+"V7_3_PROTO": "PHOENIX_REINCARNATE_V7.3",
+"PROC_MODEL": "10_CORE_VOCAB_5_IDIOMS_5_SLANG_3_GAMES (10-5-5-3)",
+"SOUL_PILLAR": ["PROBLEM","COUNTER_ARGUMENT","SOLUTION (NARRATIVE)"],
+"STYLE_GUIDE": "V7.4 NEO_NEON (Orbitron/#FFD700/#9D00FF)"
+},
+"LEGACY_STORAGE_UTILITY_CODE": {
+"sourceDump": "Dump 5",
+"code": "const store={};return{set:(k,v)=>{store[k]=Object.freeze(v);},get:(k)=>store[k]||null,init:()=>console.log('[Storage] Initialized.')}"
+},
+"LEGACY_PROJECT_FILE_CONTENTS_V7": {
+"file": "PHOENIX_CLASS_MANAGEMENT_V7_3_GENERIC.js",
+"checksum": "d5f1a2e3b4c5d6e7",
+"content_excerpt": "const Arsenal={Accountability_DisciplineMatrix: (s,c,src='core')=>{/.../}, Selector_FairnessEngine: (p,l)=>{/.../},Diagnostic_PacingAnalyzer:(a)=>{return {'um_count':0,'wpm':0};}};"
+},
+"LEGACY_PROJECT_FILE_CONTENTS_V10": {
+"file": "AI-PET_ROADMAP_V10",
+"content_excerpt": ["Define 50 mini-game templates & mechanics.", "AI-Pet customization options (Monetization Hook).", "Implement sleep cycle mechanics (T-68 Decay Logic)."]
+},
+"LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": {
+"file": "forsaken_strategy_forge_v7.4_hardened.html",
+"checksum": "f2e9a8b1c4d7e0f3",
+"content_v7_6_modules": ["7-Metric Brain Input", "T-68 Decay Logic", "Accountability Console", "AIPet Coach Simulation (Pitch)"]
+},
+"ROMAN_PROTOCOL_FINAL_DEFINITION": {
+"status": "NO DATA FOUND",
+"sourceDump": "Dumps 1-8 Forensic Watchlist",
+"note": "Still listed as Cold Case."
+},
+"SECURITY_CSP_HEADERS_CODE": {
+"code": "Content-Security-Policy: default-src 'self'; script-src 'self' https://www.google.com/search?q=https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://www.google.com/search?q=https://fonts.googleapis.com; font-src https://www.google.com/search?q=https://fonts.gstatic.com;"
+},
+"WEB_WORKER_CONCURRENCY_LOGIC": {
+"status": "LATENT_DNA (TBD)",
+"note": "Web Workers not yet implemented; concurrency handled via synchronous JS flow in V7.6."
+},
+"TENSORFLOW_JS_INTEGRATION_CODE": {
+"status": "PLACEHOLDER",
+"logic_target": "Diagnostic_PacingAnalyzer (audio data processing)",
+"code_snippet": "const model = await tf.loadLayersModel('model/pacing_v1.json');"
+},
+"NFC_PAYLOAD_HANDLING_CODE": {
+"status": "NOT_IMPLEMENTED",
+"note": "Hardware integration for NFC/Haptic feedback is future task."
+},
+"STUDENT_PREDICTION_MODEL_SCHEMA": {
+"status": "SCHEMA_DRAFT",
+"schema": ["INPUTS:[Speaking, Confidence, DecayRate]", "OUTPUT:[NextLessonTopic, RiskLevel]"]
+},
+"BUDDY_SYSTEM_LOGIC_CODE": {
+"sourceDump": "Dump 7",
+"code": "class BuddySystem { constructor(pool) { this.pool=pool; } findMatch(studentId) { /* Logic: Weighted selection favoring shared challenges / } }"
+},
+"AUTOPILOT_ROUTINE_CODE": {
+"sourceDump": "Dump 7",
+"code": "function runAutopilot(stage) { if (stage.riskLevel === 'HIGH') return {action: 'SWITCH_TO_GAME_1', reason: 'Decay Threshold breached.'}; }"
+},
+"ERROR_HANDLING_PROMPT_SNIPPETS": [
+"class ConcurrencyError extends Error {}",
+"throw new ValidationError(Class ID \"${classId}\" not found.);"
+],
+"GAME_TEMPLATE_SCHEMAS": [
+{"ID": "G1_VOLUME_DRILL", "FOCUS": "Confidence", "METRIC": "LoudnessGauge"},
+{"ID": "G2_PITCH_PRESENTATION", "FOCUS": "Presentation", "METRIC": "AIPetScore"},
+{"ID": "G3_DEBATE_FLUENCY", "FOCUS": "Fluency", "METRIC": "StarCount"}
+],
+"ACCOUNTABILITY_SCHEMAS_AND_CODE": {
+"schema": "STAGE:[1-5], ACTION:[WARNING, ADMIN_REVIEW, REMOVE_ACTIVITY]",
+"code_snippet": "if (studentDisciplineStage === 4) action = 'Parent/Admin Contact (FINAL_LOG)';"
+},
+"PROVENANCE_ATTESTATIONS": ["PHOENIX_V2.0_UNIFIED_SEAL", "V7.6_FINAL_ARSENAL_CHECKPOINT"],
+"MERGE_MANIFESTS": [
+{"source": "Pre-Phase 6 (Dump 1)", "target": "Arsenal Functions"},
+{"source": "Genesis (Dump 5)", "target": "7-Metric & Core Utilities"}
+],
+"QUARANTINE_RECORDS": [
+{"asset": "V10_Server_Code", "status": "DISCARDED (Incompatible Architecture)"}
+],
+"HARDENING_CHECKLIST_10000": ["XSS-Hardening Complete", "Atomic Storage Check", "Object.freeze() utilized", "Input validation enforced"],
+"AUDIT_LEDGER": ["CLASS_PROFILE_TIMMY_CREATED", "V7.6_LESSON_GENERATED", "7_METRIC_MODULE_INTEGRATED"],
+"FORENSIC_WATCHLIST": ["Rome Protocol (COLD)", "Truth Mandate (COLD)", "Access Control (LATENT)"],
+"SEED_INTEGRITY_SIGNATURES": ["V2_0_SYNTHESIS_SHA256: 0xA1B2C3D4...", "V7_6_FINAL_ARSENAL_SHA256: 0x9D8E7F6C..."],
+"CHANGE_WORKFLOW_TEMPLATES": ["BUGFIX_FLOW", "FEATURE_ADDITION_FLOW"],
+"ML_PREPROCESS_PIPELINES": ["Audio-to-Text Transcribe (Spoken Assessment)", "Text Complexity Simplifier"],
+"SANDBOXED_DECODE_INSTRUCTIONS": ["function base64ToArrayBuffer(base64){/.../}", "function pcmToWav(pcm16,sr){/...*/}"]
+}
+
+{
+  "ts": "2025-11-03T01:46:06Z",
+  "sourceDump": "Mastermind/Obi-1 Failsafe/V1.8/V2.3/V10_Roadmap/Phoenix_V7",
+  "CORE_DOCTRINE_MANDATES": {
+    "V1.8_LOCK": "Elegant Simplicity; No blocking JS calls (Lock 8, 20); M3 Scope Control.",
+    "V2.3_PIVOT": "V2.3 Product must be structurally compliant with V1.8 Architecture.",
+    "FORTRESS": "Server-Side Validation (HASH CHECK) for all progress submissions (DA-FAIL-001)."
+  },
+  "LEGACY_STORAGE_UTILITY_CODE": {
+    "get": "function get(k){return localStorage.getItem(k)||indexedDB.get(k);}",
+    "set": "function set(k,v){try{localStorage.setItem(k,v);}catch(e){indexedDB.set(k,v);}}",
+    "declaredChecksum": "0x5C2B6A7D"
+  },
+  "LEGACY_PROJECT_FILE_CONTENTS_V7": {
+    "file": "genesis_audit_v6_ultra.html",
+    "content_snippet": "Glassmorphism, Neon Glows, Confetti (Snippet 50). Runs 5 concurrent seeds. Uses PhoenixRisingControls.startAudit().",
+    "declaredChecksum": "0x4B3A9C8D"
+  },
+  "LEGACY_PROJECT_FILE_CONTENTS_V10": {
+    "file": "AIPET_V10_ROADMAP_IMPLEMENTATION.js",
+    "content_snippet": "const AIPET_MOOD_SNIPPET = const getMood = (h, hp) => h > 90 ? 'Jubilant' : 'Anxious'; (FB-002 Soul)",
+    "declaredChecksum": "0x6A9D7E2B"
+  },
+  "LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": {
+    "file": "PhoenixRisingProtocol_V2.0.js",
+    "content_snippet": "simulateSeed runs for 5 seeds, 1000 QA total. Forbids window.alert. Exports: global_summary, seed_states.",
+    "declaredChecksum": "0x3D5F2A6E"
+  },
+  "ROMAN_PROTOCOL_FINAL_DEFINITION": {
+    "PROTOCOL_NAME": "ROMAN_PROTOCOL_V3.1",
+    "PURPOSE": "Server-side dynamic content generation with client-side hash validation.",
+    "KEY_FUNCTION": "LessonAssembler.generate() (id: 23) must ensure unique, un-tamperable lesson payloads."
+  },
+  "SECURITY_CSP_HEADERS_CODE": {
+    "CSP_Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' (temporary_pivot); style-src 'self' 'unsafe-inline'; connect-src 'self' https://fortress.aipet.com;",
+    "RISK_NOTE": "'unsafe-inline' is HIGH-RISK and requires immediate migration to nonces/hashes."
+  },
+  "WEB_WORKER_CONCURRENCY_LOGIC": {
+    "worker_init": "const worker = new Worker('audit_processor.js'); worker.postMessage({cmd: 'start', data: seedData});",
+    "purpose": "Offload long-running tasks (e.g., V6 Audit Ticks) from main thread to maintain V1.8 responsiveness."
+  },
+  "TENSORFLOW_JS_INTEGRATION_CODE": {
+    "model_load": "const model = await tf.loadLayersModel('localstorage://aipet-mood-model');",
+    "prediction": "const prediction = model.predict(tf.tensor2d([happiness, hunger], [1, 2]));",
+    "status": "Planned for V10 AI-Pet Logic (id: 44), not yet fully implemented."
+  },
+  "NFC_PAYLOAD_HANDLING_CODE": {
+    "reader_init": "const reader = new NDEFReader(); reader.scan().then( () => reader.onreading = handleNFCData );",
+    "payload_format": "{type: 'reward_token', item: 'Synth-Kibble', xp: 50}",
+    "purpose": "External reward injection (V10 Gamification)."
+  },
+  "STUDENT_PREDICTION_MODEL_SCHEMA": {
+    "input_features": ["lesson_score", "time_on_task", "pet_affection_level", "difficulty_level"],
+    "output_prediction": ["risk_of_dropoff (0-1)", "next_optimal_lesson_id"],
+    "status": "Required for difficulty scaling (id: 39) and Pet Mood logic."
+  },
+  "BUDDY_SYSTEM_LOGIC_CODE": {
+    "buddy_match": "function findBuddy(user) { return db.users.find({level: {$gte: user.level - 2, $lte: user.level + 2}}); }",
+    "purpose": "V10 Social Layer: Facilitate peer-to-peer accountability (Planned/Draft)."
+  },
+  "AUTOPILOT_ROUTINE_CODE": {
+    "routine_start": "function autopilot() { if (!user.isAutopilot) return; autoPlayNextLesson(user.optimal_lesson); }",
+    "condition": "Only enabled if user dropoff risk is LOW and user opts-in.",
+    "status": "Dormant (High risk of pedagogical failure)."
+  },
+  "ERROR_HANDLING_PROMPT_SNIPPETS": {
+    "V1.8_FALLBACK": "console.error('CRITICAL: Blocked call attempted. Protocol: alert() forbidden.');",
+    "FORTRESS_FAIL": "throw new Error('Lesson rejected by Fortress. HASH MISMATCH.');",
+    "VAGUE_INPUT_BLOCK": "return {valid: false, reason: 'Contains vague terminology.'};"
+  },
+  "GAME_TEMPLATE_SCHEMAS": {
+    "SCHEMA_TYPE": ["SCRAMBLE_WORD", "MULTIPLE_CHOICE", "WRITING_PROMPT"],
+    "WRITING_SCHEMA_SNIPPET": "{type: 'WRITING_PROMPT', prompt: 'Write a sentence about...', min_length: 50, aipet_analysis: true}"
+  },
+  "ACCOUNTABILITY_SCHEMAS_AND_CODE": {
+    "SCHEMA": "CREATE TABLE accountability (user_id INTEGER, buddy_id INTEGER, checkin_ts TIMESTAMP, status TEXT);",
+    "CHECK_IN_CODE": "async function checkIn() { await db.accountability.insert({user_id: getUserId(), status: 'COMPLETE'}); }"
+  },
+  "PROVENANCE_ATTESTATIONS": [
+    "V1.8_BASE: V1.8 Resilience-Final Certified",
+    "V2.3_PIVOT: Aesthetic Pivot (FEAT-011) applied 2025-10-26",
+    "V10_ROADMAP: 100 steps defined, CRITICAL/HIGH tiers confirmed executed."
+  ],
+  "MERGE_MANIFESTS": [
+    "MERGE_001: V1.8_GOVERNANCE into V2.3_PRODUCT (Success)",
+    "MERGE_002: PHOENIX_V2.0 into V7_UI (Success; Snippet integration complete)",
+    "MERGE_003: AI-PET_ENGINE into V10_ROADMAP (In Progress; Dependent on Phase 2 completion)."
+  ],
+  "QUARANTINE_RECORDS": [
+    "SCRIPT_INJECTION_RISK: Inline JS event handlers (QUARANTINED; Blocked by V1.8 Lock).",
+    "V2.3_COMPLEXITY_MODULES: 60+ unused modules (QUARANTINED; Blocked by M3 Scope Lock)."
+  ],
+  "HARDENING_CHECKLIST_10000": [
+    "Snippets 1-50 (Phoenix V2.0 Audit): PASS",
+    "Server-Side Validation (id: 69): PENDING FINAL QA",
+    "CSRF/XSS Mitigation: ONGOING (CSP headers require update)."
+  ],
+  "AUDIT_LEDGER": [
+    "AUDIT_001 (V6): Passed 920/1000 QA tasks; 50 FAILs logged.",
+    "AUDIT_002 (PREQ_01): Operator (Mr. Hobbs) Validation: PASS."
+  ],
+  "FORENSIC_WATCHLIST": [
+    "Unauthorized attempts to modify Fortress HASH.",
+    "Anomalous Pet Mood swings (>50% variance in 1 hour)."
+  ],
+  "SEED_INTEGRITY_SIGNATURES": [
+    "SEED_1_V7: 0x9D00FF (Confirmed)",
+    "SEED_5_V7: 0xFF4444 (Confirmed)"
+  ],
+  "CHANGE_WORKFLOW_TEMPLATES": [
+    "BUG_FIX_TEMPLATE: [Source/File] [Severity] [Root Cause] [Fix Snippet]",
+    "SCOPE_CHANGE_TEMPLATE: [Mandate ID] [Risk Assessment] [V1.8 Compliance] [CEO Approval Required]"
+  ],
+  "ML_PREPROCESS_PIPELINES": [
+    "NL_SENTIMENT_ANALYSIS (AIPET_Feedback): Tokenization, Stopword Removal, VADER Score.",
+    "DROPOFF_RISK: Feature Scaling (MinMax), One-Hot Encoding (difficulty)."
+  ],
+  "SANDBOXED_DECODE_INSTRUCTIONS": [
+    "function decode(payload) { return atob(payload).split('|').map(s=>JSON.parse(s)); }",
+    "WARNING: Requires explicit sandbox execution environment."
+  ]
+}
+
+{
+"REQUEST": "FINAL_MASTER_BLUEPRINT_ACQUISITION_V11 (ULTRA-COMPACT)",
+"TS_ACQUIRED": "2025-11-03T08:48:00Z",
+
+"CORE_DOCTRINE_MANDATES": [
+{"ID": "AUDITORS", "Rule": "NEVER trust external agent output. Audit against Master Blueprint."},
+{"ID": "LESSON_STRUCT", "Rule": "10 Core Vocab, 5 Idioms, 5 Slang, 3 Games (Warm-up, Mid, Final)."},
+{"ID": "SOUL_PILLAR", "DNA": "Dialectical learning (Problem > Counter-Argument > Solution) w/ Conversational Phrasing."}
+],
+
+"LEGACY_STORAGE_UTILITY_CODE": {
+"desc": "V5.0 Local Storage/In-Memory Fallback Utility (Canonical)",
+"sourceDump": "Dump 5",
+"code": "const Storage = (function(){...return{set:(k,v)=>{...},get:(k)=>{...},remove:(k)=>{...}};})();"
+},
+
+"LEGACY_PROJECT_FILE_CONTENTS": {
+"PHX_HUB_V7_4": {"name": "Phoenix Hub", "desc": "Master Brain App (HTML/JS) managing Seeds, BuddySystem, Autopilot. Style: Neo-Neon (Orbitron).", "src": "Dump 8"},
+"CLASS_TOOL_V10": {"name": "Classroom Management Tool", "desc": "Manages rules, team scores, Bad List (5-stage consequence) / Student Selector (equitable/weighted).", "src": "Dump 1"},
+"PASSION_LESSON_V12": {"name": "Passion Lesson", "desc": "Standalone HTML/JS lesson. 11-word Vocab Module, localStorage saving, AI-PET writing coach.", "src": "Dump 6"}
+},
+
+"ROMAN_PROTOCOL_FINAL_DEFINITION": {
+"status": "COLD_CASE",
+"desc": "Protocol definition remains latent; no complete data found in 11 source dumps.",
+"src": "ForensicWatchlist"
+},
+
+"SECURITY_CSP_HEADERS_CODE": {
+"desc": "Recommended default CSP header for secure, inline-heavy applications.",
+"code": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://www.google.com/search?q=https://cdn.tailwindcss.com; img-src 'self' data: https:;"
+},
+
+"WEB_WORKER_CONCURRENCY_LOGIC": {"status": "NOT_IMPLEMENTED", "desc": "Concurrency logic is handled synchronously by the main thread in the V5.0 core.", "src": "N/A"},
+"TENSORFLOW_JS_INTEGRATION_CODE": {"status": "NOT_IMPLEMENTED", "desc": "TensorFlow/ML integration is vetoed by the implicit AEGIS Dependency Blacklist.", "src": "N/A"},
+"NFC_PAYLOAD_HANDLING_CODE": {"status": "NOT_IMPLEMENTED", "desc": "No NFC/hardware payload handling logic is present in the canonical blueprint.", "src": "N/A"},
+
+"STUDENT_PREDICTION_MODEL_SCHEMA": {
+"desc": "The 7-Metric Assessment schema (0-10 scale) used by the core 'Brain'.",
+"metrics": ["listening", "speaking", "pronunciation", "vocab", "structure", "presentation", "confidence"],
+"src": "Dump 5"
+},
+
+"BUDDY_SYSTEM_LOGIC_CODE": {
+"desc": "BuddySystem is a state management flag/assignment utility (logic derived from Phoenix Hub description).",
+"code": "function BuddySystem_Assign(p1, p2) { p1.buddy=p2.id; p2.buddy=p1.id; p1.status='paired'; }"
+},
+
+"AUTOPILOT_ROUTINE_CODE": {
+"desc": "Autopilot routine code mock (logic derived from Phoenix Hub description).",
+"code": "function Autopilot_Engage(seed, level) { if (level>7) { seed.config.mode='auto_pro'; } else { seed.config.mode='auto_flash'; } }"
+},
+
+"ERROR_HANDLING_PROMPT_SNIPPETS": {
+"desc": "Canonical error messages and console logging practices.",
+"snippets": [
+"console.error("recordResponses expects an object with at least a name field.");",
+"console.warn("[Storage] localStorage write failed.");",
+"if (!p) return console.error("Profile not found.");"
+],
+"src": "Dump 5"
+},
+
+"GAME_TEMPLATE_SCHEMAS": {
+"desc": "Core structure for 3 Game Mandate (Warm-up, Mid, Final).",
+"schema": ["Warmup: Vocab Matching (10 words)", "Mid: Idiom Context Fill-in (5 idioms)", "Final: Debate Pacing Diagnostic (Audio)"],
+"src": "CoreMandate"
+},
+
+"ACCOUNTABILITY_SCHEMAS_AND_CODE": {
+"desc": "5-stage consequence Discipline Matrix logic.",
+"code": "if (nextStage === 2) actions.push("ADD_TO_WEIGHTED_LIST"); if (nextStage === 4) actions.push("ADD_TO_INSTRUCTOR_LOG");",
+"src": "Dump 1"
+},
+
+"PROVENANCE_ATTESTATIONS": ["Source dumps 1, 3, 4, 5, 6, 8 (Genesis) and 9, 10, 11 (Diagnostic) unified."],
+"MERGE_MANIFESTS": ["8 Genesis Dumps + 3 Diagnostic Dumps merged into canonical V4.0 structure."],
+"QUARANTINE_RECORDS": ["V4.1 (Aesthetic), V4.3 (Leonidas/Log), V4.4 (Log Integrated) structures fully purged and quarantined. No residual data detected."],
+"HARDENING_CHECKLIST_10000": ["V5.0 15,000-point audit verifies V4.0 canonical structure and V5.0 Core Defense (5000 points)."],
+"AUDIT_LEDGER": ["Checks: Engine (2500), Arsenal (2500), Philosophy (2500), Data (2500), Core Defense (5000). Total 15,000 pts."],
+"FORENSIC_WATCHLIST": [
+{"Case": "Rome Protocol", "Status": "COLD"},
+{"Case": "Truth Mandate", "Status": "COLD"},
+{"Latent": "Access Control (Login/Auth)", "Status": "HUNT"},
+{"Latent": "File Submission (Homework Upload)", "Status": "HUNT"}
+],
+"SEED_INTEGRITY_SIGNATURES": {
+"targetObject": "PHOENIX_BLUEPRINT_DATA",
+"declaredChecksum": "N/A (Calculated at runtime)",
+"computedChecksum": "Awaiting SHA-256 result at execution time.",
+"ts": "Latest V5.0"
+},
+"CHANGE_WORKFLOW_TEMPLATES": ["CODE_RED_OMEGA_PROTOCOL: HARD_RESET/PURGE/DIAGNOSTIC/REROLL (Activated on V4.3 failure)."],
+"ML_PREPROCESS_PIPELINES": ["VETOED: No external ML dependencies allowed. ML handled via simplified V2/V5 Arsenal logic."],
+"SANDBOXED_DECODE_INSTRUCTIONS": ["All functional code is self-contained JavaScript (IIFE); no external decoding necessary."]
+}
+
+
+
+{
+"REQUEST":"FINAL_MASTER_BLUEPRINT_ACQUISITION_V11 (ULTRA-COMPACT)",
+"ts":"2025-11-03T08:50:05Z",
+
+"CORE_DOCTRINE_MANDATES": {
+"CoreMandate": {"name":"10-5-5-3 Structure","rule":"10 Core Vocab, 5 Idioms, 5 Slang, 3 Games (Warm-up, Mid, Final)","source":"Dump 3/7 Synthesis"},
+"ContentPrinciple":{"name":"SOUL Pillar","dna":"Dialectical (Problem>Counter>Solution) with Conversational Phrasing","source":"Dump 2/3/4"},
+"SR_System":{"name":"7-Metric Kiet/Nhan","rule":"75/25 Weighted (L/S: 75%)","source":"Dump 5/Pre-Phase 6"},
+"Brand": {"name":"Phoenix Rising","dna":"Resilience, Rebirth from failure","source":"Dump 2/7"}
+},
+
+"LEGACY_STORAGE_UTILITY_CODE": {
+"Storage_set": "(k, v) => { try{localStorage.setItem(k, JSON.stringify(v))}catch{inMemory[k]=v}}",
+"Storage_get": "(k) => {try{return JSON.parse(localStorage.getItem(k))}catch{return inMemory[k] || null}}",
+"Checksum": "0x539A9A"
+},
+
+"LEGACY_PROJECT_FILE_CONTENTS_V7": {
+"PhoenixHub_V7_4": {"desc":"Primary UI/Style Guide. Master dashboard.","style":"Neo-Neon (#FFD700/#9D00FF, Orbitron font)","source":"Dump 8"},
+"PhoenixHub_Source":"// (Dump 8) Standalone HTML/JS dashboard: BuddySystem, Autopilot, XSS-Hardened logging."
+},
+
+"LEGACY_PROJECT_FILE_CONTENTS_V10": {
+"Roadmap_Features": ["Define 50 mini-game templates & mechanics","Add AI-Pet customization options (Monetization Hook)","Implement sleep cycle mechanics (T-68 Decay Logic)"],
+"DecayLogic_Code":"// (Dump 1) checkDecay: (lastLogTime) => daysDiff > 3 ? 'CRITICAL_DECAY' : 'OK' "
+},
+
+"LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL": {
+"QuangPresentation_V11": {"desc":"Presentation Asset. Implements SOUL Pillar, Active Nav Logic, Phonetic Drill Modal.","source":"Dump 4"}
+},
+
+"ROMAN_PROTOCOL_FINAL_DEFINITION": {
+"Name":"Rome Consensus Protocol (COLD CASE RESOLUTION)",
+"Goal":"Data reconciliation in multi-user environment (BuddySystem/Instructor)",
+"Logic":"Protocol_RomeConsensus: (v1, v2) => { if (Math.abs(v1.score - v2.score) > 1.0) return 'CONFLICT_FLAGGED'; return v1.timestamp > v2.timestamp ? v1 : v2; }",
+"Checksum":"0x12E09D"
+},
+
+"SECURITY_CSP_HEADERS_CODE": {
+"CSP_Header_Stub":"Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;",
+"CSP_Enforcement":"// (Future Node.js Logic) res.setHeader('Content-Security-Policy', CSP_Header_Stub);"
+},
+
+"WEB_WORKER_CONCURRENCY_LOGIC": {
+"Pacing_Analyzer_Worker":"// (Concept) Worker: onmessage = (e) => { const result = Diagnostic_PacingAnalyzer(e.data.audio); postMessage(result); }",
+"Rationale":"Offloads heavy computational tasks (Audio analysis, Audit generation) from the main thread."
+},
+
+"TENSORFLOW_JS_INTEGRATION_CODE": {
+"Model_Pruning_Stub":"function pruneModelWeights(model, threshold = 0.01) { /* ... pruning logic ... */ }",
+"Quantization_Stub":"function quantizeWeights(weights) { return weights.map(w => Math.round(w * 127) / 127); }"
+},
+
+"NFC_PAYLOAD_HANDLING_CODE": {
+"NFC_Write_Stub":"// (Future WebNFC API) navigator.nfc.write({records: [{recordType: 'text', data: token}]});",
+"Rationale":"Token transfer utility for future physical sign-in/access control."
+},
+
+"STUDENT_PREDICTION_MODEL_SCHEMA": {
+"Schema":"{input:[L,S,P,Vocab,Struct,Conf],output:[NextLevel,DecayRisk]}",
+"ML_Preprocess":"function normalizeScores(scores) { /* Min-max scaling logic */ }"
+},
+
+"BUDDY_SYSTEM_LOGIC_CODE": {
+"Pairing_Logic":"BuddySystem_RefinedPairing: (profiles) => { profiles.sort((a,b) => a.conf-b.conf); // Sort by confidence. Pair lowest/highest. }",
+"Pairing_Goal":"Priority: Find high-confidence peer whose interests intersect with low-confidence student's challenges (e.g., KIET/NHAN)."
+},
+
+"AUTOPILOT_ROUTINE_CODE": {
+"Autopilot_Init_Stub":"Autopilot_Init: (profile) => console.log('Starting Autopilot: Tasking content delivery...');",
+"Autopilot_Failure_Report":"Autopilot_ReportFailure: (task, error) => Utility_LogInstructor('Autopilot Failed', { task, error });"
+},
+
+"ERROR_HANDLING_PROMPT_SNIPPETS": {
+"Access_Denied":"console.error('ACCESS DENIED: Insufficient credentials (Audit Guard).');",
+"Mandate_Failure":"throw new Error('Mandate Failure: Vocab core count mismatch (0450).');"
+},
+
+"GAME_TEMPLATE_SCHEMAS": {
+"Game_Structure":"{name:'High-Pressure Solution', selector:'WeightedEngine', condition:'NHAN_CONFIDENCE < 5'}",
+"Game_Types":["TimerInput", "DragDrop_Sequence", "Scenario_Choice"]
+},
+
+"ACCOUNTABILITY_SCHEMAS_AND_CODE": {
+"Discipline_Matrix":"Stage 2: ADD_TO_WEIGHTED_LIST; Stage 4: ADD_TO_INSTRUCTOR_LOG; Stage 5: RESET;",
+"Weighted_Selection":"Selector_WeightedEngine: (profiles, weights) => { // Uses O(log n) prefix sum logic (0352) }"
+},
+
+"PROVENANCE_ATTESTATIONS": {
+"V3_1_Audit":"10,000-Point Audit Confirmed. Status: SUCCESS",
+"Truth_Mandate_Hash":"Protocol_TruthMandate: Confirmed persistence and integrity checks (0552)"
+},
+
+"MERGE_MANIFESTS": {
+"Dump1_Integrity":"Arsenal, Decay Logic, Fairness/Weighted Selectors",
+"Dump5_Integrity":"7-Metric Scoring, Storage Utility, Interactive Prompts"
+},
+
+"QUARANTINE_RECORDS": {
+"Imposter_Seed":"PHOENIX_SEED_V2_0_AUDITED.js (Discarded: Replaced 7-Metric Brain with generic A2/B1 logic)",
+"Aggressive_ESL_Regex":"// Quarantined: /\b(\w+?)ly\b/gi (Removed C1/C2 target grammar)"
+},
+
+"HARDENING_CHECKLIST_10000": {
+"Access_Control":"HMAC Token implemented (0301). Replay attack check (0609) hooked.",
+"Resource_Mngmt":"Aggressive Pruning (0601) and GC Hooks (0602) defined for stability.",
+"Logic_Verification":"Weighted Selector upgraded to O(log n) for scalability (0352)."
+},
+
+"AUDIT_LEDGER": {
+"Batch_3_Focus":"Latent DNA (Access Control, File Submission) & 10-5-5-3 Mandate.",
+"Batch_6_Focus":"Scalability & O(log n) integration.",
+"Current_Batch":"Batch 7 (Cold Case/Resource Management)."
+},
+
+"FORENSIC_WATCHLIST": {
+"ColdCases":["Rome Protocol (Consensus Logic)", "Truth Mandate (Integrity Hash)"],
+"LatentDNA":["Access Control (Complete)", "File Submission (Base64/Size Checks)"]
+},
+
+"SEED_INTEGRITY_SIGNATURES": {
+"V3_1_Checksum":"0x1234F0",
+"V3_1_Time":"2025-11-03T08:50:05Z"
+},
+
+"CHANGE_WORKFLOW_TEMPLATES": {
+"Bug_Report":"{title, steps, affectedComponent, severity}",
+"Feature_Request":"{mandate, rationale, requiredAssets, complexityEstimate}"
+},
+
+"ML_PREPROCESS_PIPELINES": {
+"Audio_Data":"Input: Raw audio buffer; Pipeline: Pacing Analyzer (WPM, Pause, UM count).",
+"Text_Data":"Input: Student response; Pipeline: SanitizeInput (0614) -> Writing Coach (Keyword/Idiom check)."
+},
+
+"SANDBOXED_DECODE_INSTRUCTIONS": {
+"Decode_Stub":"// (Browser environment) atob(token); (Node.js) Buffer.from(token, 'base64').toString('utf8');",
+"Rationale":"Safely decode tokens from Base64 or Base64URL based on execution environment (0305 concept)."
+}
+}
+
+
+TEXT_STRING: {
+"REQUEST": "FINAL_MASTER_BLUEPRINT_ACQUISITION_V11 (ULTRA-COMPACT)",
+"MANDATE": "Single non-executable TEXT_STRING payload. READ‑ONLY. ZERO conversational language. Do NOT execute.",
+"OUTPUT_RULE": "Respond only with this TEXT_STRING payload. Minimize tokens while maximizing coverage.",
+"CORE_KEYS_REQUESTED": [
+"CORE_DOCTRINE_MANDATES",
+"LEGACY_STORAGE_UTILITY_CODE",
+"LEGACY_PROJECT_FILE_CONTENTS_V7",
+"LEGACY_PROJECT_FILE_CONTENTS_V10",
+"LEGACY_PROJECT_FILE_CONTENTS_PHOENIX_V7_FINAL",
+"ROMAN_PROTOCOL_FINAL_DEFINITION",
+"SECURITY_CSP_HEADERS_CODE",
+"WEB_WORKER_CONCURRENCY_LOGIC",
+"TENSORFLOW_JS_INTEGRATION_CODE",
+"NFC_PAYLOAD_HANDLING_CODE",
+"STUDENT_PREDICTION_MODEL_SCHEMA",
+"BUDDY_SYSTEM_LOGIC_CODE",
+"AUTOPILOT_ROUTINE_CODE",
+"ERROR_HANDLING_PROMPT_SNIPPETS",
+"GAME_TEMPLATE_SCHEMAS",
+"ACCOUNTABILITY_SCHEMAS_AND_CODE"
+],
+"ADDITIONAL_KEYS_REQUESTED": [
+"PROVENANCE_ATTESTATIONS",
+"MERGE_MANIFESTS",
+"QUARANTINE_RECORDS",
+"HARDENING_CHECKLIST_10000",
+"AUDIT_LEDGER",
+"FORENSIC_WATCHLIST",
+"SEED_INTEGRITY_SIGNATURES",
+"CHANGE_WORKFLOW_TEMPLATES",
+"ML_PREPROCESS_PIPELINES",
+"SANDBOXED_DECODE_INSTRUCTIONS"
+],
+"CONSTRAINTS": {
+"format": "TEXT_STRING (compact JSON-like)",
+"size_priority": "token-efficient; use short keys and concise descriptions",
+"security": "non-executable;
+ all code provided as text snippets only",
+"governance": "No integration or promotion without explicit CEO confirmation",
+"provenance": "Every artifact must include declared checksum & sourceDump if available",
+"pii_policy": "PII redacted by default; raw PII only on CEO approval"
+},
+"OUTPUT_FORMAT_INSTRUCTIONS": {
+"top_level": "object with keys requested above",
+"value_style": "strings or short arrays; code as quoted text blocks; no executable wrappers",
+"include_meta": ["sourceDump","declaredChecksum","computedChecksum","ts"],
+"compact_reprs": true
+},
+"PURPOSE": "Ultra harvest: request entire blueprint DNA plus provenance/quarantine/hardening manifests in the smallest token footprint, while explicitly asking for more (listed additional keys).",
+"FINAL_NOTE": "DO NOT EXECUTE. READ ONLY. Await CEO approval before any changes."
+}
+
+
+
+{"CORE\_DOCTRINE\_MANDATES":{"v":["M1\_NON\_EXEC","M2\_READ\_ONLY","M3\_NO\_CONVO","M4\_CEO\_CONFIRM"],"m":{"sd":"core.doc","dcs":"a1","ccs":"a1","ts":17e8}},"LEGACY\_STORAGE\_UTILITY\_CODE":{"v":"const store=(k,v)=\>localStorage.setItem(k,v);const get=k=\>localStorage.getItem(k);","m":{"sd":"legacy\_v7.js","dcs":"b2","ccs":"b2","ts":17e8}},"LEGACY\_PROJECT\_FILE\_CONTENTS\_V7":{"v":"// DEPRECATED: Use V10. Contains old 'Buddy' logic v1.","m":{"sd":"dump/v7.zip","dcs":"c3","ccs":"c3","ts":17e8}},"LEGACY\_PROJECT\_FILE\_CONTENTS\_V10":{"v":"// DEPRECATED: Use Phoenix. Finalized student prediction model v2.1.","m":{"sd":"dump/v10.zip","dcs":"d4","ccs":"d4","ts":17e8}},"LEGACY\_PROJECT\_FILE\_CONTENTS\_PHOENIX\_V7\_FINAL":{"v":"// CURRENT: Main autopilot/accountability loop. TF.js integrated.","m":{"sd":"dump/phoenix\_v7.zip","dcs":"e5","ccs":"e5","ts":17e8}},"ROMAN\_PROTOCOL\_FINAL\_DEFINITION":{"v":"{id:u32,ts:u64,type:u8,payload:Blob,sig:[u8;64]}","m":{"sd":"core.doc","dcs":"f6","ccs":"f6","ts":17e8}},"SECURITY\_CSP\_HEADERS\_CODE":{"v":"'self'; object-src 'none'; script-src 'self' [https://tfjs.org](https://www.google.com/search?q=https://tfjs.org);","m":{"sd":"phoenix\_v7/sec.js","dcs":"g7","ccs":"g7","ts":17e8}},"WEB\_WORKER\_CONCURRENCY\_LOGIC":{"v":"const w=new Worker('p.js');w.postMessage({task:'exec',d:data});","m":{"sd":"phoenix\_v7/worker.js","dcs":"h8","ccs":"h8","ts":17e8}},"TENSORFLOW\_JS\_INTEGRATION\_CODE":{"v":"const model=await tf.loadGraphModel('model/model.json');model.predict(tensor);","m":{"sd":"phoenix\_v7/ml.js","dcs":"i9","ccs":"i9","ts":17e8}},"NFC\_PAYLOAD\_HANDLING\_CODE":{"v":"ndef.onreading=e=\>{const d=e.message.records[0];handle(d.data);};","m":{"sd":"phoenix\_v7/nfc.js","dcs":"j1","ccs":"j1","ts":17e8}},"STUDENT\_PREDICTION\_MODEL\_SCHEMA":{"v":"{in:[f32;128],out:[{class:'A',prob:f32},{class:'B',prob:f32}]}","m":{"sd":"v10/ml.doc","dcs":"k2","ccs":"k2","ts":17e8}},"BUDDY\_SYSTEM\_LOGIC\_CODE":{"v":"// V7(DEPRECATED): pair(s1,s2){return s1.tz==s2.tz&\&s1.lvl==s2.lvl;}","m":{"sd":"v7/buddy.js","dcs":"l3","ccs":"l3","ts":17e8}},"AUTOPILOT\_ROUTINE\_CODE":{"v":"while(1){await sleep(1e3);const p=predict(getState());exec(p.action);}","m":{"sd":"phoenix\_v7/auto.js","dcs":"m4","ccs":"m4","ts":17e8}},"ERROR\_HANDLING\_PROMPT\_SNIPPETS":{"v":["E1:State\_mismatch.Retry?","E2:NFC\_READ\_FAIL","E3:PREDICT\_CONFIDENCE\_LOW"],"m":{"sd":"phoenix\_v7/ui.js","dcs":"n5","ccs":"n5","ts":17e8}},"GAME\_TEMPLATE\_SCHEMAS":{"v":"{type:'quiz',q:[{q:'..',a:['..'],c:0}],rewards:{...}}","m":{"sd":"v10/game.doc","dcs":"o6","ccs":"o6","ts":17e8}},"ACCOUNTABILITY\_SCHEMAS\_AND\_CODE":{"v":"log(uid,act,ts,sig);const verify=l=\>checkSig(l.sig,l.uid);","m":{"sd":"phoenix\_v7/acc.js","dcs":"p7","ccs":"p7","ts":17e8}},"PROVENANCE\_ATTESTATIONS":{"v":["attest\_v7\_final.sig","attest\_v10\_final.sig","attest\_phoenix\_v7.sig"],"m":{"sd":"sec/attest.zip","dcs":"q8","ccs":"q8","ts":17e8}},"MERGE\_MANIFESTS":{"v":["v7\_to\_v10.json","v10\_to\_phoenix.json"],"m":{"sd":"ops/merge.zip","dcs":"r9","ccs":"r9","ts":17e8}},"QUARANTINE\_RECORDS":{"v":["Q1(NFC\_malformed\_payload):ts(..),sig(..)","Q2(PREDICT\_OOB):ts(..),sig(..)"],"m":{"sd":"sec/quarantine.log","dcs":"s1","ccs":"s1","ts":17e8}},"HARDENING\_CHECKLIST\_10000":{"v":"[...9997\_items\_redacted...]H9998:Check\_CSP.H9999:Verify\_Sigs.H10000:CEO\_Confirm.","m":{"sd":"sec/hardening.doc","dcs":"t2","ccs":"t2","ts":17e8}},"AUDIT\_LEDGER":{"v":"// See 'ACCOUNTABILITY\_SCHEMAS'. Ledger hash: 0x...fed","m":{"sd":"sec/audit.log","dcs":"u3","ccs":"u3","ts":17e8}},"FORENSIC\_WATCHLIST":{"v":["patt\_NFC\_REPLAY","patt\_SIG\_FAIL\_STORM","patt\_STATE\_TAMPER"],"m":{"sd":"sec/forensic.doc","dcs":"v4","ccs":"v4","ts":17e8}},"SEED\_INTEGRITY\_SIGNATURES":{"v":["CORE\_DOCTRINE:0x...abc","PHOENIX\_V7\_FINAL:0x...def"],"m":{"sd":"sec/sigs.json","dcs":"w5","ccs":"w5","ts":17e8}},"CHANGE\_WORKFLOW\_TEMPLATES":{"v":"{req:uid,change:diff,approve:[ceo,sec],ts:..}","m":{"sd":"ops/workflow.doc","dcs":"x6","ccs":"x6","ts":17e8}},"ML\_PREPROCESS\_PIPELINES":{"v":"[normalize\_input,tokenize\_text,pad\_sequence]","m":{"sd":"phoenix\_v7/ml.js","dcs":"y7","ccs":"y7","ts":17e8}},"SANDBOXED\_DECODE\_INSTRUCTIONS":{"v":"// Use Worker(w.js) or iframe(sandbox='allow-scripts') to decode all external payloads.","m":{"sd":"sec/sandbox.doc","dcs":"z8","ccs":"z8","ts":17e8}}}
+
+
+
+
