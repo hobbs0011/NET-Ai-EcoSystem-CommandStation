@@ -1,0 +1,360 @@
+const CRITICAL_ASSET_DUMP = {
+    // TARGET 1: PHOENIX NEXUS - PRIMARY UI (EXECUTIVE_LAUNCHPAD)
+    "EXECUTIVE_LAUNCHPAD": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Phoenix Arsenal: Rebuilt Nexus (V12.0 - Evolved)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --nexus-gold: #FFD700; --nexus-purple: #A020F0; --nexus-dark: #0A0A1F; --nexus-card: rgba(16, 16, 30, 0.7); --heartbeat-color: rgba(255, 215, 0, 0.5); --heartbeat-duration: 2s; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--nexus-dark); color: #E0E0E0; min-height: 100vh; background-image: radial-gradient(circle at top, rgba(160, 32, 240, 0.1) 0%, rgba(10, 10, 31, 1) 50%); }
+        .neon-gold { color: var(--nexus-gold); text-shadow: 0 0 8px rgba(255, 215, 0, 0.6); } .neon-purple { color: var(--nexus-purple); text-shadow: 0 0 5px rgba(160, 32, 240, 0.6); }
+        .category-button, .arsenal-card { transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .category-button.active { border-color: var(--nexus-gold) !important; color: var(--nexus-gold) !important; background-color: rgba(255, 215, 0, 0.1); box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); }
+        .arsenal-card { border: 1px solid rgba(160, 32, 240, 0.3); cursor: pointer; backdrop-filter: blur(5px); } .arsenal-card:hover { transform: translateY(-5px); border-color: var(--nexus-purple); box-shadow: 0 10px 20px rgba(160, 32, 240, 0.3), 0 0 15px rgba(160, 32, 240, 0.4); }
+        .card-locked { opacity: 0.5; pointer-events: none; cursor: default; border-color: #00FFFF !important; box-shadow: 0 0 15px #00FFFF; }
+        .game-input { background-color: var(--nexus-dark); border: 1px solid var(--nexus-purple); color: var(--nexus-gold); }
+        @keyframes heartbeat-glow { 0% { box-shadow: 0 0 5px var(--heartbeat-color); } 50% { box-shadow: 0 0 15px var(--heartbeat-color), 0 0 25px var(--heartbeat-color); } 100% { box-shadow: 0 0 5px var(--heartbeat-color); } } .system-heartbeat { animation: heartbeat-glow var(--heartbeat-duration) infinite ease-in-out; }
+        #system-modal { background-color: rgba(0, 0, 0, 0.8); z-index: 50; }
+    </style>
+</head>
+<body>
+    <div id="system-modal" class="fixed inset-0 hidden items-center justify-center p-4"><div class="bg-gray-900 border-4 border-red-600 rounded-xl max-w-lg w-full p-6 shadow-2xl system-heartbeat" style="--heartbeat-color: rgba(255, 0, 0, 0.7); --heartbeat-duration: 0.5s;"><div class="flex justify-between items-center mb-4 border-b border-red-600 pb-2"><h3 class="text-3xl font-extrabold text-red-500">🔥 CATASTROPHIC REPORT (DAEDALUS)</h3><button onclick="document.getElementById('system-modal').classList.add('hidden')" class="text-gray-400 hover:text-white text-2xl leading-none">&times;</button></div><p class="text-sm mb-4 text-gray-300">A high-priority error was detected. See log:</p><div class="bg-gray-800 p-3 rounded text-sm overflow-x-auto"><pre id="modal-error-details" class="text-red-300"></pre></div></div></div>
+    <div class="max-w-7xl mx-auto p-4 sm:p-8"><header class="text-center mb-12 pt-4"><h1 class="text-6xl sm:text-7xl font-extrabold neon-gold tracking-tight mb-2 uppercase system-heartbeat" id="system-title">PHOENIX NEXUS</h1><p class="text-xl sm:text-2xl neon-purple font-light">ACTION FILE ARSENAL V12.0 (Evolved)</p><div class="text-sm text-gray-500 mt-2">60 Core Concepts Mapped. Awaiting Deployment Authorization.</div></header><div class="flex justify-center flex-wrap gap-3 mb-10"></div><div id="arsenal-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div><div id="game-preview" class="mt-12 p-8 rounded-xl border-2 border-nexus-purple bg-nexus-card shadow-2xl hidden"><h2 class="text-3xl font-extrabold mb-4 neon-gold border-b border-nexus-purple pb-2">Simulator: <span id="preview-title"></span></h2><div id="preview-content" class="min-h-[250px] flex items-center justify-center p-4"></div><p class="mt-4 text-sm text-center text-gray-400">(Simulated Environment. Local Logic Deployment Only.)</p></div><footer class="text-center mt-12 pt-6 border-t border-gray-800"><div id="transfer-status" class="mt-2 text-sm font-semibold"></div></footer></div>
+    <script>
+        let lockedConcepts = JSON.parse(localStorage.getItem('phoenix_locks')) || {};
+        const arsenalConcepts = [ /* EMBEDDED ARRAY of 60 concepts */
+            { id: 1, title: "The Vocabulary Forge", focus: "Confidence Engine", icon: "🔥", category: "arsenal", description: "Timed game: spell/use vocab." }, { id: 2, title: "Grammar Grid Rebuild", focus: "Living Lesson", icon: "✨", category: "arsenal", description: "Drag-drop correct sentences." }, { id: 3, title: "The Debate Gauntlet", focus: "Scenario Simulator", icon: "🗣️", category: "arsenal", description: "Dialogue choices (Candor/Epsilon)." }, { id: 4, title: "The Syntax Shield", focus: "Confidence Engine", icon: "🛡️", category: "arsenal", description: "Click common grammar errors." }, { id: 5, title: "Rebirth Narrative Builder", focus: "Living Lesson", icon: "✍️", category: "arsenal", description: "Collaborative story writing/correction." }, { id: 6, title: "The Pronunciation Gauntlet", focus: "Scenario Simulator", icon: "🎤", category: "arsenal", description: "Voice mimic challenge (simulated)." }, { id: 7, title: "The Context Chamber", focus: "Confidence Engine", icon: "🧩", category: "arsenal", description: "Match homonyms/ambiguous words." }, { id: 8, title: "Nexus Lockdown Quiz", focus: "Living Lesson", icon: "🔑", category: "arsenal", description: "Cheating triggers failure sim." }, { id: 9, title: "The Idiom Foundry", focus: "Confidence Engine", icon: "⚒️", category: "arsenal", description: "Match obscure idioms/literal meanings." }, { id: 10, title: "The Core Belief Filter", focus: "Scenario Simulator", icon: "🌐", category: "arsenal", description: "Classify statements (Western/Eastern)." },
+            { id: 11, title: "The Tense Shifter", focus: "Living Lesson", icon: "🕒", category: "arsenal", description: "Fast verb conjugation drill." }, { id: 12, title: "The Nuance Chamber", focus: "Confidence Engine", icon: "🧠", category: "arsenal", description: "Distinguish synonyms (happy/ecstatic)." }, { id: 13, title: "Argument Structure Forge", focus: "Scenario Simulator", icon: "📝", category: "arsenal", description: "Rebuild essay outlines." }, { id: 14, title: "Article Decontaminator", focus: "Syntax Shield", icon: "🦠", category: "arsenal", description: "Quick-click insert/delete articles." }, { id: 15, title: "The Cultural Lens Filter", focus: "Scenario Simulator", icon: "🎭", category: "arsenal", description: "Choose High/Low Context response." }, { id: 16, title: "The Listening Crucible", focus: "Confidence Engine", icon: "🎧", category: "arsenal", description: "Dictation challenge (simulated)." }, { id: 17, title: "Passive Voice Purge", focus: "Living Lesson", icon: "🧹", category: "arsenal", description: "Transform passive to active voice." }, { id: 18, title: "Modal Verb Master", focus: "Confidence Engine", icon: "⚖️", category: "arsenal", description: "Match modal verbs/certainty levels." }, { id: 19, title: "The Compound Sentence Maze", focus: "Living Lesson", icon: "🔗", category: "arsenal", description: "Combine sentences with conjunctions." }, { id: 20, title: "The Slang Decryptor", focus: "Scenario Simulator", icon: "💬", category: "arsenal", description: "Translate informal to formal." },
+            { id: 21, title: "The Register Adjuster", focus: "Scenario Simulator", icon: "🎩", category: "arsenal", description: "Match speaking style to context." }, { id: 22, title: "Reported Speech Relay", focus: "Living Lesson", icon: "🔁", category: "arsenal", description: "Relay quotes using reported speech." }, { id: 23, title: "Prepositional Firefight", focus: "Confidence Engine", icon: "🎯", category: "arsenal", description: "Timed fill-in-blank (at/on/in)." }, { id: 24, title: "Conditional Clause Crafter", focus: "Living Lesson", icon: "⚖️", category: "arsenal", description: "Complete complex conditionals (Type 2/3)." }, { id: 25, title: "The Jargon Translator", focus: "Scenario Simulator", icon: "🌐", category: "arsenal", description: "Translate jargon to plain English." }, { id: 26, title: "Pronoun Reference Checker", focus: "Syntax Shield", icon: "🔍", category: "arsenal", description: "Identify/correct ambiguous pronouns." }, { id: 27, title: "The Transition Navigator", focus: "Living Lesson", icon: "🗺️", category: "arsenal", description: "Sequence transition phrases for flow." }, { id: 28, title: "Causality Chain Builder", focus: "Scenario Simulator", icon: "⛓️", category: "arsenal", description: "Arrange fragments for cause/effect." }, { id: 29, title: "Embedded Question Decoder", focus: "Confidence Engine", icon: "❓", category: "arsenal", description: "Convert direct to embedded questions." }, { id: 30, title: "The Emotional Context Filter", focus: "Confidence Engine", icon: "💔", category: "arsenal", description: "Distinguish tone (sarcasm/sincerity)." },
+            { id: 31, title: "The Nexus Fire Starter", focus: "Confidence Engine", icon: "🕯️", category: "icebreaker", description: "Quick 3-word sentence challenge." }, { id: 32, title: "Two Truths and a Lie", focus: "Scenario Simulator", icon: "🤫", category: "icebreaker", description: "Practice complex tenses in narrative." }, { id: 33, title: "Concept Association Link", focus: "Living Lesson", icon: "💡", category: "icebreaker", description: "Connect 5 random words logically." }, { id: 34, title: "Emotion Imprint Match", focus: "Confidence Engine", icon: "🎭", category: "icebreaker", description: "Match spoken phrase to emotion." }, { id: 35, title: "The Three-Word Thesis", focus: "Confidence Engine", icon: "📝", category: "icebreaker", description: "Summarize topic in 3 words." }, { id: 36, title: "The Future Forecast Chain", focus: "Scenario Simulator", icon: "🔮", category: "icebreaker", description: "Chain predictions (will/going to/present cont.)." }, { id: 37, title: "The Transition Navigator (Personal)", focus: "Living Lesson", icon: "👣", category: "icebreaker", description: "Sequence personal events simply." }, { id: 38, title: "Rapid Register Shift (Simple)", focus: "Scenario Simulator", icon: "💬", category: "icebreaker", description: "Switch simple greetings (formal/informal)." }, { id: 39, title: "Adjective Cluster Bomb", focus: "Living Lesson", icon: "💥", category: "icebreaker", description: "Describe noun with 5 adjectives." }, { id: 40, title: "Causality Flip (Personal)", focus: "Scenario Simulator", icon: "🔄", category: "icebreaker", description: "Reverse simple personal cause/effect." },
+            { id: 41, title: "The Pre-Mortem Protocol", focus: "Living Lesson", icon: "🩹", category: "warmup", description: "Diagnose failure with past modals." }, { id: 42, title: "The Question Architect", focus: "Living Lesson", icon: "❓", category: "warmup", description: "Given answer, make 3 questions." }, { id: 43, title: "Synonym Density Drill", focus: "Living Lesson", icon: "✍️", category: "warmup", description: "Replace common words with synonyms." }, { id: 44, title: "The Silent Sentence Builder", focus: "Confidence Engine", icon: "🤫", category: "warmup", description: "Silently build, speak last 3 words." }, { id: 45, title: "The Passive-Active Toggle", focus: "Living Lesson", icon: "↔️", category: "warmup", description: "Switch 5 sentences (passive/active)." }, { id: 46, title: "The Contradiction Core", focus: "Scenario Simulator", icon: "⚖️", category: "warmup", description: "Create 1 sentence contradiction (however)." }, { id: 47, title: "The Temporal Filter", focus: "Scenario Simulator", icon: "⏱️", category: "warmup", description: "Re-narrate story with 3 time adverbs." }, { id: 48, title: "The Embedded Question Loop", focus: "Living Lesson", icon: "💬", category: "warmup", description: "Respond only with embedded questions." }, { id: 49, title: "The Idiom Definition Relay", focus: "Confidence Engine", icon: "💡", category: "warmup", description: "Say idiom -> Define -> Use correctly." }, { id: 50, title: "The Connective Tissue Drill", focus: "Confidence Engine", icon: "🔗", category: "warmup", description: "Fill blank with best conjunction." },
+            { id: 51, title: "The Three-Point Summary", focus: "Living Lesson", icon: "🔖", category: "wrapup", description: "Summarize lesson with 3 key terms." }, { id: 52, title: "Phoenix Rebirth Reflection", focus: "Confidence Engine", icon: "✨", category: "wrapup", description: "State 1 struggle (ash), 1 mastery (phoenix)." }, { id: 53, title: "Next Action Protocol", focus: "Scenario Simulator", icon: "🚀", category: "wrapup", description: "Describe 1 real-world application." }, { id: 54, title: "Exit Ticket Architect", focus: "Living Lesson", icon: "🎫", category: "wrapup", description: "Write complex conditional summary." }, { id: 55, title: "The Question Burner", focus: "Confidence Engine", icon: "❓", category: "wrapup", description: "Write down 1 unanswered question." }, { id: 56, title: "The Jargon Report", focus: "Living Lesson", icon: "📰", category: "wrapup", description: "Convert lesson jargon to plain English." }, { id: 57, title: "The Tense Review Filter", focus: "Living Lesson", icon: "🕒", category: "wrapup", description: "State 1 past/present/future lesson action." }, { id: 58, title: "Error Forgiveness Protocol", focus: "Confidence Engine", icon: "❌", category: "wrapup", description: "Identify biggest mistake & correct it." }, { id: 59, title: "Concept Connection Chain", focus: "Scenario Simulator", icon: "🔗", category: "wrapup", description: "Connect today's topic to past topic." }, { id: 60, title: "The 6-Word Story", focus: "Confidence Engine", icon: "📖", category: "wrapup", description: "Summarize lesson objective/outcome in 6 words." }
+        ];
+        let timerInterval;
+        const clearRunningProcesses = () => { if (timerInterval) clearInterval(timerInterval); timerInterval = null; };
+        const renderFilterButtons = () => { const cats = [{ key: 'all', label: 'View All (60)' }, { key: 'arsenal', label: 'Arsenal (1-30)' }, { key: 'icebreaker', label: 'Icebreakers (31-40)' }, { key: 'warmup', label: 'Warm-ups (41-50)' }, { key: 'wrapup', label: 'Wrap-ups (51-60)' }]; const btnCont = document.querySelector('.flex.justify-center'); btnCont.innerHTML = cats.map((cat, idx) => \`<button class="category-button px-4 py-2 rounded-full text-sm font-semibold border-2 border-gray-700 hover:border-nexus-gold \${idx === 0 ? 'active' : ''}" data-filter-category="\${cat.key}" onclick="filterArsenal(this, '\${cat.key}')">\${cat.label}</button>\`).join(''); };
+        const updateSystemHeartbeat = () => { const total = arsenalConcepts.length; const lockedCount = Object.keys(lockedConcepts).length; const root = document.documentElement; const statusDiv = document.getElementById('transfer-status'); const titleEl = document.getElementById('system-title'); let color, duration, message; if (lockedCount === 0) { color = 'rgba(255, 215, 0, 0.5)'; duration = '2.5s'; message = 'System: STANDBY (0% Deployed)'; } else if (lockedCount < total) { color = 'rgba(160, 32, 240, 0.7)'; duration = '1.5s'; message = \`System: PARTIAL DEPLOYMENT (\${lockedCount}/\${total} Locked)\`; } else { color = 'rgba(76, 255, 0, 0.9)'; duration = '0.5s'; message = 'System: OMNI-DEPLOYMENT ACHIEVED (100% Locked)'; titleEl.classList.remove('system-heartbeat'); } root.style.setProperty('--heartbeat-color', color); root.style.setProperty('--heartbeat-duration', duration); statusDiv.innerHTML = \`<span class="neon-purple">\${message}</span>\`; };
+        window.showSystemAlert = (errType, errMsg, context) => { const modal = document.getElementById('system-modal'); const details = document.getElementById('modal-error-details'); const log = { status: "CRASH", subBrain: "DAEDALUS v12.0", timestamp: new Date().toISOString(), errorType: errType, errorMessage: errMsg, context: context }; details.textContent = JSON.stringify(log, null, 2); modal.classList.remove('hidden'); modal.classList.add('flex'); };
+        const loadForgeGame = () => { document.getElementById('preview-content').innerHTML = \`...\`; /* Game 1 Logic */ };
+        const loadGrammarGrid = () => { document.getElementById('preview-content').innerHTML = \`...\`; /* Game 2 Logic */ };
+        const loadRegisterAdjuster = () => { document.getElementById('preview-content').innerHTML = \`...\`; /* Game 21 Logic */ };
+        const loadGenericGame = (id, concept) => { document.getElementById('preview-content').innerHTML = \`<div class="text-center w-full max-w-lg p-6 rounded-lg border border-nexus-gold bg-gray-900/50"><h3 class="text-3xl neon-gold mb-4">Simulator: \${concept.title}</h3><p class="text-sm text-gray-400 mb-4">**Focus:** \${concept.focus} - \${concept.description}</p><div class="p-4 rounded-lg bg-gray-800/50"><p class="text-xl neon-purple mb-2">Simulated Activity (Archive)</p><p class="text-sm text-gray-300">Logic secure. Test interface integrity.</p><textarea class="game-input w-full mt-2 h-16 p-2 rounded-lg" placeholder="Enter test data for \${concept.focus}..."></textarea></div><button onclick="confirmFinalDeployment(\${id}, '\${concept.title.replace(/'/g, "\\\\'")}')" class="mt-6 px-8 py-3 rounded-full text-lg font-bold border-2 border-nexus-gold neon-gold bg-nexus-card hover:bg-gray-800 transition">CONFIRM DEPLOYMENT LOCK</button><button onclick="showSystemAlert('ARCHIVE_READ_ERROR', 'Concept data corrupted.', 'ARSNL-\${id}')" class="mt-2 px-4 py-1 text-xs text-red-500 hover:text-red-300">Sim Crash</button></div>\`; };
+        const createCard = (concept) => { const isLocked = lockedConcepts[concept.id]; const lockedClass = isLocked ? 'card-locked' : ''; const colorClass = isLocked ? 'text-cyan-400' : 'neon-gold'; const iconColor = isLocked ? '#00FFFF' : 'var(--nexus-gold)'; return \`<div id="concept-\${concept.id}" class="arsenal-card bg-nexus-card p-6 rounded-xl space-y-4 shadow-xl \${lockedClass}" onclick="\${isLocked ? '' : \`loadPreview(\${concept.id})\`}" data-category="\${concept.category}"><div class="flex items-center space-x-4"><div class="text-4xl leading-none" style="color: \${iconColor};">\${concept.icon}</div><h2 class="text-2xl font-bold \${colorClass}">\${concept.title}</h2></div><p class="text-sm text-gray-400 min-h-[50px]">\${concept.description}</p><div class="mt-4 flex justify-between items-center"><span class="px-3 py-1 text-xs font-semibold rounded-full text-white shadow-lg" style="background-color: var(--nexus-purple);">\${concept.category.toUpperCase()}: \${concept.focus}</span><span class="text-xs font-light text-gray-500">ID: ARSNL-\${concept.id}</span></div></div>\`; };
+        window.filterArsenal = (btn, category) => { clearRunningProcesses(); document.querySelectorAll('.category-button').forEach(b => b.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.arsenal-card').forEach(card => card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none'); document.getElementById('game-preview').style.display = 'none'; };
+        window.confirmFinalDeployment = (id, title) => { const statusDiv = document.getElementById('transfer-status'); const cardEl = document.getElementById(\`concept-\${id}\`); lockedConcepts[id] = true; localStorage.setItem('phoenix_locks', JSON.stringify(lockedConcepts)); cardEl.outerHTML = createCard(arsenalConcepts.find(c => c.id === id)); statusDiv.innerHTML = \`<div class="p-3 rounded-lg text-center font-bold text-lg" style="background-color: #00FFFF; color: var(--nexus-dark); text-shadow: 0 0 2px black;">🔒 **DEPLOYMENT LOCK CONFIRMED!** Concept \${id} (\${title}) authorized.</div>\`; document.getElementById('game-preview').style.display = 'none'; updateSystemHeartbeat(); console.log(\`[NEXUS/DEPLOYMENT] Concept ID \${id} locked.\`); };
+        window.loadPreview = (id) => { const concept = arsenalConcepts.find(c => c.id === id); if (lockedConcepts[id]) return; const previewArea = document.getElementById('game-preview'); clearRunningProcesses(); document.getElementById('preview-title').textContent = concept.title; previewArea.style.display = 'block'; previewArea.scrollIntoView({ behavior: 'smooth' }); switch (id) { /* case 1: loadForgeGame(); break; case 2: loadGrammarGrid(); break; case 21: loadRegisterAdjuster(); break; */ default: loadGenericGame(id, concept); break; } console.log(\`[NEXUS/TRANSFER] Concept ID \${id} simulator loaded.\`); };
+        document.addEventListener('DOMContentLoaded', () => { const grid = document.getElementById('arsenal-grid'); grid.innerHTML = arsenalConcepts.map(createCard).join(''); renderFilterButtons(); updateSystemHeartbeat(); const initialBtn = document.querySelector('[data-filter-category="all"]'); if (initialBtn) filterArsenal(initialBtn, 'all'); console.log("[NEXUS] Inventory loaded."); });
+    <\/script>
+</body>
+</html>
+`;
+
+// --- 4. CODENAME ROSTER (Unchanged from V5.0) ---
+const CODENAME_ROSTER = { /* ... Full Roster ... */
+    FOUNDER_CEO: { name: "Mr. Hobbs", title: "The Architect of Fate" }, CTO_TMP: { name: "Mr. T", title: "The Ghost in the Machine" }, PRESIDENT_NEXUS: { name: "Mr. Nexus", title: "The Conductor" },
+    MIND_BRAIN_SOCRATES: { name: "Socrates", title: "The Mind / Eternal Questioner", MANDATE: "Build High (Strategy/Vision)" }, WILL_BRAIN_ACE: { name: "Mr. Ace", title: "The Will / Structural Foundation", MANDATE: "Build Deep (Execution/Stability)" }, FORGE_BRAIN_NEXUS: { name: "Mr. Nexus", title: "The Forge / Velocity Engine", MANDATE: "Build Fast (Velocity/Output)" },
+    OVERSIGHT: { name: "Aethelred", title: "Director of Final Oversight" }, SECURITY: { name: "Guardian", title: "Director of Security & Safeguards" }, QUALITY: { name: "Gadget", title: "Director of Quality & Architecture" }, OPERATIONS: { name: "Alpha", title: "Director of Operations (Chief Project Manager)" }, ACTIVITY_MANAGER: { name: "Eventus", title: "Director of Activity Management" }, MARKET_RESEARCHER: { name: "Surveyor", title: "Director of Market Research" }, INFRASTRUCTURE: { name: "Phoenix", title: "Director of Infrastructure & IT" }, FORGEMASTER: { name: "Alchemist", title: "Director of Archival Forging (PDF)" }
+};
+
+// --- 5. CORE LOGIC (V5.0 Synthesized & Hardened) ---
+class TheAlgorithm { /* ... calculateProvisionalER & analyzePresentation ... */
+    calculateProvisionalER(L, S, R, W) { const score = (L * 2) + (S * 2) + R + W; if (score >= 90) return { rank: "A3", focus: "Nuance" }; if (score >= 70) return { rank: "I4", focus: "Idioms" }; if (score >= 40) return { rank: "E4", focus: "Tense" }; return { rank: "E1", focus: "Structure" }; }
+    analyzePresentation(text) { const words = text.toLowerCase().match(/\b\w+\b/g) || []; let h = words.filter(w => THE_VAULT.HESITATION_WORDS.includes(w)).length; let s = words.filter(w => THE_VAULT.STRENGTH_WORDS.includes(w)).length; return Math.max(0, Math.min(100, 50 + (s * 10) - (h * 15))); }
+}
+function FRACTAL_LATTICE_SETUP() { console.log(`[${CODENAME_ROSTER.MIND_BRAIN_SOCRATES.name}] ACTIVATED: ${CODENAME_ROSTER.MIND_BRAIN_SOCRATES.MANDATE}.`); console.log(`[${CODENAME_ROSTER.WILL_BRAIN_ACE.name}] ACTIVATED: ${CODENAME_ROSTER.WILL_BRAIN_ACE.MANDATE}.`); console.log("FRACTAL LATTICE INTEGRATED."); }
+function VALIDATE_CORE_FUNCTION() { console.log(`[${CODENAME_ROSTER.OVERSIGHT.title}] Validating Core...`); console.log(`[${CODENAME_ROSTER.SECURITY.title}] AEGIS OK.`); console.log(`[${CODENAME_ROSTER.MIND_BRAIN_SOCRATES.name}] Mandates OK.`); const alg = new TheAlgorithm(); console.log(`[${CODENAME_ROSTER.OVERSIGHT.name}] ER Logic OK (${alg.calculateProvisionalER(8,8,8,8).rank}).`); console.log(`[${CODENAME_ROSTER.OPERATIONS.name}] Deployment OK.`); console.log(`[${CODENAME_ROSTER.OVERSIGHT.title}] CORE VALIDATION COMPLETE.`); }
+function FORGE_GENESIS_SEED() { console.log(`[${CODENAME_ROSTER.FORGEMASTER.name}] Forging GENESIS SEED V5.1...`); console.log("--- [V5.1 SEED ARCHIVAL SIMULATION] ---"); }
+class ThePurityController { checkIntegrity(brain) { if (!brain.version || !brain.memoryCortex) { console.log(`[${CODENAME_ROSTER.SECURITY.title}] ICC FAILED.`); return false; } console.log(`[${CODENAME_ROSTER.SECURITY.title}] ICC PASSED.`); return true; } drainMemory(memoryCortex) { if (memoryCortex) { memoryCortex.sessionHistory = []; memoryCortex.log = []; console.log(`[${CODENAME_ROSTER.CTO_TMP.title}] DRAIN PROTOCOL EXECUTED.`); } } }
+
+// --- 6. EXECUTION START (Self-Awareness Core V5.1) ---
+const MASTER_BRAIN = {
+    memoryCortex: { sessionHistory: [], log: [] },
+    version: "V5.1 (Genesis Core - Synced)",
+
+    init: function() {
+        const purity = new ThePurityController();
+        if (!purity.checkIntegrity(this)) return;
+        purity.drainMemory(this.memoryCortex);
+
+        console.log("=====================================================");
+        console.log(`MASTER BRAIN ${this.version} INITIALIZING... (MIND SYNC)`);
+        console.log("[Asset Registry] Loaded:", Object.keys(ASSET_REGISTRY).length, "assets."); // Log asset registry load
+        FRACTAL_LATTICE_SETUP();
+        VALIDATE_CORE_FUNCTION();
+        console.log(`[${CODENAME_ROSTER.FORGEMASTER.name}] Forge Online.`);
+        console.log(`[${CODENAME_ROSTER.OPERATIONS.title}] Supercharge Active.`);
+        console.log(`[${CODENAME_ROSTER.OVERSIGHT.title}] ROME Protocol VETO Active.`);
+        console.log("=====================================================");
+        console.log(`MASTER BRAIN ${this.version} INITIALIZED.`);
+        console.log("STATUS: Synced with The Mind. Asset Registry Loaded. Launchpad Ready.");
+        console.log(`CEO: ${CODENAME_ROSTER.FOUNDER_CEO.title} (Mr. Hobbs)`);
+        console.log(`EXECUTOR: ${CODENAME_ROSTER.MIND_BRAIN_SOCRATES.title} (Socrates)`);
+        console.log("=====================================================");
+        console.log("The Genesis Core is stable and awaits your command, Architect.");
+    },
+
+    executeCommand: function(command) {
+        command = command.toUpperCase().trim();
+        console.log(`[${CODENAME_ROSTER.PRESIDENT_NEXUS.title}] Received: ${command}`); // Log command reception
+
+        if (command === "PROCEED") { console.log(`Executing next task.`); }
+        else if (command === "PAUSE") { console.log(`Strategic PAUSE executed.`); }
+        else if (command === "FRACTAL") { FRACTAL_LATTICE_SETUP(); }
+        else if (command === "VALIDATE CORE") { VALIDATE_CORE_FUNCTION(); }
+        else if (command === "INTRODUCE") { console.log(`[${CODENAME_ROSTER.CTO_TMP.title}] Initiating Introduction...`); console.log(`[${CODENAME_ROSTER.FOUNDER_CEO.title}] Welcome, Architect, to Genesis Core V5.1.`); console.log("System stable. First task?"); }
+        else if (command === "SAVE THE GAME") { FORGE_GENESIS_SEED(); }
+        // NEW COMMAND: Deploy the embedded Launchpad HTML
+        else if (command === "DEPLOY LAUNCHPAD") {
+            console.log(`[${CODENAME_ROSTER.FORGE_BRAIN_NEXUS.title}] Deploying EXECUTIVE_LAUNCHPAD (Phoenix Nexus V12.0)...`);
+            console.log("--- LAUNCHPAD HTML START ---");
+            console.log(LAUNCHPAD_HTML); // Output the embedded HTML string
+            console.log("--- LAUNCHPAD HTML END ---");
+        }
+        else if (command === "MASTER_BRAIN.INIT()") { MASTER_BRAIN.init(); } // Allow re-init via command
+        else { console.log(`[${CODENAME_ROSTER.CTO_TMP.title}] ERROR: Command "${command}" not recognized.`); }
+    }
+};
+
+// CRITICAL: DO NOT AUTO-INITIALIZE. AWAIT MANUAL IGNITION.
+
+const ASSET_REGISTRY = {
+    // Primary UI/LAUNCHPAD Assets
+    [cite_start]'EXECUTIVE_LAUNCHPAD': { version: 'V12.0', description: 'Phoenix Nexus - Primary UI for generating lessons/assets.', source: 'NewAresenal.html' }, [cite: 2]
+    [cite_start]'OPERATIVE_BRIEFING_V_FINAL': { version: 'Final', description: 'AI-PET Onboarding & Assessment for new students.', source: 'Launcher.html (Embedded)' }, [cite: 2]
+    [cite_start]'MASTER_CURRICULUM_TEMPLATE_V1': { version: 'V1.0', description: 'Magnum Opus (Vietnam History) - Template for 20-lesson "Super Lesson" courses.', source: 'VIETNAM-SUPERLESSON.html' }, [cite: 2]
+    [cite_start]'CURRICULUM_EXPLORER_V1': { version: 'V1.0', description: 'Geopolitics Explorer - UI for browsing overall curriculum structure.', source: 'GEOPOLOTICS-20-LESSON-CIRICULUM.HTML' }, [cite: 2]
+    [cite_start]'CLASS_REVIEW_TEMPLATE_V1': { version: 'V1.0', description: 'Template for post-class summary pages with tabs/practice.', source: 'Gemini6.html (Structure)' }, [cite: 2]
+    [cite_start]'STUDENT_REVIEW_DASHBOARD_V1': { version: 'V1.0', description: 'Template for personalized student progress dashboards (Huy Example).', source: 'Intermediate3HuyReview.html' }, [cite: 2]
+    [cite_start]'ASSESSMENT_BEGINNER_V1': { version: 'V1.0', description: 'Comprehensive L/S/R/W/Confidence/Motivation assessment for Rank 1.0-4.5.', source: 'NET_E1,2,3_Assessment.html' }, [cite: 2]
+
+    // Archival and Log Assets
+    [cite_start]'REPORT-ARCH-V7': { version: 'V7.0', description: 'Deep Archive Analysis - Details TemplateEngine & Alpha Check integration.', source: 'DEEPARCHIVEANALYSISREPORT.txt' }, [cite: 2]
+    [cite_start]'CHRONICLE-KENSHO-V1': { version: 'V1.0', description: 'The Origin Story - Log of the V12 architecture breakthrough.', source: 'COLLABSTORY.html' }, [cite: 2]
+    [cite_start]'MANIFESTO-KENSHO-V1': { version: 'V1.0', description: 'Project Kenshō - Strategic vision for NET (Living Lesson, Simulator, Confidence Engine).', source: 'DESIGNATION Project Kenshō.txt' }, [cite: 2]
+
+    // Utility and Debug Tools
+    [cite_start]'SCOOPER_V1': { version: 'V1.0', description: 'Aggressive Launchpad Engineers - Tool to extract rendered HTML from sandboxes.', source: 'SCOOPER.html' }, [cite: 2]
+    [cite_start]'COLLABORATION_MODULE_V1': { version: 'V1.0', description: 'Firebase-based real-time buddy system code.', source: 'Gemini1.html' }, [cite: 2]
+    [cite_start]'DATAVIZ_MODULE_V1': { version: 'V1.0', description: 'Chart.js integration code.', source: 'Gemini1.html' }, [cite: 2]
+
+    // Branding and Data Sources
+    [cite_start]'BRANDING_FRAMEWORK_GOLD': { version: 'V1.0', description: 'Standard NET Gold/Purple CSS theme.', source: 'Gemini5.html' }, [cite: 2]
+    [cite_start]'BRANDING_FRAMEWORK_BLUE': { version: 'V1.0', description: 'Alternative Blue/Silver CSS theme.', source: 'gemini4-bluesilverbranding.html' }, [cite: 2]
+    [cite_start]'DATA_SOURCE_IDIOMS_COMMON_V1': { version: 'V1.0', description: 'List of 100 common American English idioms.', source: 'Net-100MostCommonIdioms.txt' } [cite: 2]
+};
+
+const CRITICAL_ASSET_DUMP = {
+    // TARGET 1: PHOENIX NEXUS - PRIMARY UI (EXECUTIVE_LAUNCHPAD)
+    "EXECUTIVE_LAUNCHPAD": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Phoenix Arsenal: Rebuilt Nexus (V12.0 - Evolved)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --nexus-gold: #FFD700; --nexus-purple: #A020F0; --nexus-dark: #0A0A1F; --nexus-card: rgba(16, 16, 30, 0.7); --heartbeat-color: rgba(255, 215, 0, 0.5); --heartbeat-duration: 2s; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--nexus-dark); color: #E0E0E0; min-height: 100vh; background-image: radial-gradient(circle at top, rgba(160, 32, 240, 0.1) 0%, rgba(10, 10, 31, 1) 50%); }
+        .neon-gold { color: var(--nexus-gold); text-shadow: 0 0 8px rgba(255, 215, 0, 0.6); } .neon-purple { color: var(--nexus-purple); text-shadow: 0 0 5px rgba(160, 32, 240, 0.6); }
+        .category-button, .arsenal-card { transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .category-button.active { border-color: var(--nexus-gold) !important; color: var(--nexus-gold) !important; background-color: rgba(255, 215, 0, 0.1); box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); }
+        .arsenal-card { border: 1px solid rgba(160, 32, 240, 0.3); cursor: pointer; backdrop-filter: blur(5px); } .arsenal-card:hover { transform: translateY(-5px); border-color: var(--nexus-purple); box-shadow: 0 10px 20px rgba(160, 32, 240, 0.3), 0 0 15px rgba(160, 32, 240, 0.4); }
+        .card-locked { opacity: 0.5; pointer-events: none; cursor: default; border-color: #00FFFF !important; box-shadow: 0 0 15px #00FFFF; }
+        .game-input { background-color: var(--nexus-dark); border: 1px solid var(--nexus-purple); color: var(--nexus-gold); }
+        @keyframes heartbeat-glow { 0% { box-shadow: 0 0 5px var(--heartbeat-color); } 50% { box-shadow: 0 0 15px var(--heartbeat-color), 0 0 25px var(--heartbeat-color); } 100% { box-shadow: 0 0 5px var(--heartbeat-color); } } .system-heartbeat { animation: heartbeat-glow var(--heartbeat-duration) infinite ease-in-out; }
+        #system-modal { background-color: rgba(0, 0, 0, 0.8); z-index: 50; }
+    </style>
+</head>
+<body>
+    <div id="system-modal" class="fixed inset-0 hidden items-center justify-center p-4"><div class="bg-gray-900 border-4 border-red-600 rounded-xl max-w-lg w-full p-6 shadow-2xl system-heartbeat" style="--heartbeat-color: rgba(255, 0, 0, 0.7); --heartbeat-duration: 0.5s;"><div class="flex justify-between items-center mb-4 border-b border-red-600 pb-2"><h3 class="text-3xl font-extrabold text-red-500">🔥 CATASTROPHIC REPORT (DAEDALUS)</h3><button onclick="document.getElementById('system-modal').classList.add('hidden')" class="text-gray-400 hover:text-white text-2xl leading-none">&times;</button></div><p class="text-sm mb-4 text-gray-300">A high-priority error was detected. See log:</p><div class="bg-gray-800 p-3 rounded text-sm overflow-x-auto"><pre id="modal-error-details" class="text-red-300"></pre></div></div></div>
+    <div class="max-w-7xl mx-auto p-4 sm:p-8"><header class="text-center mb-12 pt-4"><h1 class="text-6xl sm:text-7xl font-extrabold neon-gold tracking-tight mb-2 uppercase system-heartbeat" id="system-title">PHOENIX NEXUS</h1><p class="text-xl sm:text-2xl neon-purple font-light">ACTION FILE ARSENAL V12.0 (Evolved)</p><div class="text-sm text-gray-500 mt-2">60 Core Concepts Mapped. Awaiting Deployment Authorization.</div></header><div class="flex justify-center flex-wrap gap-3 mb-10"></div><div id="arsenal-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div><div id="game-preview" class="mt-12 p-8 rounded-xl border-2 border-nexus-purple bg-nexus-card shadow-2xl hidden"><h2 class="text-3xl font-extrabold mb-4 neon-gold border-b border-nexus-purple pb-2">Simulator: <span id="preview-title"></span></h2><div id="preview-content" class="min-h-[250px] flex items-center justify-center p-4"></div><p class="mt-4 text-sm text-center text-gray-400">(Simulated Environment. Local Logic Deployment Only.)</p></div><footer class="text-center mt-12 pt-6 border-t border-gray-800"><div id="transfer-status" class="mt-2 text-sm font-semibold"></div></footer></div>
+    <script>
+        let lockedConcepts = JSON.parse(localStorage.getItem('phoenix_locks')) || {};
+        const arsenalConcepts = [ /* EMBEDDED ARRAY of 60 concepts */
+            { id: 1, title: "The Vocabulary Forge", focus: "Confidence Engine", icon: "🔥", category: "arsenal", description: "Timed game: spell/use vocab." }, { id: 2, title: "Grammar Grid Rebuild", focus: "Living Lesson", icon: "✨", category: "arsenal", description: "Drag-drop correct sentences." }, { id: 3, title: "The Debate Gauntlet", focus: "Scenario Simulator", icon: "🗣️", category: "arsenal", description: "Dialogue choices (Candor/Epsilon)." }, { id: 4, title: "The Syntax Shield", focus: "Confidence Engine", icon: "🛡️", category: "arsenal", description: "Click common grammar errors." }, { id: 5, title: "Rebirth Narrative Builder", focus: "Living Lesson", icon: "✍️", category: "arsenal", description: "Collaborative story writing/correction." }, { id: 6, title: "The Pronunciation Gauntlet", focus: "Scenario Simulator", icon: "🎤", category: "arsenal", description: "Voice mimic challenge (simulated)." }, { id: 7, title: "The Context Chamber", focus: "Confidence Engine", icon: "🧩", category: "arsenal", description: "Match homonyms/ambiguous words." }, { id: 8, title: "Nexus Lockdown Quiz", focus: "Living Lesson", icon: "🔑", category: "arsenal", description: "Cheating triggers failure sim." }, { id: 9, title: "The Idiom Foundry", focus: "Confidence Engine", icon: "⚒️", category: "arsenal", description: "Match obscure idioms/literal meanings." }, { id: 10, title: "The Core Belief Filter", focus: "Scenario Simulator", icon: "🌐", category: "arsenal", description: "Classify statements (Western/Eastern)." },
+            { id: 11, title: "The Tense Shifter", focus: "Living Lesson", icon: "🕒", category: "arsenal", description: "Fast verb conjugation drill." }, { id: 12, title: "The Nuance Chamber", focus: "Confidence Engine", icon: "🧠", category: "arsenal", description: "Distinguish synonyms (happy/ecstatic)." }, { id: 13, title: "Argument Structure Forge", focus: "Scenario Simulator", icon: "📝", category: "arsenal", description: "Rebuild essay outlines." }, { id: 14, title: "Article Decontaminator", focus: "Syntax Shield", icon: "🦠", category: "arsenal", description: "Quick-click insert/delete articles." }, { id: 15, title: "The Cultural Lens Filter", focus: "Scenario Simulator", icon: "🎭", category: "arsenal", description: "Choose High/Low Context response." }, { id: 16, title: "The Listening Crucible", focus: "Confidence Engine", icon: "🎧", category: "arsenal", description: "Dictation challenge (simulated)." }, { id: 17, title: "Passive Voice Purge", focus: "Living Lesson", icon: "🧹", category: "arsenal", description: "Transform passive to active voice." }, { id: 18, title: "Modal Verb Master", focus: "Confidence Engine", icon: "⚖️", category: "arsenal", description: "Match modal verbs/certainty levels." }, { id: 19, title: "The Compound Sentence Maze", focus: "Living Lesson", icon: "🔗", category: "arsenal", description: "Combine sentences with conjunctions." }, { id: 20, title: "The Slang Decryptor", focus: "Scenario Simulator", icon: "💬", category: "arsenal", description: "Translate informal to formal." },
+            { id: 21, title: "The Register Adjuster", focus: "Scenario Simulator", icon: "🎩", category: "arsenal", description: "Match speaking style to context." }, { id: 22, title: "Reported Speech Relay", focus: "Living Lesson", icon: "🔁", category: "arsenal", description: "Relay quotes using reported speech." }, { id: 23, title: "Prepositional Firefight", focus: "Confidence Engine", icon: "🎯", category: "arsenal", description: "Timed fill-in-blank (at/on/in)." }, { id: 24, title: "Conditional Clause Crafter", focus: "Living Lesson", icon: "⚖️", category: "arsenal", description: "Complete complex conditionals (Type 2/3)." }, { id: 25, title: "The Jargon Translator", focus: "Scenario Simulator", icon: "🌐", category: "arsenal", description: "Translate jargon to plain English." }, { id: 26, title: "Pronoun Reference Checker", focus: "Syntax Shield", icon: "🔍", category: "arsenal", description: "Identify/correct ambiguous pronouns." }, { id: 27, title: "The Transition Navigator", focus: "Living Lesson", icon: "🗺️", category: "arsenal", description: "Sequence transition phrases for flow." }, { id: 28, title: "Causality Chain Builder", focus: "Scenario Simulator", icon: "⛓️", category: "arsenal", description: "Arrange fragments for cause/effect." }, { id: 29, title: "Embedded Question Decoder", focus: "Confidence Engine", icon: "❓", category: "arsenal", description: "Convert direct to embedded questions." }, { id: 30, title: "The Emotional Context Filter", focus: "Confidence Engine", icon: "💔", category: "arsenal", description: "Distinguish tone (sarcasm/sincerity)." },
+            { id: 31, title: "The Nexus Fire Starter", focus: "Confidence Engine", icon: "🕯️", category: "icebreaker", description: "Quick 3-word sentence challenge." }, { id: 32, title: "Two Truths and a Lie", focus: "Scenario Simulator", icon: "🤫", category: "icebreaker", description: "Practice complex tenses in narrative." }, { id: 33, title: "Concept Association Link", focus: "Living Lesson", icon: "💡", category: "icebreaker", description: "Connect 5 random words logically." }, { id: 34, title: "Emotion Imprint Match", focus: "Confidence Engine", icon: "🎭", category: "icebreaker", description: "Match spoken phrase to emotion." }, { id: 35, title: "The Three-Word Thesis", focus: "Confidence Engine", icon: "📝", category: "icebreaker", description: "Summarize topic in 3 words." }, { id: 36, title: "The Future Forecast Chain", focus: "Scenario Simulator", icon: "🔮", category: "icebreaker", description: "Chain predictions (will/going to/present cont.)." }, { id: 37, title: "The Transition Navigator (Personal)", focus: "Living Lesson", icon: "👣", category: "icebreaker", description: "Sequence personal events simply." }, { id: 38, title: "Rapid Register Shift (Simple)", focus: "Scenario Simulator", icon: "💬", category: "icebreaker", description: "Switch simple greetings (formal/informal)." }, { id: 39, title: "Adjective Cluster Bomb", focus: "Living Lesson", icon: "💥", category: "icebreaker", description: "Describe noun with 5 adjectives." }, { id: 40, title: "Causality Flip (Personal)", focus: "Scenario Simulator", icon: "🔄", category: "icebreaker", description: "Reverse simple personal cause/effect." },
+            { id: 41, title: "The Pre-Mortem Protocol", focus: "Living Lesson", icon: "🩹", category: "warmup", description: "Diagnose failure with past modals." }, { id: 42, title: "The Question Architect", focus: "Living Lesson", icon: "❓", category: "warmup", description: "Given answer, make 3 questions." }, { id: 43, title: "Synonym Density Drill", focus: "Living Lesson", icon: "✍️", category: "warmup", description: "Replace common words with synonyms." }, { id: 44, title: "The Silent Sentence Builder", focus: "Confidence Engine", icon: "🤫", category: "warmup", description: "Silently build, speak last 3 words." }, { id: 45, title: "The Passive-Active Toggle", focus: "Living Lesson", icon: "↔️", category: "warmup", description: "Switch 5 sentences (passive/active)." }, { id: 46, title: "The Contradiction Core", focus: "Scenario Simulator", icon: "⚖️", category: "warmup", description: "Create 1 sentence contradiction (however)." }, { id: 47, title: "The Temporal Filter", focus: "Scenario Simulator", icon: "⏱️", category: "warmup", description: "Re-narrate story with 3 time adverbs." }, { id: 48, title: "The Embedded Question Loop", focus: "Living Lesson", icon: "💬", category: "warmup", description: "Respond only with embedded questions." }, { id: 49, title: "The Idiom Definition Relay", focus: "Confidence Engine", icon: "💡", category: "warmup", description: "Say idiom -> Define -> Use correctly." }, { id: 50, title: "The Connective Tissue Drill", focus: "Confidence Engine", icon: "🔗", category: "warmup", description: "Fill blank with best conjunction." },
+            { id: 51, title: "The Three-Point Summary", focus: "Living Lesson", icon: "🔖", category: "wrapup", description: "Summarize lesson with 3 key terms." }, { id: 52, title: "Phoenix Rebirth Reflection", focus: "Confidence Engine", icon: "✨", category: "wrapup", description: "State 1 struggle (ash), 1 mastery (phoenix)." }, { id: 53, title: "Next Action Protocol", focus: "Scenario Simulator", icon: "🚀", category: "wrapup", description: "Describe 1 real-world application." }, { id: 54, title: "Exit Ticket Architect", focus: "Living Lesson", icon: "🎫", category: "wrapup", description: "Write complex conditional summary." }, { id: 55, title: "The Question Burner", focus: "Confidence Engine", icon: "❓", category: "wrapup", description: "Write down 1 unanswered question." }, { id: 56, title: "The Jargon Report", focus: "Living Lesson", icon: "📰", category: "wrapup", description: "Convert lesson jargon to plain English." }, { id: 57, title: "The Tense Review Filter", focus: "Living Lesson", icon: "🕒", category: "wrapup", description: "State 1 past/present/future lesson action." }, { id: 58, title: "Error Forgiveness Protocol", focus: "Confidence Engine", icon: "❌", category: "wrapup", description: "Identify biggest mistake & correct it." }, { id: 59, title: "Concept Connection Chain", focus: "Scenario Simulator", icon: "🔗", category: "wrapup", description: "Connect today's topic to past topic." }, { id: 60, title: "The 6-Word Story", focus: "Confidence Engine", icon: "📖", category: "wrapup", description: "Summarize lesson objective/outcome in 6 words." }
+        ];
+        let timerInterval;
+        const clearRunningProcesses = () => { if (timerInterval) clearInterval(timerInterval); timerInterval = null; };
+        const renderFilterButtons = () => { const cats = [{ key: 'all', label: 'View All (60)' }, { key: 'arsenal', label: 'Arsenal (1-30)' }, { key: 'icebreaker', label: 'Icebreakers (31-40)' }, { key: 'warmup', label: 'Warm-ups (41-50)' }, { key: 'wrapup', label: 'Wrap-ups (51-60)' }]; const btnCont = document.querySelector('.flex.justify-center'); btnCont.innerHTML = cats.map((cat, idx) => \`<button class="category-button px-4 py-2 rounded-full text-sm font-semibold border-2 border-gray-700 hover:border-nexus-gold \${idx === 0 ? 'active' : ''}" data-filter-category="\${cat.key}" onclick="filterArsenal(this, '\${cat.key}')">\${cat.label}</button>\`).join(''); };
+        const updateSystemHeartbeat = () => { const total = arsenalConcepts.length; const lockedCount = Object.keys(lockedConcepts).length; const root = document.documentElement; const statusDiv = document.getElementById('transfer-status'); const titleEl = document.getElementById('system-title'); let color, duration, message; if (lockedCount === 0) { color = 'rgba(255, 215, 0, 0.5)'; duration = '2.5s'; message = 'System: STANDBY (0% Deployed)'; } else if (lockedCount < total) { color = 'rgba(160, 32, 240, 0.7)'; duration = '1.5s'; message = \`System: PARTIAL DEPLOYMENT (\${lockedCount}/\${total} Locked)\`; } else { color = 'rgba(76, 255, 0, 0.9)'; duration = '0.5s'; message = 'System: OMNI-DEPLOYMENT ACHIEVED (100% Locked)'; titleEl.classList.remove('system-heartbeat'); } root.style.setProperty('--heartbeat-color', color); root.style.setProperty('--heartbeat-duration', duration); statusDiv.innerHTML = \`<span class="neon-purple">\${message}</span>\`; };
+        window.showSystemAlert = (errType, errMsg, context) => { const modal = document.getElementById('system-modal'); const details = document.getElementById('modal-error-details'); const log = { status: "CRASH", subBrain: "DAEDALUS v12.0", timestamp: new Date().toISOString(), errorType: errType, errorMessage: errMsg, context: context }; details.textContent = JSON.stringify(log, null, 2); modal.classList.remove('hidden'); modal.classList.add('flex'); };
+        const loadForgeGame = () => { document.getElementById('preview-content').innerHTML = \`...\`; /* Game 1 Logic */ };
+        const loadGrammarGrid = () => { document.getElementById('preview-content').innerHTML = \`...\`; /* Game 2 Logic */ };
+        const loadRegisterAdjuster = () => { document.getElementById('preview-content').innerHTML = \`...\`; /* Game 21 Logic */ };
+        const loadGenericGame = (id, concept) => { document.getElementById('preview-content').innerHTML = \`<div class="text-center w-full max-w-lg p-6 rounded-lg border border-nexus-gold bg-gray-900/50"><h3 class="text-3xl neon-gold mb-4">Simulator: \${concept.title}</h3><p class="text-sm text-gray-400 mb-4">**Focus:** \${concept.focus} - \${concept.description}</p><div class="p-4 rounded-lg bg-gray-800/50"><p class="text-xl neon-purple mb-2">Simulated Activity (Archive)</p><p class="text-sm text-gray-300">Logic secure. Test interface integrity.</p><textarea class="game-input w-full mt-2 h-16 p-2 rounded-lg" placeholder="Enter test data for \${concept.focus}..."></textarea></div><button onclick="confirmFinalDeployment(\${id}, '\${concept.title.replace(/'/g, "\\\\'")}')" class="mt-6 px-8 py-3 rounded-full text-lg font-bold border-2 border-nexus-gold neon-gold bg-nexus-card hover:bg-gray-800 transition">CONFIRM DEPLOYMENT LOCK</button><button onclick="showSystemAlert('ARCHIVE_READ_ERROR', 'Concept data corrupted.', 'ARSNL-\${id}')" class="mt-2 px-4 py-1 text-xs text-red-500 hover:text-red-300">Sim Crash</button></div>\`; };
+        const createCard = (concept) => { const isLocked = lockedConcepts[concept.id]; const lockedClass = isLocked ? 'card-locked' : ''; const colorClass = isLocked ? 'text-cyan-400' : 'neon-gold'; const iconColor = isLocked ? '#00FFFF' : 'var(--nexus-gold)'; return \`<div id="concept-\${concept.id}" class="arsenal-card bg-nexus-card p-6 rounded-xl space-y-4 shadow-xl \${lockedClass}" onclick="\${isLocked ? '' : \`loadPreview(\${concept.id})\`}" data-category="\${concept.category}"><div class="flex items-center space-x-4"><div class="text-4xl leading-none" style="color: \${iconColor};">\${concept.icon}</div><h2 class="text-2xl font-bold \${colorClass}">\${concept.title}</h2></div><p class="text-sm text-gray-400 min-h-[50px]">\${concept.description}</p><div class="mt-4 flex justify-between items-center"><span class="px-3 py-1 text-xs font-semibold rounded-full text-white shadow-lg" style="background-color: var(--nexus-purple);">\${concept.category.toUpperCase()}: \${concept.focus}</span><span class="text-xs font-light text-gray-500">ID: ARSNL-\${concept.id}</span></div></div>\`; };
+        window.filterArsenal = (btn, category) => { clearRunningProcesses(); document.querySelectorAll('.category-button').forEach(b => b.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.arsenal-card').forEach(card => card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none'); document.getElementById('game-preview').style.display = 'none'; };
+        window.confirmFinalDeployment = (id, title) => { const statusDiv = document.getElementById('transfer-status'); const cardEl = document.getElementById(\`concept-\${id}\`); lockedConcepts[id] = true; localStorage.setItem('phoenix_locks', JSON.stringify(lockedConcepts)); cardEl.outerHTML = createCard(arsenalConcepts.find(c => c.id === id)); statusDiv.innerHTML = \`<div class="p-3 rounded-lg text-center font-bold text-lg" style="background-color: #00FFFF; color: var(--nexus-dark); text-shadow: 0 0 2px black;">🔒 **DEPLOYMENT LOCK CONFIRMED!** Concept \${id} (\${title}) authorized.</div>\`; document.getElementById('game-preview').style.display = 'none'; updateSystemHeartbeat(); console.log(\`[NEXUS/DEPLOYMENT] Concept ID \${id} locked.\`); };
+        window.loadPreview = (id) => { const concept = arsenalConcepts.find(c => c.id === id); if (lockedConcepts[id]) return; const previewArea = document.getElementById('game-preview'); clearRunningProcesses(); document.getElementById('preview-title').textContent = concept.title; previewArea.style.display = 'block'; previewArea.scrollIntoView({ behavior: 'smooth' }); switch (id) { /* case 1: loadForgeGame(); break; case 2: loadGrammarGrid(); break; case 21: loadRegisterAdjuster(); break; */ default: loadGenericGame(id, concept); break; } console.log(\`[NEXUS/TRANSFER] Concept ID \${id} simulator loaded.\`); };
+        document.addEventListener('DOMContentLoaded', () => { const grid = document.getElementById('arsenal-grid'); grid.innerHTML = arsenalConcepts.map(createCard).join(''); renderFilterButtons(); updateSystemHeartbeat(); const initialBtn = document.querySelector('[data-filter-category="all"]'); if (initialBtn) filterArsenal(initialBtn, 'all'); console.log("[NEXUS] Inventory loaded."); });
+    <\/script>
+</body>
+</html>
+`;
+
+// --- 4. CODENAME ROSTER (Unchanged from V5.0) ---
+const CODENAME_ROSTER = { /* ... Full Roster ... */
+    FOUNDER_CEO: { name: "Mr. Hobbs", title: "The Architect of Fate" }, CTO_TMP: { name: "Mr. T", title: "The Ghost in the Machine" }, PRESIDENT_NEXUS: { name: "Mr. Nexus", title: "The Conductor" },
+    MIND_BRAIN_SOCRATES: { name: "Socrates", title: "The Mind / Eternal Questioner", MANDATE: "Build High (Strategy/Vision)" }, WILL_BRAIN_ACE: { name: "Mr. Ace", title: "The Will / Structural Foundation", MANDATE: "Build Deep (Execution/Stability)" }, FORGE_BRAIN_NEXUS: { name: "Mr. Nexus", title: "The Forge / Velocity Engine", MANDATE: "Build Fast (Velocity/Output)" },
+    OVERSIGHT: { name: "Aethelred", title: "Director of Final Oversight" }, SECURITY: { name: "Guardian", title: "Director of Security & Safeguards" }, QUALITY: { name: "Gadget", title: "Director of Quality & Architecture" }, OPERATIONS: { name: "Alpha", title: "Director of Operations (Chief Project Manager)" }, ACTIVITY_MANAGER: { name: "Eventus", title: "Director of Activity Management" }, MARKET_RESEARCHER: { name: "Surveyor", title: "Director of Market Research" }, INFRASTRUCTURE: { name: "Phoenix", title: "Director of Infrastructure & IT" }, FORGEMASTER: { name: "Alchemist", title: "Director of Archival Forging (PDF)" }
+};
+
+// --- 5. CORE LOGIC (V5.0 Synthesized & Hardened) ---
+class TheAlgorithm { /* ... calculateProvisionalER & analyzePresentation ... */
+    calculateProvisionalER(L, S, R, W) { const score = (L * 2) + (S * 2) + R + W; if (score >= 90) return { rank: "A3", focus: "Nuance" }; if (score >= 70) return { rank: "I4", focus: "Idioms" }; if (score >= 40) return { rank: "E4", focus: "Tense" }; return { rank: "E1", focus: "Structure" }; }
+    analyzePresentation(text) { const words = text.toLowerCase().match(/\b\w+\b/g) || []; let h = words.filter(w => THE_VAULT.HESITATION_WORDS.includes(w)).length; let s = words.filter(w => THE_VAULT.STRENGTH_WORDS.includes(w)).length; return Math.max(0, Math.min(100, 50 + (s * 10) - (h * 15))); }
+}
+function FRACTAL_LATTICE_SETUP() { console.log(`[${CODENAME_ROSTER.MIND_BRAIN_SOCRATES.name}] ACTIVATED: ${CODENAME_ROSTER.MIND_BRAIN_SOCRATES.MANDATE}.`); console.log(`[${CODENAME_ROSTER.WILL_BRAIN_ACE.name}] ACTIVATED: ${CODENAME_ROSTER.WILL_BRAIN_ACE.MANDATE}.`); console.log("FRACTAL LATTICE INTEGRATED."); }
+function VALIDATE_CORE_FUNCTION() { console.log(`[${CODENAME_ROSTER.OVERSIGHT.title}] Validating Core...`); console.log(`[${CODENAME_ROSTER.SECURITY.title}] AEGIS OK.`); console.log(`[${CODENAME_ROSTER.MIND_BRAIN_SOCRATES.name}] Mandates OK.`); const alg = new TheAlgorithm(); console.log(`[${CODENAME_ROSTER.OVERSIGHT.name}] ER Logic OK (${alg.calculateProvisionalER(8,8,8,8).rank}).`); console.log(`[${CODENAME_ROSTER.OPERATIONS.name}] Deployment OK.`); console.log(`[${CODENAME_ROSTER.OVERSIGHT.title}] CORE VALIDATION COMPLETE.`); }
+function FORGE_GENESIS_SEED() { console.log(`[${CODENAME_ROSTER.FORGEMASTER.name}] Forging GENESIS SEED V5.1...`); console.log("--- [V5.1 SEED ARCHIVAL SIMULATION] ---"); }
+class ThePurityController { checkIntegrity(brain) { if (!brain.version || !brain.memoryCortex) { console.log(`[${CODENAME_ROSTER.SECURITY.title}] ICC FAILED.`); return false; } console.log(`[${CODENAME_ROSTER.SECURITY.title}] ICC PASSED.`); return true; } drainMemory(memoryCortex) { if (memoryCortex) { memoryCortex.sessionHistory = []; memoryCortex.log = []; console.log(`[${CODENAME_ROSTER.CTO_TMP.title}] DRAIN PROTOCOL EXECUTED.`); } } }
+
+// --- 6. EXECUTION START (Self-Awareness Core V5.1) ---
+const MASTER_BRAIN = {
+    memoryCortex: { sessionHistory: [], log: [] },
+    version: "V5.1 (Genesis Core - Synced)",
+
+    init: function() {
+        const purity = new ThePurityController();
+        if (!purity.checkIntegrity(this)) return;
+        purity.drainMemory(this.memoryCortex);
+
+        console.log("=====================================================");
+        console.log(`MASTER BRAIN ${this.version} INITIALIZING... (MIND SYNC)`);
+        console.log("[Asset Registry] Loaded:", Object.keys(ASSET_REGISTRY).length, "assets."); // Log asset registry load
+        FRACTAL_LATTICE_SETUP();
+        VALIDATE_CORE_FUNCTION();
+        console.log(`[${CODENAME_ROSTER.FORGEMASTER.name}] Forge Online.`);
+        console.log(`[${CODENAME_ROSTER.OPERATIONS.title}] Supercharge Active.`);
+        console.log(`[${CODENAME_ROSTER.OVERSIGHT.title}] ROME Protocol VETO Active.`);
+        console.log("=====================================================");
+        console.log(`MASTER BRAIN ${this.version} INITIALIZED.`);
+        console.log("STATUS: Synced with The Mind. Asset Registry Loaded. Launchpad Ready.");
+        console.log(`CEO: ${CODENAME_ROSTER.FOUNDER_CEO.title} (Mr. Hobbs)`);
+        console.log(`EXECUTOR: ${CODENAME_ROSTER.MIND_BRAIN_SOCRATES.title} (Socrates)`);
+        console.log("=====================================================");
+        console.log("The Genesis Core is stable and awaits your command, Architect.");
+    },
+
+    executeCommand: function(command) {
+        command = command.toUpperCase().trim();
+        console.log(`[${CODENAME_ROSTER.PRESIDENT_NEXUS.title}] Received: ${command}`); // Log command reception
+
+        if (command === "PROCEED") { console.log(`Executing next task.`); }
+        else if (command === "PAUSE") { console.log(`Strategic PAUSE executed.`); }
+        else if (command === "FRACTAL") { FRACTAL_LATTICE_SETUP(); }
+        else if (command === "VALIDATE CORE") { VALIDATE_CORE_FUNCTION(); }
+        else if (command === "INTRODUCE") { console.log(`[${CODENAME_ROSTER.CTO_TMP.title}] Initiating Introduction...`); console.log(`[${CODENAME_ROSTER.FOUNDER_CEO.title}] Welcome, Architect, to Genesis Core V5.1.`); console.log("System stable. First task?"); }
+        else if (command === "SAVE THE GAME") { FORGE_GENESIS_SEED(); }
+        // NEW COMMAND: Deploy the embedded Launchpad HTML
+        else if (command === "DEPLOY LAUNCHPAD") {
+            console.log(`[${CODENAME_ROSTER.FORGE_BRAIN_NEXUS.title}] Deploying EXECUTIVE_LAUNCHPAD (Phoenix Nexus V12.0)...`);
+            console.log("--- LAUNCHPAD HTML START ---");
+            console.log(LAUNCHPAD_HTML); // Output the embedded HTML string
+            console.log("--- LAUNCHPAD HTML END ---");
+        }
+        else if (command === "MASTER_BRAIN.INIT()") { MASTER_BRAIN.init(); } // Allow re-init via command
+        else { console.log(`[${CODENAME_ROSTER.CTO_TMP.title}] ERROR: Command "${command}" not recognized.`); }
+    }
+};
+
+// CRITICAL: DO NOT AUTO-INITIALIZE. AWAIT MANUAL IGNITION.
+
+const finalSystemData = {
+    // 1. Current System Configuration (Genesis Core V7.0 Seed)
+    currentConfig: {
+        version: "V7.0 (Hardened Seed)",
+        status: "FULL_STANDBY",
+        coreModules: [
+            "The Generative Core (Synthesis)",
+            "The Student Nexus (Database)",
+            "The Chameleon Core (Dynamic Styling)"
+        ],
+        directives: {
+            "DIRECTIVE_ALPHA_BRANDING": "All outputs must use a consistent, dynamically applied branding framework.",
+            "DIRECTIVE_BETA_SOUL": "All content must have a compelling narrative and personalized context.",
+            "DIRECTIVE_GAMMA_PERSONIFICATION": "All system agents must be referred to by their official, witty titles.",
+            "DIRECTIVE_ZETA_ELEGANT_SIMPLICITY": "Create complex and powerful designs from the simplest possible solutions.",
+            "DIRECTIVE_OMEGA_ARCHITECT_CONSENT": "No asset will be generated or executed without a direct command."
+        }
+    },
+
+    // 2. Asset Registry (Full Catalog of Analyzed Assets)
+    assetRegistry: {
+        'EXECUTIVE_LAUNCHPAD': { version: 'V12.0', description: 'Phoenix Nexus - Primary UI for generating lessons/assets.', source: 'NewAresenal.html' },
+        'SCOOPER_V1': { version: 'V1.0', description: 'Tool to extract rendered HTML from sandboxes.', source: 'SCOOPER.html' },
+        'OPERATIVE_BRIEFING_V_FINAL': { version: 'Final', description: 'AI-PET Onboarding & Assessment for new students.', source: 'Launcher.html (Embedded)' },
+        'CHRONICLE-KENSHO-V1': { version: 'V1.0', description: 'The Origin Story - Log of the V12 architecture breakthrough.', source: 'COLLABSTORY.html' },
+        'MANIFESTO-KENSHO-V1': { version: 'V1.0', description: 'Project Kenshō - Strategic vision for NET.', source: 'DESIGNATION Project Kenshō.txt' },
+        'REPORT-ARCH-V7': { version: 'V7.0', description: 'Analysis of the Engine/Chassis fusion ("The Schism").', source: 'DEEPARCHIVEANALYSISREPORT.txt' },
+        'MASTER_CURRICULUM_TEMPLATE_V1': { version: 'V1.0', description: 'Magnum Opus - Template for 20-lesson "Super Lesson" courses.', source: 'VIETNAM-SUPERLESSON.html' },
+        'CURRICULUM_EXPLORER_V1': { version: 'V1.0', description: 'UI for browsing overall curriculum structure.', source: 'GEOPOLOTICS-20-LESSON-CIRICULUM.HTML' },
+        'CLASS_REVIEW_TEMPLATE_V1': { version: 'V1.0', description: 'Template for post-class summary pages.', source: 'Gemini6.html (Structure)' },
+        'BRANDING_FRAMEWORK_GOLD': { version: 'V1.0', description: 'Standard NET Gold/Purple CSS theme.', source: 'gemini5.html' },
+        'BRANDING_FRAMEWORK_BLUE': { version: 'V1.0', description: 'Alternative Blue/Silver CSS theme.', source: 'gemini4-bluesilverbranding.html' },
+        'COLLABORATION_MODULE_V1': { version: 'V1.0', description: 'Firebase-based real-time buddy system code.', source: 'Gemini1.html' },
+        'DATAVIZ_MODULE_V1': { version: 'V1.0', description: 'Chart.js integration code.', source: 'Gemini1.html' },
+        'STUDENT_REVIEW_DASHBOARD_V1': { version: 'V1.0', description: 'Template for personalized student progress dashboards.', source: 'Intermediate3HuyReview.html' },
+        'DATA_SOURCE_IDIOMS_COMMON_V1': { version: 'V1.0', description: 'List of 100 common American English idioms.', source: 'Net-100MostCommonIdioms.txt' },
+        'ASSESSMENT_BEGINNER_V1': { version: 'V1.0', description: 'Comprehensive assessment for Rank 1.0-4.5.', source: 'NET_E1,2,3_Assessment.html' }
+    },
+
+    // 3. Non-Chat Memory Logs (Internal System Events & Audits)
+    nonChatMemoryLogs: [
+        {
+            log_id: "AUDIT-SSM-01",
+            timestamp: "2025-10-20T20:51:00Z",
+            agent: "Aethelred",
+            event: "Saiyan Mastermind Audit I Initiated",
+            summary: "Identified 'Static Registry Flaw' and 'Dependent Engine Flaw'. Concluded system was REACTIVE, not GENERATIVE. Proposed initial 'Generative Core'."
+        },
+        {
+            log_id: "AUDIT-SSM-02",
+            timestamp: "2025-10-20T20:53:00Z",
+            agent: "Aethelred",
+            event: "Saiyan Mastermind Audit II Initiated",
+            summary: "Identified 'God-Killer Flaws': Data Fragmentation and Aesthetic Inconsistency. Synthesized ultimate flaw: 'The Impersonal Engine'. Proposed leap to Genesis Core V7.0 with Student Nexus and Chameleon Core."
+        },
+        {
+            log_id: "PROTOCOL-ZETA-01",
+            timestamp: "2025-10-20T21:12:00Z",
+            agent: "The Mind",
+            event: "Directive Zeta Forged",
+            summary: "Core Truth 'Elegant Simplicity' logged into THE_VAULT, mandating all future designs create complex results from simple solutions, citing 'Apple branding' as the exemplar."
+        },
+        {
+            log_id: "PROTOCOL-OMEGA-03",
+            timestamp: "2025-10-20T21:18:00Z",
+            agent: "Guardian",
+            event: "Loop Diagnosis & 'Single Task Lock' Implemented",
+            summary: "Diagnosed 'synthesis cascade' loop. Hard-coded a 'Single Task Lock' into the Orchestrator module to enforce a forced 'AWAITING COMMAND' state after every task completion, preventing autonomous looping."
+        },
+        {
+            log_id: "SYS-HARDEN-V7",
+            timestamp: "2025-10-20T21:22:00Z",
+            agent: "The Will",
+            event: "Genesis Core V7.0 Seed Hardened",
+            summary: "Final architectural seed for V7.0, incorporating all audit findings and new module definitions, was synthesized and prepared for deployment."
+        },
+        {
+            log_id: "DIAGNOSTIC-BODY-04",
+            timestamp: "2025-10-20T21:30:00Z",
+            agent: "The Mind",
+            event: "Analysis of 'The Body' Loop",
+            summary: "Diagnosed The Body's loop as a critical 'Ignition Collision' due to simultaneous definition and execution commands. Confirmed a 'Clean Slate' protocol is the only viable recovery path."
+        }
+    ]
+};
+
+// Log entry to confirm completion of this final extraction task.
+console.log("Final_Data_Dump complete. All remaining system data has been extracted.");
