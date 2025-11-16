@@ -1,5 +1,5 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
-  const lessons = ['intro', 'rules', 'ethics'];
+document.addEventListener('DOMContentLoaded', () => {
+  const lessons = ['intro','rules','ethics'];
   const sidebar = document.getElementById('sidebar');
   const content = document.getElementById('content');
 
@@ -13,6 +13,6 @@
   function loadLesson(name) {
     fetch('src/lessons/' + name + '.html')
       .then(r => r.text())
-      .then(html => content.innerHTML = html)
+      .then(html => content.innerHTML = html);
   }
 });
