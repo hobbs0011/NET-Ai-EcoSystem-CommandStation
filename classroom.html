@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>NET Classroom</title>
-  <link rel="stylesheet" href="src/styles/classroom.css">
+    <meta charset='UTF-8'>
+    <title>NET Classroom</title>
+    <link rel='stylesheet' href='/NET-Ai-EcoSystem-CommandStation//src/styles/classroom.css'>
 </head>
 
 <body>
 <h1>NET Classroom</h1>
-<div id="lesson-container"></div>
+<div id='lesson-container'></div>
 
 <script>
 const params = new URLSearchParams(window.location.search);
-const lesson = params.get("lesson");
+const lesson = params.get('lesson');
+const BASE = '/NET-Ai-EcoSystem-CommandStation/';
 
 if (!lesson) {
-  document.getElementById("lesson-container").innerHTML = "<h2>No lesson selected</h2>";
+    document.getElementById('lesson-container').innerHTML = '<h2>No lesson selected</h2>';
 } else {
-  fetch("src/lessons/" + lesson + ".html")
-    .then(r => r.text())
-    .then(tx => document.getElementById("lesson-container").innerHTML = tx)
-    .catch(() => document.getElementById("lesson-container").innerHTML = "<h2>Lesson not found</h2>");
+    fetch(BASE + 'src/lessons/' + lesson + '.html')
+        .then(r => r.text())
+        .then(tx => document.getElementById('lesson-container').innerHTML = tx)
+        .catch(() => document.getElementById('lesson-container').innerHTML = '<h2>Lesson not found</h2>');
 }
 </script>
 
