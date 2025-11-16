@@ -1,0 +1,120 @@
+﻿.landing-body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1e1b4b, #0f0a1f 40%, #000 100%);
+  color: white;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* NAVBAR */
+.net-nav {
+  width: 100%;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(5, 5, 15, 0.6);
+  backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.net-nav-link {
+  margin-left: 24px;
+  color: #cfcff9;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.net-nav-link.primary {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #a855f7, #f5b12a);
+  color: black;
+  font-weight: 600;
+}
+
+/* HERO */
+.hero {
+  padding: 120px 32px 100px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin: 0 auto 16px;
+  max-width: 720px;
+}
+
+.hero-gradient {
+  background: linear-gradient(90deg, #a855f7, #f5b12a);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #cfd0ff;
+  max-width: 680px;
+  margin: 0 auto 32px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  margin: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: 0.1s ease;
+}
+
+.hero-btn.primary {
+  background: linear-gradient(90deg, #a855f7, #f5b12a);
+  color: black;
+  font-weight: 600;
+}
+
+.hero-btn.ghost {
+  background: transparent;
+  color: #e5e7f8;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* FEATURES */
+.feature-section {
+  padding: 80px 32px;
+}
+
+.feature-heading {
+  text-align: center;
+  margin-bottom: 48px;
+  font-size: 2rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.05);
+  padding: 24px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* FOOTER */
+.footer {
+  padding: 40px;
+  text-align: center;
+  color: #aaa;
+}

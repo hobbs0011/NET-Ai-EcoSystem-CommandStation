@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NET Classroom Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="src/styles/main.css" />
+  <link rel="stylesheet" href="src/styles/classroom.css" />
+
+</head>
+<body class="classroom-body">
+
+  <header class="classroom-header">
+    <div class="net-logo">NET<span>•CM</span></div>
+    <a href="index.html" class="net-nav-link ghost">← Back to Home</a>
+  </header>
+
+  <main class="classroom-main">
+    <div class="classroom-container">
+      <h1 class="classroom-title">Classroom Manager</h1>
+
+      <div class="classroom-card">
+        <h2>Lesson</h2>
+        <div id="lesson-title" class="classroom-lesson-title">No lesson active</div>
+        <div id="scene-title" class="classroom-scene-title">—</div>
+        <div id="scene-content" class="classroom-scene-content">Start a lesson to begin.</div>
+        <div class="classroom-controls">
+          <button id="btn-prev" class="net-btn ghost">← Prev</button>
+          <button id="btn-next" class="net-btn ghost">Next →</button>
+        </div>
+      </div>
+
+      <button id="btn-start-sarcasm" class="net-btn primary">Start Sarcasm I-1</button>
+    </div>
+  </main>
+
+  <script src="src/core/net-core-v10.js"></script>
+  <script src="src/lessons/net-lesson-pack-5-sarcasm.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

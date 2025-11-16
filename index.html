@@ -2,59 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>NET Classroom Manager — Core V10</title>
+  <title>NET Ecosystem — Command Station</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="src/styles/main.css" />
+  <link rel="stylesheet" href="src/styles/landing.css" />
+
 </head>
-<body class="net-body">
-  <div id="app">
-    <header class="net-header">
-      <div class="net-logo">NET<span>•CM</span></div>
-      <div class="net-status-pill" id="net-status-pill">CORE V10 · IDLE</div>
-    </header>
+<body class="landing-body">
 
-    <main class="net-main">
-      <section class="net-panel">
-        <h1 class="net-title">NET Classroom Manager</h1>
-        <p class="net-subtitle">
-          Core V10 Scaffold — State Engine, Lesson Loader & Sarcasm (I-1) ready.
-        </p>
+  <!-- NAVBAR -->
+  <nav class="net-nav">
+    <div class="net-nav-left">
+      <div class="net-logo">NET<span>•OS</span></div>
+    </div>
+    <div class="net-nav-right">
+      <a href="classroom.html" class="net-nav-link">Classroom Manager</a>
+      <a href="#" class="net-nav-link">Docs</a>
+      <a href="#" class="net-nav-link primary">Launch</a>
+    </div>
+  </nav>
 
-        <div class="net-grid">
-          <div class="net-card">
-            <h2>Lesson Panel</h2>
-            <div id="lesson-title" class="net-lesson-title">No lesson loaded</div>
-            <div id="scene-title" class="net-scene-title">—</div>
-            <div id="scene-content" class="net-scene-content">Click “Start Sarcasm” to begin.</div>
-            <div class="net-scene-controls">
-              <button id="btn-prev" class="net-btn ghost">← Prev</button>
-              <button id="btn-next" class="net-btn ghost">Next →</button>
-            </div>
-          </div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="hero-title">
+      The <span class="hero-gradient">NET AI Ecosystem</span> Command Station
+    </h1>
+    <p class="hero-subtitle">
+      A unified control center for lessons, gamified learning, classroom intelligence,
+      and modular NET agents.
+    </p>
 
-          <div class="net-card">
-            <h2>Student Spinner (Skeleton)</h2>
-            <div id="student-list" class="net-student-list">
-              <!-- future: list virtualization -->
-            </div>
-            <button id="btn-spin" class="net-btn">Spin (coming soon)</button>
-          </div>
-        </div>
+    <div class="hero-buttons">
+      <a href="classroom.html" class="hero-btn primary">Open Classroom Manager</a>
+      <a href="#features" class="hero-btn ghost">See Features</a>
+    </div>
+  </section>
 
-        <div class="net-footer">
-          <button id="btn-start-sarcasm" class="net-btn primary">
-            Start Lesson: Sarcasm (I-1)
-          </button>
-          <span id="net-footer-status" class="net-footer-status">
-            Ready.
-          </span>
-        </div>
-      </section>
-    </main>
-  </div>
+  <!-- FEATURES -->
+  <section id="features" class="feature-section">
+    <h2 class="feature-heading">Designed with the Gospel Aesthetic</h2>
+    <div class="feature-grid">
 
-  <script src="src/core/net-core-v10.js"></script>
-  <script src="src/lessons/net-lesson-pack-5-sarcasm.js"></script>
-  <script src="app.js"></script>
+      <div class="feature-card">
+        <h3>NET Core V10 Engine</h3>
+        <p>State machine, lesson packs, render logic, and secure mutation.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Lesson Manager</h3>
+        <p>Scene transitions, storyline UI, vocabulary modules, and quizzes.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>UI Component System</h3>
+        <p>NET buttons, panels, neon gradients, and gold/purple theme.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Powered by NET Agents</h3>
+        <p>Chatty, Gemini, Plexy, Claude, and the Gospel Engine.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>NET Ecosystem © 2025</p>
+  </footer>
+
 </body>
 </html>
