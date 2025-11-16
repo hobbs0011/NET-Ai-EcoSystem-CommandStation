@@ -1,3 +1,5 @@
-﻿theme: null
-exclude:
-  - README.md
+theme: null
+title: NET CommandStation
+url: "https://hobbs0011.github.io"
+baseurl: "/NET-Ai-EcoSystem-CommandStation"
+markdown: kramdown
