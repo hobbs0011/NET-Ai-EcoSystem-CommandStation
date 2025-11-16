@@ -1,16 +1,60 @@
-<<<<<<< HEAD
-<!-- NET STAGE 5 INIT -->
-=======
 ﻿<!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-  <meta charset='UTF-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <title>NET-Ai-EcoSystem CommandStation</title>
+  <meta charset="UTF-8" />
+  <title>NET Classroom Manager — Core V10</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/styles/main.css" />
 </head>
-<body>
-  <div id='root'></div>
-  <script type='module' src='/src/main.jsx'></script>
+<body class="net-body">
+  <div id="app">
+    <header class="net-header">
+      <div class="net-logo">NET<span>•CM</span></div>
+      <div class="net-status-pill" id="net-status-pill">CORE V10 · IDLE</div>
+    </header>
+
+    <main class="net-main">
+      <section class="net-panel">
+        <h1 class="net-title">NET Classroom Manager</h1>
+        <p class="net-subtitle">
+          Core V10 Scaffold — State Engine, Lesson Loader & Sarcasm (I-1) ready.
+        </p>
+
+        <div class="net-grid">
+          <div class="net-card">
+            <h2>Lesson Panel</h2>
+            <div id="lesson-title" class="net-lesson-title">No lesson loaded</div>
+            <div id="scene-title" class="net-scene-title">—</div>
+            <div id="scene-content" class="net-scene-content">Click “Start Sarcasm” to begin.</div>
+            <div class="net-scene-controls">
+              <button id="btn-prev" class="net-btn ghost">← Prev</button>
+              <button id="btn-next" class="net-btn ghost">Next →</button>
+            </div>
+          </div>
+
+          <div class="net-card">
+            <h2>Student Spinner (Skeleton)</h2>
+            <div id="student-list" class="net-student-list">
+              <!-- future: list virtualization -->
+            </div>
+            <button id="btn-spin" class="net-btn">Spin (coming soon)</button>
+          </div>
+        </div>
+
+        <div class="net-footer">
+          <button id="btn-start-sarcasm" class="net-btn primary">
+            Start Lesson: Sarcasm (I-1)
+          </button>
+          <span id="net-footer-status" class="net-footer-status">
+            Ready.
+          </span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="src/core/net-core-v10.js"></script>
+  <script src="src/lessons/net-lesson-pack-5-sarcasm.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
->>>>>>> cbb424b02cc3354461037cda7de47f7bea49ead5
