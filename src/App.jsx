@@ -1,9 +1,10 @@
-import React from "react";
+﻿import React from "react";
 
 export default function App() {
   return (
     <div style={{ padding: "40px", color: "white" }}>
       <h1>Welcome to the NET Classroom</h1>
+
       <p>This is your command station for student lessons, ethics, and AI practice.</p>
 
       <ul>
